@@ -1,0 +1,56 @@
+2026-10-09 13:04:16,050 [INFO] ========== 開始執行台股分析 ==========
+2026-10-09 13:04:16,050 [INFO] 股票數量：4
+2026-10-09 13:04:16,617 [INFO] 開始分析 2330
+2026-10-09 13:04:17,498 [ERROR] 2330 大戶分析錯誤
+Traceback (most recent call last):
+  File "/home/runner/work/tw-stock-tracker/tw-stock-tracker/main.py", line 235, in analyze_big_holder
+    df = dl.taiwan_stock_holding_shares_per(
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/data_loader.py", line 749, in taiwan_stock_holding_shares_per
+    stock_shareholding_class = self.get_data(
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/finmind_api.py", line 192, in get_data
+    return pd.DataFrame(self._extract_data(response))
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/finmind_api.py", line 121, in _extract_data
+    raise Exception(f"FinMind API unexpected response: {msg}")
+Exception: FinMind API unexpected response: Your level is free. Please update your user level. Detail information:https://finmindtrade.com/analysis/#/Sponsor/sponsor
+2026-10-09 13:04:17,500 [INFO] 2330 分析完成，分數：13.3
+2026-10-09 13:04:17,500 [INFO] 開始分析 2454
+2026-10-09 13:04:17,842 [ERROR] 2454 大戶分析錯誤
+Traceback (most recent call last):
+  File "/home/runner/work/tw-stock-tracker/tw-stock-tracker/main.py", line 235, in analyze_big_holder
+    df = dl.taiwan_stock_holding_shares_per(
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/data_loader.py", line 749, in taiwan_stock_holding_shares_per
+    stock_shareholding_class = self.get_data(
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/finmind_api.py", line 192, in get_data
+    return pd.DataFrame(self._extract_data(response))
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/finmind_api.py", line 121, in _extract_data
+    raise Exception(f"FinMind API unexpected response: {msg}")
+Exception: FinMind API unexpected response: Your level is free. Please update your user level. Detail information:https://finmindtrade.com/analysis/#/Sponsor/sponsor
+2026-10-09 13:04:17,843 [INFO] 2454 分析完成，分數：13.3
+2026-10-09 13:04:17,843 [INFO] 開始分析 2317
+2026-10-09 13:04:18,178 [ERROR] 2317 大戶分析錯誤
+Traceback (most recent call last):
+  File "/home/runner/work/tw-stock-tracker/tw-stock-tracker/main.py", line 235, in analyze_big_holder
+    df = dl.taiwan_stock_holding_shares_per(
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/data_loader.py", line 749, in taiwan_stock_holding_shares_per
+    stock_shareholding_class = self.get_data(
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/finmind_api.py", line 192, in get_data
+    return pd.DataFrame(self._extract_data(response))
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/finmind_api.py", line 121, in _extract_data
+    raise Exception(f"FinMind API unexpected response: {msg}")
+Exception: FinMind API unexpected response: Your level is free. Please update your user level. Detail information:https://finmindtrade.com/analysis/#/Sponsor/sponsor
+2026-10-09 13:04:18,178 [INFO] 2317 分析完成，分數：13.3
+2026-10-09 13:04:18,178 [INFO] 開始分析 2603
+2026-10-09 13:04:18,539 [ERROR] 2603 大戶分析錯誤
+Traceback (most recent call last):
+  File "/home/runner/work/tw-stock-tracker/tw-stock-tracker/main.py", line 235, in analyze_big_holder
+    df = dl.taiwan_stock_holding_shares_per(
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/data_loader.py", line 749, in taiwan_stock_holding_shares_per
+    stock_shareholding_class = self.get_data(
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/finmind_api.py", line 192, in get_data
+    return pd.DataFrame(self._extract_data(response))
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/FinMind/data/finmind_api.py", line 121, in _extract_data
+    raise Exception(f"FinMind API unexpected response: {msg}")
+Exception: FinMind API unexpected response: Your level is free. Please update your user level. Detail information:https://finmindtrade.com/analysis/#/Sponsor/sponsor
+2026-10-09 13:04:18,539 [INFO] 2603 分析完成，分數：38.3
+2026-10-09 13:04:18,539 [INFO] 分析完成，輸出：/home/runner/work/tw-stock-tracker/tw-stock-tracker/analysis.json
+2026-10-09 13:04:18,539 [INFO] ========== 分析結束 ==========

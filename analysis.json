@@ -1,0 +1,82 @@
+{
+  "update_time": "2026-10-09T13:04:18.539500",
+  "stock_count": 4,
+  "stocks": [
+    {
+      "stock_id": "2603",
+      "analysis_date": "2026-10-09",
+      "revenue": {
+        "score": 23,
+        "latest_yoy": 0,
+        "trend": "連續 3 個月增加",
+        "latest_revenue": 49711309000.0,
+        "message": "營收溫和成長"
+      },
+      "big_holder": {
+        "score": 0,
+        "trend": "資料不足",
+        "latest_percent": null,
+        "message": "資料錯誤"
+      },
+      "score": 38.3,
+      "status": "🟠 偏弱"
+    },
+    {
+      "stock_id": "2330",
+      "analysis_date": "2026-10-09",
+      "revenue": {
+        "score": 8,
+        "latest_yoy": 0,
+        "trend": "未連續增加",
+        "latest_revenue": 511857399000.0,
+        "message": "營收溫和成長"
+      },
+      "big_holder": {
+        "score": 0,
+        "trend": "資料不足",
+        "latest_percent": null,
+        "message": "資料錯誤"
+      },
+      "score": 13.3,
+      "status": "🔴 弱勢"
+    },
+    {
+      "stock_id": "2454",
+      "analysis_date": "2026-10-09",
+      "revenue": {
+        "score": 8,
+        "latest_yoy": 0,
+        "trend": "未連續增加",
+        "latest_revenue": 55399497000.0,
+        "message": "營收溫和成長"
+      },
+      "big_holder": {
+        "score": 0,
+        "trend": "資料不足",
+        "latest_percent": null,
+        "message": "資料錯誤"
+      },
+      "score": 13.3,
+      "status": "🔴 弱勢"
+    },
+    {
+      "stock_id": "2317",
+      "analysis_date": "2026-10-09",
+      "revenue": {
+        "score": 8,
+        "latest_yoy": 0,
+        "trend": "未連續增加",
+        "latest_revenue": 1158633235000.0,
+        "message": "營收溫和成長"
+      },
+      "big_holder": {
+        "score": 0,
+        "trend": "資料不足",
+        "latest_percent": null,
+        "message": "資料錯誤"
+      },
+      "score": 13.3,
+      "status": "🔴 弱勢"
+    }
+  ]
+}
