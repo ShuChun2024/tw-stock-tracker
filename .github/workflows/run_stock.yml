@@ -3,7 +3,7 @@ name: Run Stock Analysis
 on:
   schedule:
     # 每天台灣時間晚上 9 點自動執行 (UTC 13:00)
-    - cron: '0 13 * * *'
+    - cron: '0 12 * * *'
   workflow_dispatch: # 允許你隨時手動點擊按鈕執行
 
 jobs:
