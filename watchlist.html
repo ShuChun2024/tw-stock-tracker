@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+
+<title>觀測股票管理</title>
+
+<style>
+
+:root{
+    color-scheme:dark;
+    --bg:#101827;
+    --panel:#1b2638;
+    --panel2:#111c2d;
+    --border:#334155;
+    --text:#e5edf7;
+    --muted:#9aabc1;
+    --blue:#60a5fa;
+    --green:#4ade80;
+    --red:#f87171;
+    --yellow:#fbbf24;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,"Microsoft JhengHei",sans-serif;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:18px;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+h1{
+    font-size:23px;
+    margin:8px 0;
+}
+
+h2{
+    font-size:17px;
+    margin-top:0;
+}
+
+a{
+    color:var(--blue);
+    text-decoration:none;
+}
+
+.panel{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px;
+    margin:16px 0;
+}
+
+.field{
+    margin-bottom:14px;
+}
+
+label{
+    display:block;
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+input{
+    width:100%;
+    background:#263449;
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:11px;
+    font-size:15px;
+}
+
+input:focus{
+    outline:none;
+    border-color:var(--blue);
+}
+
+button{
+    background:#263449;
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:10px 14px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+button:hover{
+    border-color:var(--blue);
+}
+
+button:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+.primary{
+    border-color:var(--blue);
+}
+
+.danger{
+    color:var(--red);
+}
+
+.actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.actions button{
+    flex:1;
+    min-width:120px;
+}
+
+#message{
+    margin-top:14px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+    white-space:pre-wrap;
+}
+
+.hint{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+}
+
+.stock-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    padding:14px 0;
+    border-top:1px solid var(--border);
+}
+
+.stock-row:first-child{
+    border-top:0;
+}
+
+.stock-code{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.stock-short{
+    font-size:16px;
+    font-weight:bold;
+    margin-left:8px;
+}
+
+.company-name{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:5px;
+}
+
+.name-missing{
+    color:var(--yellow);
+}
+
+.row-actions{
+    display:flex;
+    gap:6px;
+    flex-shrink:0;
+}
+
+.row-actions button{
+    padding:8px 10px;
+}
+
+.empty{
+    padding:20px;
+    text-align:center;
+    color:var(--muted);
+}
+
+@media(max-width:520px){
+
+    .container{
+        padding:12px;
+    }
+
+    .stock-row{
+        align-items:flex-start;
+    }
+
+    .row-actions{
+        flex-direction:column;
+    }
+
+    .row-actions button{
+        min-width:70px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+    <h1>觀測股票管理</h1>
+
+    <a href="./index.html">
+        ← 返回分析首頁
+    </a>
+
+</header>
+
+
+<!-- 新增 / 編輯 -->
+
+<section class="panel">
+
+    <h2 id="formTitle">
+        新增觀測股票
+    </h2>
+
+    <form id="stockForm">
+
+        <div class="field">
+
+            <label for="stockCode">
+                股票代碼
+            </label>
+
+            <input
+                id="stockCode"
+                type="text"
+                inputmode="numeric"
+                maxlength="6"
+                placeholder="例如：2330、3711、2382"
+                autocomplete="off"
+                required
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="shortName">
+                中文簡稱（可留空）
+            </label>
+
+            <input
+                id="shortName"
+                type="text"
+                maxlength="40"
+                placeholder="例如：台積電"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="companyName">
+                公司全名（可留空）
+            </label>
+
+            <input
+                id="companyName"
+                type="text"
+                maxlength="100"
+                placeholder="例如：台灣積體電路製造股份有限公司"
+            >
+
+        </div>
+
+
+        <div class="actions">
+
+            <button
+                type="submit"
+                class="primary"
+                id="saveBtn"
+            >
+                新增股票
+            </button>
+
+
+            <button
+                type="button"
+                id="lookupBtn"
+            >
+                🔍 查詢名稱
+            </button>
+
+
+            <button
+                type="button"
+                id="cancelBtn"
+                hidden
+            >
+                取消編輯
+            </button>
+
+        </div>
+
+    </form>
+
+
+    <div id="message">
+        輸入股票代碼即可新增，不需要先取得公司名稱。
+    </div>
+
+
+    <div class="hint">
+
+        股票名稱查詢會依序嘗試公開資料來源。
+        如果因 CORS、網路或資料來源限制而查不到，
+        股票仍然可以新增，之後可以再手動輸入名稱。
+
+    </div>
+
+</section>
+
+
+<!-- 股票清單 -->
+
+<section class="panel">
+
+    <h2>
+        目前觀測清單
+        （<span id="count">0</span> 檔）
+    </h2>
+
+    <div id="stockList"></div>
+
+</section>
+
+</div>
+
+
+<script>
+
+"use strict";
+
+
+/* =========================================================
+   基本設定
+========================================================= */
+
+const WATCHLIST_KEY = "twStockWatchlistV1";
+
+
+const DEFAULT_STOCKS = [
+
+    {
+        stock_id:"2330",
+        short_name:"台積電",
+        company_name:"台灣積體電路製造股份有限公司"
+    },
+
+    {
+        stock_id:"2454",
+        short_name:"聯發科",
+        company_name:"聯發科技股份有限公司"
+    },
+
+    {
+        stock_id:"2317",
+        short_name:"鴻海",
+        company_name:"鴻海精密工業股份有限公司"
+    },
+
+    {
+        stock_id:"2603",
+        short_name:"長榮",
+        company_name:"長榮海運股份有限公司"
+    }
+
+];
+
+
+let watchlist = loadWatchlist();
+
+let editingCode = null;
+
+
+/* =========================================================
+   HTML 安全處理
+========================================================= */
+
+function escapeHTML(value){
+
+    return String(value ?? "").replace(
+        /[&<>"']/g,
+        function(ch){
+
+            return {
+
+                "&":"&amp;",
+                "<":"&lt;",
+                ">":"&gt;",
+                '"':"&quot;",
+                "'":"&#39;"
+
+            }[ch];
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   讀取 localStorage
+========================================================= */
+
+function loadWatchlist(){
+
+    try{
+
+        const saved =
+            localStorage.getItem(WATCHLIST_KEY);
+
+
+        if(saved === null){
+
+            localStorage.setItem(
+                WATCHLIST_KEY,
+                JSON.stringify(DEFAULT_STOCKS)
+            );
+
+            return [...DEFAULT_STOCKS];
+
+        }
+
+
+        const list = JSON.parse(saved);
+
+
+        if(!Array.isArray(list)){
+
+            return [...DEFAULT_STOCKS];
+
+        }
+
+
+        return list.filter(function(item){
+
+            return item &&
+                   /^\d{4,6}$/.test(
+                       String(item.stock_id)
+                   );
+
+        });
+
+
+    }catch(error){
+
+        console.error(error);
+
+        return [...DEFAULT_STOCKS];
+
+    }
+
+}
+
+
+/* =========================================================
+   儲存
+========================================================= */
+
+function saveWatchlist(){
+
+    localStorage.setItem(
+        WATCHLIST_KEY,
+        JSON.stringify(watchlist)
+    );
+
+    renderWatchlist();
+
+}
+
+
+/* =========================================================
+   訊息
+========================================================= */
+
+function showMessage(message){
+
+    document.getElementById("message").textContent =
+        message;
+
+}
+
+
+/* =========================================================
+   重設表單
+========================================================= */
+
+function resetForm(){
+
+    editingCode = null;
+
+    document.getElementById("stockForm").reset();
+
+    document.getElementById("stockCode").disabled =
+        false;
+
+    document.getElementById("formTitle").textContent =
+        "新增觀測股票";
+
+    document.getElementById("saveBtn").textContent =
+        "新增股票";
+
+    document.getElementById("cancelBtn").hidden =
+        true;
+
+}
+
+
+/* =========================================================
+   顯示股票清單
+========================================================= */
+
+function renderWatchlist(){
+
+    const listElement =
+        document.getElementById("stockList");
+
+
+    document.getElementById("count").textContent =
+        watchlist.length;
+
+
+    if(watchlist.length === 0){
+
+        listElement.innerHTML =
+            '<div class="empty">目前沒有觀測股票。</div>';
+
+        return;
+
+    }
+
+
+    listElement.innerHTML =
+        watchlist.map(function(stock){
+
+            const hasName =
+                stock.short_name ||
+                stock.company_name;
+
+
+            return `
+
+                <div class="stock-row">
+
+                    <div>
+
+                        <div>
+
+                            <span class="stock-code">
+                                ${escapeHTML(stock.stock_id)}
+                            </span>
+
+                            <span class="stock-short">
+                                ${
+                                    escapeHTML(
+                                        stock.short_name ||
+                                        "尚未取得名稱"
+                                    )
+                                }
+                            </span>
+
+                        </div>
+
+
+                        <div class="${
+                            hasName
+                            ? "company-name"
+                            : "company-name name-missing"
+                        }">
+
+                            ${
+                                escapeHTML(
+                                    stock.company_name ||
+                                    "尚未取得公司名稱"
+                                )
+                            }
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row-actions">
+
+                        <button
+                            type="button"
+                            data-lookup="${escapeHTML(stock.stock_id)}"
+                        >
+                            查詢
+                        </button>
+
+                        <button
+                            type="button"
+                            data-edit="${escapeHTML(stock.stock_id)}"
+                        >
+                            編輯
+                        </button>
+
+                        <button
+                            type="button"
+                            class="danger"
+                            data-delete="${escapeHTML(stock.stock_id)}"
+                        >
+                            刪除
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+
+    listElement
+        .querySelectorAll("[data-lookup]")
+        .forEach(function(button){
+
+            button.addEventListener(
+                "click",
+                function(){
+
+                    lookupAndSave(
+                        button.dataset.lookup
+                    );
+
+                }
+            );
+
+        });
+
+
+    listElement
+        .querySelectorAll("[data-edit]")
+        .forEach(function(button){
+
+            button.addEventListener(
+                "click",
+                function(){
+
+                    editStock(
+                        button.dataset.edit
+                    );
+
+                }
+            );
+
+        });
+
+
+    listElement
+        .querySelectorAll("[data-delete]")
+        .forEach(function(button){
+
+            button.addEventListener(
+                "click",
+                function(){
+
+                    deleteStock(
+                        button.dataset.delete
+                    );
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   新增 / 修改
+========================================================= */
+
+document
+.getElementById("stockForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+
+    const code =
+        document.getElementById("stockCode")
+        .value
+        .trim();
+
+
+    const shortName =
+        document.getElementById("shortName")
+        .value
+        .trim();
+
+
+    const companyName =
+        document.getElementById("companyName")
+        .value
+        .trim();
+
+
+    /* 股票代碼是唯一必要條件 */
+
+    if(!/^\d{4,6}$/.test(code)){
+
+        showMessage(
+            "股票代碼格式錯誤。\n" +
+            "請輸入 4～6 位數字，例如：2330、3711。"
+        );
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       編輯模式
+    ===================================================== */
+
+    if(editingCode !== null){
+
+        watchlist =
+            watchlist.map(function(stock){
+
+                if(
+                    String(stock.stock_id) ===
+                    String(editingCode)
+                ){
+
+                    return {
+
+                        stock_id:stock.stock_id,
+
+                        short_name:
+                            shortName ||
+                            stock.short_name ||
+                            "",
+
+                        company_name:
+                            companyName ||
+                            stock.company_name ||
+                            ""
+
+                    };
+
+                }
+
+                return stock;
+
+            });
+
+
+        saveWatchlist();
+
+        showMessage(
+            "已更新 " + editingCode + " 的名稱資料。"
+        );
+
+        resetForm();
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       新增模式
+    ===================================================== */
+
+    const exists =
+        watchlist.some(function(stock){
+
+            return String(stock.stock_id) === code;
+
+        });
+
+
+    if(exists){
+
+        showMessage(
+            "股票代碼 " + code +
+            " 已經存在於觀測清單。"
+        );
+
+        return;
+
+    }
+
+
+    /*
+       ★★★ 重要修改 ★★★
+
+       不再要求股票名稱。
+
+       只要股票代碼正確，
+       就允許新增。
+    */
+
+
+    const newStock = {
+
+        stock_id:code,
+
+        short_name:
+            shortName ||
+            "尚未取得名稱",
+
+        company_name:
+            companyName ||
+            ""
+
+    };
+
+
+    watchlist.push(newStock);
+
+
+    saveWatchlist();
+
+
+    resetForm();
+
+
+    showMessage(
+        "✓ 已新增股票 " + code +
+        "。\n" +
+        "目前名稱尚未取得，可以按「查詢」或稍後手動編輯。"
+    );
+
+});
+
+
+/* =========================================================
+   編輯
+========================================================= */
+
+function editStock(code){
+
+    const stock =
+        watchlist.find(function(item){
+
+            return String(item.stock_id) ===
+                   String(code);
+
+        });
+
+
+    if(!stock){
+
+        return;
+
+    }
+
+
+    editingCode = String(code);
+
+
+    document.getElementById("stockCode").value =
+        stock.stock_id;
+
+    document.getElementById("stockCode").disabled =
+        true;
+
+
+    document.getElementById("shortName").value =
+        stock.short_name === "尚未取得名稱"
+        ? ""
+        : stock.short_name || "";
+
+
+    document.getElementById("companyName").value =
+        stock.company_name || "";
+
+
+    document.getElementById("formTitle").textContent =
+        "編輯 " + code;
+
+
+    document.getElementById("saveBtn").textContent =
+        "儲存修改";
+
+
+    document.getElementById("cancelBtn").hidden =
+        false;
+
+
+    showMessage(
+        "正在編輯股票 " + code
+    );
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================================
+   刪除
+========================================================= */
+
+function deleteStock(code){
+
+    const stock =
+        watchlist.find(function(item){
+
+            return String(item.stock_id) ===
+                   String(code);
+
+        });
+
+
+    if(!stock){
+
+        return;
+
+    }
+
+
+    if(
+        !confirm(
+            "確定要刪除股票 " +
+            code +
+            "？"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    watchlist =
+        watchlist.filter(function(item){
+
+            return String(item.stock_id) !==
+                   String(code);
+
+        });
+
+
+    saveWatchlist();
+
+
+    showMessage(
+        "已從觀測清單刪除 " + code
+    );
+
+
+    if(editingCode === String(code)){
+
+        resetForm();
+
+    }
+
+}
+
+
+/* =========================================================
+   取消編輯
+========================================================= */
+
+document
+.getElementById("cancelBtn")
+.addEventListener(
+    "click",
+    function(){
+
+        resetForm();
+
+        showMessage(
+            "已取消編輯。"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   API 逾時控制
+========================================================= */
+
+async function fetchJSON(url){
+
+    const controller =
+        new AbortController();
+
+
+    const timer =
+        setTimeout(
+            function(){
+
+                controller.abort();
+
+            },
+            8000
+        );
+
+
+    try{
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method:"GET",
+                    cache:"no-store",
+                    signal:controller.signal
+                }
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "HTTP " + response.status
+            );
+
+        }
+
+
+        return await response.json();
+
+    }finally{
+
+        clearTimeout(timer);
+
+    }
+
+}
+
+
+/* =========================================================
+   TWSE 資料
+========================================================= */
+
+async function lookupTWSE(code){
+
+    const url =
+        "https://openapi.twse.com.tw/v1/opendata/t187ap03_L";
+
+
+    const data =
+        await fetchJSON(url);
+
+
+    if(!Array.isArray(data)){
+
+        return null;
+
+    }
+
+
+    for(const row of data){
+
+        const rowCode =
+            String(
+                row["公司代號"] || ""
+            ).trim();
+
+
+        if(rowCode !== code){
+
+            continue;
+
+        }
+
+
+        return {
+
+            short_name:
+                String(
+                    row["公司簡稱"] || ""
+                ).trim(),
+
+            company_name:
+                String(
+                    row["公司名稱"] || ""
+                ).trim()
+
+        };
+
+    }
+
+
+    return null;
+
+}
+
+
+/* =========================================================
+   TPEx 資料
+========================================================= */
+
+async function lookupTPEx(code){
+
+    /*
+       TPEx 公司基本資料。
+
+       不同公開資料版本可能存在欄位差異，
+       所以這裡同時支援多種可能欄位。
+    */
+
+    const urls = [
+
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+
+        "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes"
+
+    ];
+
+
+    for(const url of urls){
+
+        try{
+
+            const data =
+                await fetchJSON(url);
+
+
+            if(!Array.isArray(data)){
+
+                continue;
+
+            }
+
+
+            for(const row of data){
+
+                const rowCode =
+                    String(
+                        row["公司代號"] ??
+                        row["SecuritiesCompanyCode"] ??
+                        row["股票代號"] ??
+                        ""
+                    ).trim();
+
+
+                if(rowCode !== code){
+
+                    continue;
+
+                }
+
+
+                const shortName =
+                    String(
+                        row["公司簡稱"] ??
+                        row["CompanyAbbreviation"] ??
+                        row["CompanyName"] ??
+                        row["名稱"] ??
+                        ""
+                    ).trim();
+
+
+                const companyName =
+                    String(
+                        row["公司名稱"] ??
+                        row["CompanyName"] ??
+                        row["公司全名"] ??
+                        ""
+                    ).trim();
+
+
+                if(shortName || companyName){
+
+                    return {
+
+                        short_name:
+                            shortName ||
+                            companyName,
+
+                        company_name:
+                            companyName ||
+                            shortName
+
+                    };
+
+                }
+
+            }
+
+        }catch(error){
+
+            console.warn(
+                "TPEx API failed:",
+                url,
+                error
+            );
+
+        }
+
+    }
+
+
+    return null;
+
+}
+
+
+/* =========================================================
+   查詢股票名稱
+========================================================= */
+
+async function lookupStockName(code){
+
+    /*
+       先查 TWSE
+    */
+
+    try{
+
+        const twse =
+            await lookupTWSE(code);
+
+
+        if(twse){
+
+            return twse;
+
+        }
+
+    }catch(error){
+
+        console.warn(
+            "TWSE lookup failed:",
+            error
+        );
+
+    }
+
+
+    /*
+       再查 TPEx
+    */
+
+    try{
+
+        const tpex =
+            await lookupTPEx(code);
+
+
+        if(tpex){
+
+            return tpex;
+
+        }
+
+    }catch(error){
+
+        console.warn(
+            "TPEx lookup failed:",
+            error
+        );
+
+    }
+
+
+    return null;
+
+}
+
+
+/* =========================================================
+   上方查詢按鈕
+========================================================= */
+
+document
+.getElementById("lookupBtn")
+.addEventListener(
+    "click",
+    async function(){
+
+        const code =
+            document.getElementById("stockCode")
+            .value
+            .trim();
+
+
+        if(!/^\d{4,6}$/.test(code)){
+
+            showMessage(
+                "請先輸入 4～6 位數字的股票代碼。"
+            );
+
+            return;
+
+        }
+
+
+        const button =
+            document.getElementById("lookupBtn");
+
+
+        button.disabled = true;
+
+        button.textContent =
+            "查詢中…";
+
+
+        showMessage(
+            "正在查詢 TWSE / TPEx 公開資料…"
+        );
+
+
+        try{
+
+            const result =
+                await lookupStockName(code);
+
+
+            if(!result){
+
+                showMessage(
+                    "查無公開名稱資料。\n\n" +
+                    "股票仍然可以新增，請直接按「新增股票」，" +
+                    "之後再手動編輯名稱。"
+                );
+
+                return;
+
+            }
+
+
+            document.getElementById("shortName").value =
+                result.short_name || "";
+
+
+            document.getElementById("companyName").value =
+                result.company_name || "";
+
+
+            showMessage(
+                "✓ 找到股票名稱：\n" +
+                result.short_name +
+                "\n" +
+                result.company_name
+            );
+
+        }catch(error){
+
+            console.error(error);
+
+
+            showMessage(
+                "名稱查詢失敗。\n\n" +
+                "這不會影響股票新增。\n" +
+                "請直接按「新增股票」，之後可手動輸入名稱。"
+            );
+
+        }finally{
+
+            button.disabled = false;
+
+            button.textContent =
+                "🔍 查詢名稱";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   清單上的「查詢」
+========================================================= */
+
+async function lookupAndSave(code){
+
+    showMessage(
+        "正在查詢 " +
+        code +
+        " 的公司名稱…"
+    );
+
+
+    try{
+
+        const result =
+            await lookupStockName(code);
+
+
+        if(!result){
+
+            showMessage(
+                "查無 " +
+                code +
+                " 的公開名稱資料。\n" +
+                "可以按「編輯」手動輸入名稱。"
+            );
+
+            return;
+
+        }
+
+
+        watchlist =
+            watchlist.map(function(stock){
+
+                if(
+                    String(stock.stock_id) ===
+                    String(code)
+                ){
+
+                    return {
+
+                        ...stock,
+
+                        short_name:
+                            result.short_name ||
+                            stock.short_name,
+
+                        company_name:
+                            result.company_name ||
+                            stock.company_name
+
+                    };
+
+                }
+
+
+                return stock;
+
+            });
+
+
+        saveWatchlist();
+
+
+        showMessage(
+            "✓ 已更新 " +
+            code +
+            " 的公司名稱。"
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        showMessage(
+            "查詢失敗。\n" +
+            "請使用「編輯」手動輸入名稱。"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   跨分頁同步
+========================================================= */
+
+window.addEventListener(
+    "storage",
+    function(event){
+
+        if(event.key === WATCHLIST_KEY){
+
+            watchlist =
+                loadWatchlist();
+
+            renderWatchlist();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   啟動
+========================================================= */
+
+renderWatchlist();
+
+
+</script>
+
+</body>
+</html>
