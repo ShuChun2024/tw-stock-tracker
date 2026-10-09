@@ -1,82 +1,119 @@
 {
-  "update_time": "2026-10-09T13:04:18.539500",
+  "update_time": "2026-10-09 21:29:53",
   "stock_count": 4,
+  "complete_count": 4,
   "stocks": [
     {
       "stock_id": "2603",
       "analysis_date": "2026-10-09",
       "revenue": {
-        "score": 23,
-        "latest_yoy": 0,
-        "trend": "連續 3 個月增加",
+        "score": 40,
+        "latest_yoy": 65.03901404949326,
+        "trend": "連續增加",
         "latest_revenue": 49711309000.0,
-        "message": "營收溫和成長"
+        "latest_revenue_month": "2026-09",
+        "message": "年增率達標且營收連續增加",
+        "data_available": true
       },
-      "big_holder": {
+      "foreign_holding": {
         "score": 0,
-        "trend": "資料不足",
-        "latest_percent": null,
-        "message": "資料錯誤"
+        "trend": "整體減少",
+        "latest_percent": 25.69,
+        "change_periods": -0.00999999999999801,
+        "latest_date": "2026-10-08",
+        "message": "最近 4 期外資持股比例整體減少",
+        "data_available": true
       },
-      "score": 38.3,
-      "status": "🟠 偏弱"
+      "score": 66.7,
+      "status": "🟡 偏多",
+      "data_quality": {
+        "complete": true,
+        "missing_items": []
+      }
     },
     {
       "stock_id": "2330",
       "analysis_date": "2026-10-09",
       "revenue": {
-        "score": 8,
-        "latest_yoy": 0,
+        "score": 25,
+        "latest_yoy": 54.64861207105231,
         "trend": "未連續增加",
         "latest_revenue": 511857399000.0,
-        "message": "營收溫和成長"
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
       },
-      "big_holder": {
+      "foreign_holding": {
         "score": 0,
-        "trend": "資料不足",
-        "latest_percent": null,
-        "message": "資料錯誤"
+        "trend": "整體減少",
+        "latest_percent": 69.14,
+        "change_periods": -0.060000000000002274,
+        "latest_date": "2026-10-08",
+        "message": "最近 4 期外資持股比例整體減少",
+        "data_available": true
       },
-      "score": 13.3,
-      "status": "🔴 弱勢"
+      "score": 41.7,
+      "status": "🟠 偏弱",
+      "data_quality": {
+        "complete": true,
+        "missing_items": []
+      }
+    },
+    {
+      "stock_id": "2317",
+      "analysis_date": "2026-10-09",
+      "revenue": {
+        "score": 25,
+        "latest_yoy": 38.415735330862866,
+        "trend": "未連續增加",
+        "latest_revenue": 1158633235000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 0,
+        "trend": "整體減少",
+        "latest_percent": 39.97,
+        "change_periods": -0.39000000000000057,
+        "latest_date": "2026-10-08",
+        "message": "最近 4 期外資持股比例整體減少",
+        "data_available": true
+      },
+      "score": 41.7,
+      "status": "🟠 偏弱",
+      "data_quality": {
+        "complete": true,
+        "missing_items": []
+      }
     },
     {
       "stock_id": "2454",
       "analysis_date": "2026-10-09",
       "revenue": {
         "score": 8,
-        "latest_yoy": 0,
+        "latest_yoy": 1.968413175049677,
         "trend": "未連續增加",
         "latest_revenue": 55399497000.0,
-        "message": "營收溫和成長"
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
       },
-      "big_holder": {
+      "foreign_holding": {
         "score": 0,
-        "trend": "資料不足",
-        "latest_percent": null,
-        "message": "資料錯誤"
+        "trend": "整體減少",
+        "latest_percent": 55.6,
+        "change_periods": -0.6000000000000014,
+        "latest_date": "2026-10-08",
+        "message": "最近 4 期外資持股比例整體減少",
+        "data_available": true
       },
       "score": 13.3,
-      "status": "🔴 弱勢"
-    },
-    {
-      "stock_id": "2317",
-      "analysis_date": "2026-10-09",
-      "revenue": {
-        "score": 8,
-        "latest_yoy": 0,
-        "trend": "未連續增加",
-        "latest_revenue": 1158633235000.0,
-        "message": "營收溫和成長"
-      },
-      "big_holder": {
-        "score": 0,
-        "trend": "資料不足",
-        "latest_percent": null,
-        "message": "資料錯誤"
-      },
-      "score": 13.3,
-      "status": "🔴 弱勢"
+      "status": "🔴 弱勢",
+      "data_quality": {
+        "complete": true,
+        "missing_items": []
+      }
     }
   ]
 }
