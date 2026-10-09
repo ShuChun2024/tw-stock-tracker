@@ -3,7 +3,7 @@ name: Run Stock Analysis
 on:
   schedule:
     # 每天台灣時間晚上 9 點自動執行 (UTC 13:00)
-    - cron: '0 12 * * *'
+    - cron: '0 13 * * *'
   workflow_dispatch: # 允許你隨時手動點擊按鈕執行
 
 jobs:
@@ -29,10 +29,12 @@ jobs:
     - name: 執行選股分析
       run: python main.py
 
-    - name: 將生成的網頁發布回 GitHub
+
+    - name: 保存股票分析資料
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add index.html
-        git diff-index --quiet HEAD || git commit -m "更新股票追蹤資料 [skip ci]"
+        git add analysis.json
+        git add -f stock_analysis.log || true
+        git diff --cached --quiet || git commit -m "更新股票分析資料 [skip ci]"
         git push
