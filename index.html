@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1120">
+  <meta name="color-scheme" content="dark">
+  <title>台股分析儀表板</title>
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card: #151f32;
+      --text: #e5edf8;
+      --muted: #9aaac0;
+      --border: #2c3b52;
+      --blue: #38bdf8;
+      --green: #4ade80;
+      --red: #f87171;
+      --yellow: #fbbf24;
+      --gray: #a5b4c8;
+      --metric-bg: #1c2940;
+      --button-bg: #1e3a5f;
+      --button-border: #315780;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 16px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Microsoft JhengHei", Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 20px;
+      padding: 22px;
+      background: linear-gradient(135deg, #172842, #111a2b);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 26px;
+      color: #f8fafc;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 18px 0;
+    }
+
+    select,
+    button {
+      min-height: 42px;
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    select {
+      flex: 1;
+      min-width: 180px;
+      background: var(--card);
+      color: var(--text);
+      color-scheme: dark;
+    }
+
+    button {
+      border: 1px solid transparent;
+      background: #1769aa;
+      color: #ffffff;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    button:hover:not(:disabled) {
+      background: #2584ca;
+    }
+
+    button:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    #message {
+      margin: 12px 0 18px;
+      padding: 12px 14px;
+      color: var(--muted);
+      background: #111a2b;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .stock-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 16px;
+    }
+
+    .stock-card {
+      min-width: 0;
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .stock-card:hover {
+      border-color: #405875;
+    }
+
+    .stock-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .stock-id {
+      font-size: 23px;
+      font-weight: 700;
+      color: #f8fafc;
+      letter-spacing: 0.5px;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 20px;
+      background: #263449;
+      color: #d5dfed;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .score-area {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .score {
+      font-size: 32px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .score-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .metric {
+      min-width: 0;
+      padding: 11px;
+      background: var(--metric-bg);
+      border: 1px solid rgba(70, 95, 125, 0.28);
+      border-radius: 8px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .metric-value {
+      margin-top: 4px;
+      font-size: 16px;
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+
+    /* 台股配色：紅漲、綠跌 */
+    .positive {
+      color: var(--red);
+    }
+
+    .negative {
+      color: var(--green);
+    }
+
+    .neutral {
+      color: var(--text);
+    }
+
+    .detail-button {
+      width: 100%;
+      margin-top: 14px;
+      background: var(--button-bg);
+      color: #7dd3fc;
+      border: 1px solid var(--button-border);
+    }
+
+    .detail-button:hover:not(:disabled) {
+      background: #294d75;
+    }
+
+    .details {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .details.open {
+      display: block;
+    }
+
+    .details p {
+      margin: 8px 0;
+      color: #d5dfed;
+    }
+
+    .details strong {
+      color: #f1f5f9;
+    }
+
+    .quality {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--metric-bg);
+      border: 1px solid var(--border);
+    }
+
+    .quality-title {
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #f8fafc;
+    }
+
+    .quality-good {
+      color: var(--green);
+      font-weight: 650;
+    }
+
+    .quality-warning {
+      color: var(--yellow);
+      font-weight: 650;
+    }
+
+    .quality-unknown {
+      color: var(--gray);
+      font-weight: 650;
+    }
+
+    .footer {
+      margin: 24px 0 12px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+      }
+
+      header {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .stock-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .stock-card {
+        padding: 14px;
+      }
+
+      .stock-id {
+        font-size: 21px;
+      }
+
+      .score {
+        font-size: 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1>台股分析儀表板</h1>
+      <div class="subtitle">營收趨勢、外資持股與綜合評分</div>
+    </header>
+
+    <section class="toolbar" aria-label="分析操作">
+      <select id="sortSelect" aria-label="排序方式">
+        <option value="score-desc">綜合評分：高至低</option>
+        <option value="score-asc">綜合評分：低至高</option>
+        <option value="stock-id">股票代號</option>
+      </select>
+
+      <button id="reloadButton" type="button">重新載入</button>
+    </section>
+
+    <div id="message" role="status" aria-live="polite">
+      正在載入分析資料……
+    </div>
+
+    <section
+      id="stockGrid"
+      class="stock-grid"
+      aria-label="股票分析結果"
+    ></section>
+
+    <footer class="footer">
+      本頁分析結果僅供資訊參考，不構成投資建議。
+    </footer>
+  </main>
+
+  <script>
+    "use strict";
+
+    const stockGrid = document.getElementById("stockGrid");
+    const message = document.getElementById("message");
+    const sortSelect = document.getElementById("sortSelect");
+    const reloadButton = document.getElementById("reloadButton");
+
+    let stocks = [];
+    let analysisDate = "";
+
+    // HTML 文字跳脫，避免資料中的特殊字元破壞網頁結構。
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, function (char) {
+        const entities = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        };
+
+        return entities[char];
+      });
+    }
+
+    function formatNumber(value, digits = 2) {
+      const number = Number(value);
+
+      if (
+        value === null ||
+        value === undefined ||
+        value === "" ||
+        !Number.isFinite(number)
+      ) {
+        return "資料不足";
+      }
+
+      return number.toLocaleString("zh-TW", {
+        maximumFractionDigits: digits,
+        minimumFractionDigits: 0
+      });
+    }
+
+    function formatPercent(value) {
+      if (
+        value === null ||
+        value === undefined ||
+        value === "" ||
+        !Number.isFinite(Number(value))
+      ) {
+        return "資料不足";
+      }
+
+      return formatNumber(value, 2) + "%";
+    }
+
+    function formatRevenue(value) {
+      if (
+        value === null ||
+        value === undefined ||
+        value === "" ||
+        !Number.isFinite(Number(value))
+      ) {
+        return "資料不足";
+      }
+
+      return formatNumber(Number(value) / 100000000, 2) + " 億";
+    }
+
+    function formatDate(value) {
+      if (!value) return "未提供";
+      return String(value);
+    }
+
+    function formatScore(value) {
+      if (
+        value === null ||
+        value === undefined ||
+        value === "" ||
+        !Number.isFinite(Number(value))
+      ) {
+        return "—";
+      }
+
+      return formatNumber(value, 1);
+    }
+
+    function scoreClass(value) {
+      if (
+        value === null ||
+        value === undefined ||
+        value === "" ||
+        !Number.isFinite(Number(value))
+      ) {
+        return "neutral";
+      }
+
+      const score = Number(value);
+
+      if (score >= 70) return "positive";
+      if (score < 40) return "negative";
+      return "neutral";
+    }
+
+    function percentClass(value) {
+      if (
+        value === null ||
+        value === undefined ||
+        value === "" ||
+        !Number.isFinite(Number(value))
+      ) {
+        return "neutral";
+      }
+
+      if (Number(value) > 0) return "positive";
+      if (Number(value) < 0) return "negative";
+      return "neutral";
+    }
+
+    // 將資料品質 JSON 轉成繁體中文。
+    function dataQualityText(dataQuality) {
+      if (dataQuality === null || dataQuality === undefined) {
+        return {
+          status: "狀態未提供",
+          missingText: "未提供",
+          className: "quality-unknown"
+        };
+      }
+
+      if (typeof dataQuality === "string") {
+        try {
+          dataQuality = JSON.parse(dataQuality);
+        } catch {
+          return {
+            status: dataQuality,
+            missingText: "未提供",
+            className: "quality-unknown"
+          };
+        }
+      }
+
+      if (
+        typeof dataQuality !== "object" ||
+        Array.isArray(dataQuality)
+      ) {
+        return {
+          status: "狀態未提供",
+          missingText: "未提供",
+          className: "quality-unknown"
+        };
+      }
+
+      const complete = dataQuality.complete;
+
+      const missing = Array.isArray(dataQuality.missing_items)
+        ? dataQuality.missing_items
+        : [];
+
+      const itemNames = {
+        revenue: "營收資料",
+        foreign_holding: "外資持股資料",
+        score: "綜合評分",
+        analysis_date: "分析日期"
+      };
+
+      const missingText = missing.length > 0
+        ? missing.map(function (item) {
+            return itemNames[item] || String(item);
+          }).join("、")
+        : (complete === true ? "無" : "未提供");
+
+      let status;
+      let className;
+
+      if (complete === true) {
+        status = "資料完整";
+        className = "quality-good";
+      } else if (complete === false) {
+        status = "資料不完整";
+        className = "quality-warning";
+      } else {
+        status = "狀態未提供";
+        className = "quality-unknown";
+      }
+
+      return {
+        status: status,
+        missingText: missingText,
+        className: className
+      };
+    }
+
+    function renderStock(stock) {
+      const stockId = escapeHTML(stock.stock_id ?? "未知");
+      const revenue = stock.revenue || {};
+      const foreign = stock.foreign_holding || {};
+      const quality = dataQualityText(stock.data_quality);
+
+      const score = stock.score;
+      const revenueScore = revenue.score;
+      const foreignScore = foreign.score;
+
+      const latestRevenue = formatRevenue(revenue.latest_revenue);
+      const latestYoY = formatPercent(revenue.latest_yoy);
+      const foreignPercent = formatPercent(foreign.latest_percent);
+
+      const revenueMonth = formatDate(revenue.latest_revenue_month);
+      const foreignDate = formatDate(foreign.latest_date);
+
+      const revenueTrend = revenue.trend || "未提供";
+      const foreignTrend = foreign.trend || "未提供";
+
+      const revenueMessage = revenue.message || "未提供";
+      const foreignMessage = foreign.message || "未提供";
+      const status = stock.status || "未提供";
+
+      const changePeriods = foreign.change_periods;
+      let foreignChangeText = "資料不足";
+
+      if (
+        changePeriods !== null &&
+        changePeriods !== undefined &&
+        changePeriods !== "" &&
+        Number.isFinite(Number(changePeriods))
+      ) {
+        const change = Number(changePeriods);
+        const sign = change > 0 ? "+" : "";
+        foreignChangeText =
+          sign + formatNumber(change, 2) + " 個百分點";
+      }
+
+      return `
+        <article class="stock-card">
+          <div class="stock-header">
+            <div>
+              <div class="stock-id">${stockId}</div>
+              <div class="subtitle">分析日期：${escapeHTML(
+                stock.analysis_date || analysisDate || "未提供"
+              )}</div>
+            </div>
+            <span class="status">${escapeHTML(status)}</span>
+          </div>
+
+          <div class="score-area">
+            <span class="score ${scoreClass(score)}">${formatScore(score)}</span>
+            <span class="score-label">／100 綜合評分</span>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-label">最新月營收</div>
+              <div class="metric-value">${escapeHTML(latestRevenue)}</div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-label">營收年增率</div>
+              <div class="metric-value ${percentClass(revenue.latest_yoy)}">
+                ${escapeHTML(latestYoY)}
+              </div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-label">外資持股比例</div>
+              <div class="metric-value">${escapeHTML(foreignPercent)}</div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-label">營收趨勢</div>
+              <div class="metric-value">${escapeHTML(revenueTrend)}</div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="detail-button"
+            aria-expanded="false"
+          >查看詳細資料</button>
+
+          <div class="details">
+            <p><strong>股票代號：</strong>${stockId}</p>
+            <p><strong>分析日期：</strong>${escapeHTML(
+              stock.analysis_date || analysisDate || "未提供"
+            )}</p>
+
+            <p><strong>綜合評分：</strong>${escapeHTML(formatScore(score))}</p>
+            <p><strong>營收評分：</strong>${escapeHTML(formatScore(revenueScore))}</p>
+            <p><strong>外資持股評分：</strong>${escapeHTML(formatScore(foreignScore))}</p>
+
+            <p><strong>最新營收月份：</strong>${escapeHTML(revenueMonth)}</p>
+            <p><strong>最新月營收：</strong>${escapeHTML(latestRevenue)}</p>
+            <p><strong>營收年增率：</strong>${escapeHTML(latestYoY)}</p>
+            <p><strong>營收趨勢：</strong>${escapeHTML(revenueTrend)}</p>
+            <p><strong>營收分析：</strong>${escapeHTML(revenueMessage)}</p>
+
+            <p><strong>外資資料日期：</strong>${escapeHTML(foreignDate)}</p>
+            <p><strong>外資持股比例：</strong>${escapeHTML(foreignPercent)}</p>
+            <p><strong>外資持股變化：</strong>${escapeHTML(foreignChangeText)}</p>
+            <p><strong>外資持股趨勢：</strong>${escapeHTML(foreignTrend)}</p>
+            <p><strong>外資分析：</strong>${escapeHTML(foreignMessage)}</p>
+
+            <div class="quality">
+              <div class="quality-title">資料品質</div>
+              <div class="${quality.className}">
+                ${escapeHTML(quality.status)}
+              </div>
+              <div>
+                <strong>缺失項目：</strong>${escapeHTML(quality.missingText)}
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderStocks() {
+      if (!stocks.length) {
+        stockGrid.innerHTML = "";
+        message.textContent = "目前沒有可顯示的股票分析資料。";
+        return;
+      }
+
+      const sortedStocks = [...stocks];
+      const sortMode = sortSelect.value;
+
+      if (sortMode === "score-desc") {
+        sortedStocks.sort(function (a, b) {
+          const scoreA = Number(a.score);
+          const scoreB = Number(b.score);
+          const validA = a.score != null && Number.isFinite(scoreA);
+          const validB = b.score != null && Number.isFinite(scoreB);
+
+          if (!validA && !validB) {
+            return String(a.stock_id).localeCompare(String(b.stock_id));
+          }
+          if (!validA) return 1;
+          if (!validB) return -1;
+
+          return scoreB - scoreA;
+        });
+      } else if (sortMode === "score-asc") {
+        sortedStocks.sort(function (a, b) {
+          const scoreA = Number(a.score);
+          const scoreB = Number(b.score);
+          const validA = a.score != null && Number.isFinite(scoreA);
+          const validB = b.score != null && Number.isFinite(scoreB);
+
+          if (!validA && !validB) {
+            return String(a.stock_id).localeCompare(String(b.stock_id));
+          }
+          if (!validA) return 1;
+          if (!validB) return -1;
+
+          return scoreA - scoreB;
+        });
+      } else if (sortMode === "stock-id") {
+        sortedStocks.sort(function (a, b) {
+          return String(a.stock_id).localeCompare(String(b.stock_id));
+        });
+      }
+
+      stockGrid.innerHTML = sortedStocks.map(renderStock).join("");
+
+      message.textContent =
+        `共 ${stocks.length} 檔股票｜分析日期：${analysisDate || "未提供"}`;
+
+      // 為每張卡片的「查看詳細資料」按鈕加上事件。
+      stockGrid.querySelectorAll(".detail-button").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const details = button.nextElementSibling;
+          const isOpen = details.classList.toggle("open");
+
+          button.textContent = isOpen
+            ? "收合詳細資料"
+            : "查看詳細資料";
+
+          button.setAttribute("aria-expanded", String(isOpen));
+        });
+      });
+    }
+
+    async function loadAnalysis() {
+      reloadButton.disabled = true;
+      message.textContent = "正在載入最新分析資料……";
+
+      try {
+        const response = await fetch("./analysis.json?t=" + Date.now(), {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error(
+            `讀取失敗，HTTP 狀態碼：${response.status}`
+          );
+        }
+
+        const data = await response.json();
+
+        // 相容分析結果是陣列或物件內含 stocks 陣列的格式。
+        if (Array.isArray(data)) {
+          stocks = data;
+          analysisDate = "";
+        } else if (data && Array.isArray(data.stocks)) {
+          stocks = data.stocks;
+          analysisDate = data.analysis_date || "";
+        } else {
+          throw new Error(
+            "analysis.json 格式不符合預期，找不到股票資料陣列。"
+          );
+        }
+
+        // 若最外層沒有日期，使用第一筆股票的分析日期。
+        if (!analysisDate && stocks.length > 0) {
+          analysisDate = stocks[0].analysis_date || "";
+        }
+
+        renderStocks();
+      } catch (error) {
+        stockGrid.innerHTML = "";
+        message.textContent =
+          "無法載入分析資料：" + (error.message || String(error));
+      } finally {
+        reloadButton.disabled = false;
+      }
+    }
+
+    sortSelect.addEventListener("change", renderStocks);
+    reloadButton.addEventListener("click", loadAnalysis);
+
+    loadAnalysis();
+  </script>
+</body>
+</html>
