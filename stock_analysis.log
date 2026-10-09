@@ -140,3 +140,43 @@ Exception: FinMind API unexpected response: Your level is free. Please update yo
 2026-10-09 14:14:35,621 [INFO] 摘要 stock_id=2454 score=None foreign_score=0 foreign_change=-0.6 foreign_trend=整體減少 complete=False
 2026-10-09 14:14:35,621 [INFO] 摘要 stock_id=2317 score=None foreign_score=0 foreign_change=-0.39 foreign_trend=整體減少 complete=False
 2026-10-09 14:14:35,621 [INFO] 摘要 stock_id=2603 score=None foreign_score=0 foreign_change=-0.01 foreign_trend=整體減少 complete=False
+2026-10-09 14:22:01,884 [INFO] 台股分析開始，日期：2026-10-09
+2026-10-09 14:22:01,885 [INFO] 股票清單：['2330', '2454', '2317', '2603']
+2026-10-09 14:22:01,885 [INFO] 分析設定：{'revenue_yoy_target': 20, 'revenue_months': 3, 'big_holder_periods': 4, 'foreign_periods': 4}
+2026-10-09 14:22:02,445 [INFO] 未設定 FINMIND_TOKEN，使用預設 API 存取方式。
+2026-10-09 14:22:02,445 [INFO] ============================================================
+2026-10-09 14:22:02,445 [INFO] 開始分析股票：2330
+2026-10-09 14:22:02,445 [INFO] [2330] 開始分析月營收。
+2026-10-09 14:22:02,923 [WARNING] [2330] 營收資料不足：yoy_score=25, trend_score=None
+2026-10-09 14:22:02,923 [INFO] [2330] 開始分析外資持股。
+2026-10-09 14:22:03,082 [INFO] [2330] 外資分析完成：score=0, latest_percent=69.14, change_periods=-0.06, trend=整體減少, dates=['2026-10-05', '2026-10-06', '2026-10-07', '2026-10-08']
+2026-10-09 14:22:03,082 [INFO] [2330] 分析完成：score=None, status=⚪ 資料不足, data_quality={'complete': False, 'missing_items': ['revenue']}
+2026-10-09 14:22:03,082 [INFO] ============================================================
+2026-10-09 14:22:03,082 [INFO] 開始分析股票：2454
+2026-10-09 14:22:03,082 [INFO] [2454] 開始分析月營收。
+2026-10-09 14:22:03,266 [WARNING] [2454] 營收資料不足：yoy_score=15, trend_score=None
+2026-10-09 14:22:03,266 [INFO] [2454] 開始分析外資持股。
+2026-10-09 14:22:03,433 [INFO] [2454] 外資分析完成：score=0, latest_percent=55.6, change_periods=-0.6, trend=整體減少, dates=['2026-10-05', '2026-10-06', '2026-10-07', '2026-10-08']
+2026-10-09 14:22:03,433 [INFO] [2454] 分析完成：score=None, status=⚪ 資料不足, data_quality={'complete': False, 'missing_items': ['revenue']}
+2026-10-09 14:22:03,433 [INFO] ============================================================
+2026-10-09 14:22:03,433 [INFO] 開始分析股票：2317
+2026-10-09 14:22:03,433 [INFO] [2317] 開始分析月營收。
+2026-10-09 14:22:03,584 [WARNING] [2317] 營收資料不足：yoy_score=25, trend_score=None
+2026-10-09 14:22:03,584 [INFO] [2317] 開始分析外資持股。
+2026-10-09 14:22:03,750 [INFO] [2317] 外資分析完成：score=0, latest_percent=39.97, change_periods=-0.39, trend=整體減少, dates=['2026-10-05', '2026-10-06', '2026-10-07', '2026-10-08']
+2026-10-09 14:22:03,750 [INFO] [2317] 分析完成：score=None, status=⚪ 資料不足, data_quality={'complete': False, 'missing_items': ['revenue']}
+2026-10-09 14:22:03,750 [INFO] ============================================================
+2026-10-09 14:22:03,750 [INFO] 開始分析股票：2603
+2026-10-09 14:22:03,751 [INFO] [2603] 開始分析月營收。
+2026-10-09 14:22:03,907 [WARNING] [2603] 營收資料不足：yoy_score=25, trend_score=None
+2026-10-09 14:22:03,907 [INFO] [2603] 開始分析外資持股。
+2026-10-09 14:22:04,373 [INFO] [2603] 外資分析完成：score=0, latest_percent=25.69, change_periods=-0.01, trend=整體減少, dates=['2026-10-05', '2026-10-06', '2026-10-07', '2026-10-08']
+2026-10-09 14:22:04,373 [INFO] [2603] 分析完成：score=None, status=⚪ 資料不足, data_quality={'complete': False, 'missing_items': ['revenue']}
+2026-10-09 14:22:04,374 [INFO] 分析完成。
+2026-10-09 14:22:04,374 [INFO] 總股票數：4
+2026-10-09 14:22:04,374 [INFO] 資料完整股票數：0
+2026-10-09 14:22:04,374 [INFO] 輸出檔案：/home/runner/work/tw-stock-tracker/tw-stock-tracker/analysis.json
+2026-10-09 14:22:04,374 [INFO] 摘要 stock_id=2330 score=None foreign_score=0 foreign_change=-0.06 foreign_trend=整體減少 complete=False
+2026-10-09 14:22:04,374 [INFO] 摘要 stock_id=2454 score=None foreign_score=0 foreign_change=-0.6 foreign_trend=整體減少 complete=False
+2026-10-09 14:22:04,374 [INFO] 摘要 stock_id=2317 score=None foreign_score=0 foreign_change=-0.39 foreign_trend=整體減少 complete=False
+2026-10-09 14:22:04,374 [INFO] 摘要 stock_id=2603 score=None foreign_score=0 foreign_change=-0.01 foreign_trend=整體減少 complete=False
