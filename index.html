@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>台股分析儀表板</title>
+<style>
+:root{color-scheme:dark;--bg:#101827;--panel:#1b2638;--border:#334155;--text:#e5edf7;--muted:#9aabc1;--red:#ff7272;--green:#4ade80;--blue:#60a5fa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Microsoft JhengHei",sans-serif}
+.container{max-width:1200px;margin:auto;padding:18px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+h1{font-size:23px;margin:8px 0}
+button,input,select{background:#263449;color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:14px}
+button{cursor:pointer}
+button:hover{border-color:var(--blue)}
+a{color:var(--blue);text-decoration:none}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.toolbar input{flex:1;min-width:150px}
+#message{color:var(--muted);font-size:13px;margin:12px 0;white-space:pre-wrap}
+.stock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.stock-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;min-width:0}
+.stock-header{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.stock-id{font-size:19px;font-weight:bold}
+.company-short{font-size:17px;font-weight:bold;margin-top:5px}
+.company-full{font-size:12px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}
+.status{font-size:12px;border:1px solid var(--border);border-radius:20px;padding:5px 8px;white-space:nowrap}
+.score-area{display:flex;align-items:center;gap:12px;margin:18px 0}
+.score{font-size:38px;font-weight:bold}
+.score-label{font-size:13px;color:var(--muted)}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.metric{background:#111c2d;border-radius:9px;padding:12px;min-width:0}
+.metric-title{font-size:12px;color:var(--muted);margin-bottom:8px}
+.metric-value{font-size:18px;font-weight:bold;overflow-wrap:anywhere}
+.metric-sub{font-size:12px;color:var(--muted);margin-top:6px;overflow-wrap:anywhere}
+.positive{color:var(--red)}
+.negative{color:var(--green)}
+.neutral{color:var(--muted)}
+.detail-button{margin-top:12px;width:100%}
+.details{display:none;border-top:1px solid var(--border);margin-top:12px;padding-top:12px;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.details.open{display:block}
+.quality{color:#fbbf24;font-size:12px;margin-top:10px;line-height:1.6}
+.footer{font-size:12px;color:var(--muted);margin:22px 0 8px}
+.empty{padding:30px;text-align:center;color:var(--muted);background:var(--panel);border-radius:12px}
+@media(max-width:480px){.container{padding:12px}h1{font-size:20px}.score{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div>
+    <h1>台股分析儀表板</h1>
+    <div class="footer" id="updateTime">分析資料載入中…</div>
+  </div>
+  <div class="toolbar">
+    <button id="refreshBtn">↻ 重新整理</button>
+    <a href="./watchlist.html"><button type="button">管理觀測股票</button></a>
+  </div>
+</header>
+
+<div class="toolbar">
+  <input id="searchInput" placeholder="搜尋代碼、股票名稱…" aria-label="搜尋股票">
+  <select id="sortSelect" aria-label="排序方式">
+    <option value="code">依股票代碼排序</option>
+    <option value="name">依中文名稱排序</option>
+    <option value="scoreDesc">評分由高至低</option>
+    <option value="scoreAsc">評分由低至高</option>
+  </select>
+</div>
+
+<div id="message" role="status">正在讀取分析資料…</div>
+<div id="stockGrid" class="stock-grid"></div>
+<div class="footer">
+  本頁顯示的是後端已產生的分析結果。新增觀測股票不代表該股票已完成分析。
+</div>
+</div>
+
+<script>
+"use strict";
+
+const WATCHLIST_KEY = "twStockWatchlistV1";
+
+const DEFAULT_STOCKS = [
+  {stock_id:"2330",short_name:"台積電",company_name:"台灣積體電路製造股份有限公司"},
+  {stock_id:"2454",short_name:"聯發科",company_name:"聯發科技股份有限公司"},
+  {stock_id:"2317",short_name:"鴻海",company_name:"鴻海精密工業股份有限公司"},
+  {stock_id:"2603",short_name:"長榮",company_name:"長榮海運股份有限公司"}
+];
+
+let analysisMap = new Map();
+let analysisUpdateTime = "";
+let loading = false;
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[ch]);
+}
+
+function getWatchlist() {
+  try {
+    const saved = localStorage.getItem(WATCHLIST_KEY);
+    if (saved === null) {
+      localStorage.setItem(WATCHLIST_KEY, JSON.stringify(DEFAULT_STOCKS));
+      return [...DEFAULT_STOCKS];
+    }
+    const list = JSON.parse(saved);
+    if (!Array.isArray(list)) return [...DEFAULT_STOCKS];
+    return list.filter(x => x && /^\d{4,6}$/.test(String(x.stock_id)));
+  } catch (error) {
+    return [...DEFAULT_STOCKS];
+  }
+}
+
+function scoreText(value) {
+  return value === null || value === undefined || value === ""
+    || !Number.isFinite(Number(value)) ? "—" : Number(value).toFixed(1);
+}
+
+function scoreStatus(stock) {
+  if (stock.score === null || stock.score === undefined ||
+      !Number.isFinite(Number(stock.score))) return "資料不足";
+  return stock.status || "已完成分析";
+}
+
+function scoreColor(score) {
+  if (score === null || score === undefined || !Number.isFinite(Number(score))) return "neutral";
+  if (Number(score) >= 70) return "positive";
+  if (Number(score) < 40) return "negative";
+  return "neutral";
+}
+
+function signedPercent(value) {
+  if (value === null || value === undefined || value === "" ||
+      !Number.isFinite(Number(value))) return "—";
+  const n = Number(value);
+  return (n > 0 ? "+" : "") + n.toFixed(2) + "%";
+}
+
+function getTrendClass(value) {
+  if (value === null || value === undefined) return "neutral";
+  const s = String(value);
+  if (s.includes("增加") || s.includes("上升") || s.includes("成長") || s.includes("增加")) return "positive";
+  if (s.includes("減少") || s.includes("下降") || s.includes("衰退")) return "negative";
+  return "neutral";
+}
+
+function normalizeMissingItems(items) {
+  if (!Array.isArray(items)) return [];
+  return items.map(item => {
+    const value = String(item);
+    if (value === "revenue") return "營收";
+    if (value === "foreign_holding") return "外資持股";
+    return value;
+  });
+}
+
+function render() {
+  const list = getWatchlist();
+  const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+  const sort = document.getElementById("sortSelect").value;
+
+  let stocks = list.map(item => {
+    const result = analysisMap.get(String(item.stock_id));
+    return {...item, analysis: result || null};
+  });
+
+  stocks = stocks.filter(item => {
+    const a = item.analysis;
+    const text = [
+      item.stock_id, item.short_name, item.company_name,
+      a?.stock_id, a?.status
+    ].join(" ").toLowerCase();
+    return text.includes(keyword);
+  });
+
+  stocks.sort((a,b) => {
+    if (sort === "name") {
+      return String(a.short_name || a.stock_id).localeCompare(
+        String(b.short_name || b.stock_id), "zh-Hant"
+      );
+    }
+    if (sort === "scoreDesc" || sort === "scoreAsc") {
+      const as = a.analysis?.score;
+      const bs = b.analysis?.score;
+      const av = Number.isFinite(Number(as)) && as !== null ? Number(as) : null;
+      const bv = Number.isFinite(Number(bs)) && bs !== null ? Number(bs) : null;
+      if (av === null && bv !== null) return 1;
+      if (av !== null && bv === null) return -1;
+      if (av === null && bv === null) return a.stock_id.localeCompare(b.stock_id);
+      return sort === "scoreDesc" ? bv - av : av - bv;
+    }
+    return String(a.stock_id).localeCompare(String(b.stock_id));
+  });
+
+  const grid = document.getElementById("stockGrid");
+  if (!stocks.length) {
+    grid.innerHTML = '<div class="empty">沒有符合條件的股票，請調整搜尋內容或到管理頁新增股票。</div>';
+    return;
+  }
+
+  grid.innerHTML = stocks.map((item, index) => {
+    const s = item.analysis;
+    const revenue = s?.revenue || {};
+    const foreign = s?.foreign_holding || {};
+    const quality = s?.data_quality || {};
+    const missing = normalizeMissingItems(quality.missing_items);
+    const unavailable = !s;
+    const status = unavailable ? "尚未分析" : scoreStatus(s);
+    const score = unavailable ? "—" : scoreText(s.score);
+
+    const revenueValue = unavailable ? "尚未分析" :
+      (revenue.latest_yoy == null ? "資料不足" : signedPercent(revenue.latest_yoy));
+    const foreignValue = unavailable ? "尚未分析" :
+      (foreign.latest_percent == null ? "資料不足" : Number(foreign.latest_percent).toFixed(2) + "%");
+
+    const revenueClass = unavailable ? "neutral" : getTrendClass(revenue.trend);
+    const foreignClass = unavailable ? "neutral" : getTrendClass(foreign.trend);
+
+    let qualityText = "";
+    if (unavailable) {
+      qualityText = "此股票尚未出現在 analysis.json。";
+    } else if (quality.complete === false || missing.length) {
+      qualityText = "資料品質提醒：" + (missing.length ? "缺少 " + missing.join("、") : "部分資料不完整");
+    }
+
+    const detailId = "details-" + index;
+    return `
+      <article class="stock-card">
+        <div class="stock-header">
+          <div>
+            <div class="stock-id">${escapeHTML(item.stock_id)}</div>
+            <div class="company-short">${escapeHTML(item.short_name || "名稱待確認")}</div>
+            <div class="company-full">${escapeHTML(item.company_name || "公司全名待確認")}</div>
+          </div>
+          <span class="status">${escapeHTML(status)}</span>
+        </div>
+
+        <div class="score-area">
+          <div class="score ${unavailable ? "neutral" : scoreColor(s.score)}">${escapeHTML(score)}</div>
+          <div>
+            <div class="score-label">綜合評分 / 100</div>
+            <div class="score-label">${unavailable ? "等待後端分析" : escapeHTML(s.status || status)}</div>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-title">最新營收年增率</div>
+            <div class="metric-value ${revenueClass}">${escapeHTML(revenueValue)}</div>
+            <div class="metric-sub">${escapeHTML(revenue.latest_revenue_month || "")}</div>
+          </div>
+          <div class="metric">
+            <div class="metric-title">外資持股比例</div>
+            <div class="metric-value ${foreignClass}">${escapeHTML(foreignValue)}</div>
+            <div class="metric-sub">${escapeHTML(foreign.latest_date || "")}</div>
+          </div>
+        </div>
+
+        ${qualityText ? `<div class="quality">${escapeHTML(qualityText)}</div>` : ""}
+        <button class="detail-button" data-detail="${escapeHTML(detailId)}">查看詳細資料</button>
+        <div class="details" id="${escapeHTML(detailId)}">
+          <strong>分析日期：</strong>${escapeHTML(s?.analysis_date || analysisUpdateTime || "尚無資料")}<br>
+          <strong>營收最新金額：</strong>${escapeHTML(revenue.latest_revenue ?? "—")}<br>
+          <strong>營收趨勢：</strong>${escapeHTML(revenue.trend || "—")}<br>
+          <strong>營收說明：</strong>${escapeHTML(revenue.message || "尚無分析資料")}<br>
+          <strong>外資持股趨勢：</strong>${escapeHTML(foreign.trend || "—")}<br>
+          <strong>外資期間變化：</strong>${escapeHTML(foreign.change_periods ?? "—")}<br>
+          <strong>外資說明：</strong>${escapeHTML(foreign.message || "尚無分析資料")}<br>
+          <strong>資料完整性：</strong>${unavailable ? "尚未分析" : quality.complete === false ? "不完整" : "依後端標示"}<br>
+          <strong>缺少項目：</strong>${escapeHTML(missing.join("、") || (unavailable ? "尚未分析" : "無明確缺項"))}
+        </div>
+      </article>`;
+  }).join("");
+
+  grid.querySelectorAll("[data-detail]").forEach(button => {
+    button.addEventListener("click", () => {
+      const panel = document.getElementById(button.dataset.detail);
+      const opened = panel.classList.toggle("open");
+      button.textContent = opened ? "收合詳細資料" : "查看詳細資料";
+    });
+  });
+}
+
+async function refreshAnalysis() {
+  if (loading) return;
+  loading = true;
+  const button = document.getElementById("refreshBtn");
+  const message = document.getElementById("message");
+  button.disabled = true;
+  button.textContent = "讀取中…";
+  message.textContent = "正在讀取最新分析資料…";
+
+  try {
+    const response = await fetch("./analysis.json?t=" + Date.now(), {
+      cache: "no-store"
+    });
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const data = await response.json();
+    const stocks = Array.isArray(data) ? data : data.stocks;
+
+    if (!Array.isArray(stocks)) {
+      throw new Error("analysis.json 格式不正確，找不到 stocks 陣列。");
+    }
+
+    analysisMap = new Map(stocks.map(stock => [String(stock.stock_id), stock]));
+    analysisUpdateTime = data.update_time || data.analysis_date || "";
+    document.getElementById("updateTime").textContent =
+      "分析資料更新時間：" + (analysisUpdateTime || "資料未提供");
+
+    message.textContent = "已讀取 " + stocks.length + " 筆分析結果。";
+    render();
+  } catch (error) {
+    message.textContent =
+      "讀取分析資料失敗：" + error.message +
+      "\n請確認 analysis.json 已發布，且網站與分析檔案位於可正常存取的位置。";
+    render();
+  } finally {
+    loading = false;
+    button.disabled = false;
+    button.textContent = "↻ 重新整理";
+  }
+}
+
+document.getElementById("refreshBtn").addEventListener("click", refreshAnalysis);
+document.getElementById("searchInput").addEventListener("input", render);
+document.getElementById("sortSelect").addEventListener("change", render);
+window.addEventListener("storage", event => {
+  if (event.key === WATCHLIST_KEY) render();
+});
+
+render();
+refreshAnalysis();
+</script>
+</body>
+</html>
