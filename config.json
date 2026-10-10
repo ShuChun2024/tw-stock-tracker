@@ -1,10 +1,14 @@
 {
-  "stocks": ["2330", "2454", "2317", "2603"],
+  "stocks": [
+    "2330",
+    "2454",
+    "2317",
+    "2603",
+    "2881"
+  ],
   "settings": {
     "revenue_yoy_target": 20,
     "revenue_months": 3,
     "foreign_periods": 4
   }
 }
-
-
