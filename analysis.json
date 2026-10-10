@@ -1,7 +1,7 @@
 {
-  "update_time": "2026-10-10 19:53:56",
-  "stock_count": 9,
-  "complete_count": 9,
+  "update_time": "2026-10-10 20:46:01",
+  "stock_count": 10,
+  "complete_count": 10,
   "stocks": [
     {
       "stock_id": "2603",
@@ -166,6 +166,34 @@
       },
       "score": 38.3,
       "status": "🟠 偏弱",
+      "data_quality": {
+        "complete": true,
+        "missing_items": []
+      }
+    },
+    {
+      "stock_id": "1102",
+      "analysis_date": "2026-10-10",
+      "revenue": {
+        "score": 0,
+        "latest_yoy": -1.2967348215780161,
+        "trend": "未連續增加",
+        "latest_revenue": 5590320000.0,
+        "latest_revenue_month": "2026-08",
+        "message": "營收年增率為負",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 14.52,
+        "change_periods": 0.2699999999999996,
+        "latest_date": "2026-10-08",
+        "message": "最近 4 期外資持股比例整體增加",
+        "data_available": true
+      },
+      "score": 25.0,
+      "status": "🔴 弱勢",
       "data_quality": {
         "complete": true,
         "missing_items": []
