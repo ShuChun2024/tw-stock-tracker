@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>台股 API 測試</title>
+
+<style>
+body {
+  font-family: sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 20px;
+}
+
+input,
+button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+input {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #64748b;
+  border-radius: 6px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+}
+
+button.delete {
+  background: #dc2626;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #1e293b;
+  padding: 12px;
+  border-radius: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>台股 API 測試</h2>
+
+<label>管理密鑰 ADMIN_KEY</label>
+
+<input
+  id="adminKey"
+  type="password"
+  autocomplete="off"
+  placeholder="輸入 ADMIN_KEY"
+>
+
+<hr>
+
+<h3>目前股票清單</h3>
+
+<button id="loadBtn">
+  重新讀取股票清單
+</button>
+
+<pre id="stocks">尚未讀取</pre>
+
+<hr>
+
+<h3>新增股票</h3>
+
+<input
+  id="stockCode"
+  type="text"
+  inputmode="numeric"
+  maxlength="6"
+  placeholder="例如：2881"
+>
+
+<button id="addBtn">
+  新增股票 2881
+</button>
+
+<hr>
+
+<h3>刪除股票</h3>
+
+<input
+  id="deleteCode"
+  type="text"
+  inputmode="numeric"
+  maxlength="6"
+  placeholder="例如：2881"
+>
+
+<button id="deleteBtn" class="delete">
+  刪除股票
+</button>
+
+<hr>
+
+<p id="status">尚未執行</p>
+
+<pre id="result"></pre>
+
+<script>
+
+const API =
+  "https://tw-stock-config-api.before2year.workers.dev";
+
+function getKey() {
+  return document.getElementById("adminKey").value.trim();
+}
+
+async function apiRequest(method, body = null) {
+
+  const key = getKey();
+
+  if (!key) {
+    throw new Error("請先輸入 ADMIN_KEY");
+  }
+
+  const options = {
+    method: method,
+    headers: {
+      "X-Admin-Key": key,
+      "Content-Type": "application/json"
+    },
+    cache: "no-store"
+  };
+
+  if (body) {
+    options.body = JSON.stringify(body);
+  }
+
+  const response = await fetch(API, options);
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(
+      data.error || `HTTP ${response.status}`
+    );
+  }
+
+  return data;
+}
+
+async function loadStocks() {
+
+  const status =
+    document.getElementById("status");
+
+  const result =
+    document.getElementById("result");
+
+  const stocks =
+    document.getElementById("stocks");
+
+  status.textContent = "讀取中……";
+  result.textContent = "";
+
+  try {
+
+    const data =
+      await apiRequest("GET");
+
+    stocks.textContent =
+      data.stocks.join("、");
+
+    result.textContent =
+      JSON.stringify(data, null, 2);
+
+    status.textContent =
+      "讀取成功";
+
+  } catch (error) {
+
+    status.textContent =
+      "讀取失敗：" + error.message;
+
+  }
+}
+
+async function addStock() {
+
+  const code =
+    document.getElementById("stockCode").value.trim();
+
+  const status =
+    document.getElementById("status");
+
+  const result =
+    document.getElementById("result");
+
+  if (!/^[0-9]{4,6}$/.test(code)) {
+
+    status.textContent =
+      "股票代碼格式錯誤";
+
+    return;
+  }
+
+  status.textContent =
+    "新增中……";
+
+  result.textContent = "";
+
+  try {
+
+    const data =
+      await apiRequest(
+        "POST",
+        {
+          action: "add",
+          stock: code
+        }
+      );
+
+    document.getElementById("stocks").textContent =
+      data.stocks.join("、");
+
+    result.textContent =
+      JSON.stringify(data, null, 2);
+
+    status.textContent =
+      data.workflowTriggered
+        ? "新增成功，分析已觸發"
+        : "新增成功，但分析未觸發";
+
+  } catch (error) {
+
+    status.textContent =
+      "新增失敗：" + error.message;
+
+  }
+}
+
+async function deleteStock() {
+
+  const code =
+    document.getElementById("deleteCode").value.trim();
+
+  const status =
+    document.getElementById("status");
+
+  const result =
+    document.getElementById("result");
+
+  if (!/^[0-9]{4,6}$/.test(code)) {
+
+    status.textContent =
+      "股票代碼格式錯誤";
+
+    return;
+  }
+
+  if (!confirm("確定要刪除 " + code + "？")) {
+    return;
+  }
+
+  status.textContent =
+    "刪除中……";
+
+  result.textContent = "";
+
+  try {
+
+    const data =
+      await apiRequest(
+        "POST",
+        {
+          action: "delete",
+          stock: code
+        }
+      );
+
+    document.getElementById("stocks").textContent =
+      data.stocks.join("、");
+
+    result.textContent =
+      JSON.stringify(data, null, 2);
+
+    status.textContent =
+      data.workflowTriggered
+        ? "刪除成功，分析已觸發"
+        : "刪除成功，但分析未觸發";
+
+  } catch (error) {
+
+    status.textContent =
+      "刪除失敗：" + error.message;
+
+  }
+}
+
+document
+  .getElementById("loadBtn")
+  .addEventListener(
+    "click",
+    loadStocks
+  );
+
+document
+  .getElementById("addBtn")
+  .addEventListener(
+    "click",
+    addStock
+  );
+
+document
+  .getElementById("deleteBtn")
+  .addEventListener(
+    "click",
+    deleteStock
+  );
+
+</script>
+
+</body>
+</html>
