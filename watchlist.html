@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10141c">
+<title>台股觀察清單管理</title>
+<style>
+:root{color-scheme:dark;--bg:#10141c;--panel:#1a2230;--border:#344155;--text:#edf2f8;--muted:#aab6c7;--blue:#3478f6;--green:#1b9c70;--red:#d64b55;}
+*{box-sizing:border-box}
+body{margin:0;padding:18px;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Microsoft JhengHei","Noto Sans TC",sans-serif}
+.container{max-width:900px;margin:auto}
+h1{font-size:24px;margin:0 0 10px}
+h2{font-size:18px;margin:0 0 14px}
+.subtitle,.note{color:var(--muted);font-size:14px;line-height:1.7}
+.back-btn{display:inline-block;margin:0 0 12px;padding:9px 12px;border:1px solid var(--border);border-radius:8px;color:#dce8ff;text-decoration:none;background:#202c3d}
+.back-btn:hover{background:#2b3b53}
+.panel{margin-top:18px;padding:18px;background:var(--panel);border:1px solid var(--border);border-radius:12px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field{min-width:0}
+label{display:block;margin-bottom:6px;color:var(--muted);font-size:13px}
+input{width:100%;min-width:0;padding:11px;border:1px solid var(--border);border-radius:8px;background:#101722;color:var(--text);font-size:16px}
+input:focus{outline:2px solid var(--blue);border-color:transparent}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+button{padding:10px 14px;border:0;border-radius:8px;background:var(--blue);color:white;font-size:14px;cursor:pointer}
+button.secondary{background:#45546b}
+button.success{background:var(--green)}
+button.danger{background:var(--red)}
+button:disabled{opacity:.5;cursor:not-allowed}
+.status{display:none;margin-top:14px;padding:11px;border-radius:8px;line-height:1.6;font-size:14px;overflow-wrap:anywhere}
+.status.success{display:block;background:#153c32;color:#b8f3dc}
+.status.warning{display:block;background:#48351b;color:#ffe0a4}
+.status.error{display:block;background:#4a252b;color:#ffd0d4}
+.status a{color:#fff;text-decoration:underline}
+.list-header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.count{color:var(--muted);font-size:13px}
+.stock-list{display:grid;gap:10px;margin-top:14px}
+.stock-card{padding:14px;background:#121a26;border:1px solid var(--border);border-radius:10px}
+.stock-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.stock-code{font-size:18px;font-weight:700}
+.stock-name{margin-top:5px;overflow-wrap:anywhere}
+.stock-company{margin-top:4px;color:var(--muted);font-size:13px}
+.stock-actions{display:flex;gap:6px;flex-wrap:wrap}
+.stock-actions button{padding:7px 10px;font-size:13px}
+.empty{padding:20px 0;color:var(--muted);text-align:center}
+.note{font-size:13px}
+.analysis-note{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.6}
+@media(max-width:520px){
+  body{padding:12px}
+  .panel{padding:14px}
+  .form-grid{grid-template-columns:1fr}
+  h1{font-size:21px}
+  .stock-top{flex-direction:column}
+  .stock-actions{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>台股觀察清單管理</h1>
+  <a class="back-btn" href="index.html">← 回首頁（index.html）</a>
+  <div class="subtitle">管理 GitHub 股票清單、新增與刪除觀察標的，並可查詢股票中文名稱。</div>
+
+  <section class="panel">
+    <h2>GitHub 同步與分析</h2>
+    <div class="subtitle">新增、修改或刪除股票只會儲存清單，不會自動執行分析。完成所有修改後，再按「執行分析」。</div>
+    <div class="actions">
+      <button id="syncButton" onclick="syncGitHub()">同步 GitHub</button>
+      <button class="secondary" onclick="loadStockDatabase()">重新載入股票資料庫</button>
+      <button id="analysisButton" class="success" onclick="runAnalysis()">執行分析</button>
+    </div>
+    <div class="analysis-note">執行分析會啟動 GitHub Actions；分析完成時間依股票數量與資料來源而定。</div>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+  </section>
+
+  <section class="panel">
+    <h2 id="formTitle">新增觀察股票</h2>
+    <div class="form-grid">
+      <div class="field">
+        <label for="stockCode">股票代碼（必填）</label>
+        <input id="stockCode" inputmode="numeric" maxlength="6" placeholder="例如：2330">
+      </div>
+      <div class="field">
+        <label for="shortName">股票簡稱</label>
+        <input id="shortName" maxlength="40" placeholder="例如：台積電">
+      </div>
+      <div class="field" style="grid-column:1/-1">
+        <label for="companyName">公司名稱</label>
+        <input id="companyName" maxlength="100" placeholder="例如：台灣積體電路製造股份有限公司">
+      </div>
+    </div>
+    <div class="actions">
+      <button class="secondary" onclick="lookupCurrentStock()">查詢股票名稱</button>
+      <button id="saveButton" class="success" onclick="saveCurrentStock()">新增股票</button>
+      <button id="cancelButton" class="secondary" onclick="cancelEdit()" hidden>取消編輯</button>
+      <button class="secondary" onclick="clearForm()">清空欄位</button>
+    </div>
+    <p class="note">股票代碼會儲存至 GitHub。自行修改的中文名稱只保存在目前瀏覽器。</p>
+  </section>
+
+  <section class="panel">
+    <div class="list-header">
+      <h2 style="margin:0">目前觀察清單</h2>
+      <span id="stockCount" class="count">0 檔股票</span>
+    </div>
+    <div id="stockList" class="stock-list">
+      <div class="empty">尚未載入股票清單</div>
+    </div>
+  </section>
+</div>
+
+<script>
+"use strict";
+
+const API_URL = "https://tw-stock-config-api.before2year.workers.dev";
+const LOCAL_LIST_KEY = "twStockWatchlist";
+const LOCAL_NAMES_KEY = "twStockDisplayNames";
+
+let watchlist = [];
+let stockDatabase = {};
+let remoteLoaded = false;
+let editingCode = null;
+let adminKey = "";
+let busy = false;
+
+function showStatus(message, type = "success", link = null) {
+  const el = document.getElementById("status");
+  el.className = "status " + type;
+  el.replaceChildren(document.createTextNode(message));
+
+  if (link) {
+    el.appendChild(document.createTextNode(" "));
+    const a = document.createElement("a");
+    a.href = link;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = "查看 GitHub Actions 執行紀錄";
+    el.appendChild(a);
+  }
+}
+
+function setBusy(value) {
+  busy = value;
+  document.querySelectorAll("button").forEach(
+    button => button.disabled = value
+  );
+}
+
+function getAdminKey() {
+  if (adminKey) return adminKey;
+
+  const value = prompt(
+    "請輸入 Cloudflare Worker 的 ADMIN_KEY。\n請勿將金鑰提供給他人。"
+  );
+
+  if (value === null || !value.trim()) {
+    throw new Error("已取消操作，未輸入管理金鑰。");
+  }
+
+  adminKey = value.trim();
+  return adminKey;
+}
+
+async function apiRequest(method, payload = null) {
+  const headers = {
+    "X-Admin-Key": getAdminKey()
+  };
+
+  const options = {
+    method,
+    headers
+  };
+
+  if (method !== "GET") {
+    headers["Content-Type"] = "application/json";
+    options.body = JSON.stringify(payload || {});
+  }
+
+  let response;
+
+  try {
+    response = await fetch(API_URL, options);
+  } catch {
+    throw new Error(
+      "無法連線至 Cloudflare Worker。請確認網路、API 網址與 CORS 設定。"
+    );
+  }
+
+  let result;
+
+  try {
+    result = await response.json();
+  } catch {
+    throw new Error(
+      "API 回應不是有效的 JSON，HTTP 狀態：" + response.status
+    );
+  }
+
+  if (!response.ok || result.ok === false) {
+    if (response.status === 401 || response.status === 403) {
+      adminKey = "";
+      throw new Error(
+        "管理金鑰驗證失敗。請再次操作並輸入正確的 ADMIN_KEY。"
+      );
+    }
+
+    throw new Error(
+      result.error ||
+      result.message ||
+      ("API 請求失敗，HTTP 狀態：" + response.status)
+    );
+  }
+
+  return result;
+}
+
+function readLocalNames() {
+  try {
+    const data = JSON.parse(
+      localStorage.getItem(LOCAL_NAMES_KEY) || "{}"
+    );
+
+    return data && typeof data === "object" ? data : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveLocalNames() {
+  const names = {};
+
+  watchlist.forEach(stock => {
+    names[stock.code] = {
+      shortName: stock.shortName || "",
+      companyName: stock.companyName || ""
+    };
+  });
+
+  try {
+    localStorage.setItem(LOCAL_NAMES_KEY, JSON.stringify(names));
+    localStorage.setItem(LOCAL_LIST_KEY, JSON.stringify(watchlist));
+  } catch {
+    showStatus(
+      "清單已更新，但瀏覽器無法儲存本機名稱快取。",
+      "warning"
+    );
+  }
+}
+
+function loadLocalList() {
+  try {
+    const data = JSON.parse(
+      localStorage.getItem(LOCAL_LIST_KEY) || "[]"
+    );
+
+    if (Array.isArray(data)) {
+      watchlist = data
+        .filter(item => item && /^\d{4,6}$/.test(String(item.code || "")))
+        .map(item => ({
+          code: String(item.code),
+          shortName: String(item.shortName || ""),
+          companyName: String(item.companyName || "")
+        }));
+    }
+  } catch {
+    watchlist = [];
+  }
+}
+
+function parseStockDatabase(data) {
+  stockDatabase = {};
+  let items;
+
+  if (Array.isArray(data)) {
+    items = data;
+  } else if (data && Array.isArray(data.stocks)) {
+    items = data.stocks;
+  } else if (data && typeof data === "object") {
+    items = Object.entries(data)
+      .filter(([key]) => /^\d{4,6}$/.test(key))
+      .map(([key, value]) =>
+        typeof value === "string"
+          ? { stock_id: key, short_name: value }
+          : {
+              stock_id: key,
+              ...(value && typeof value === "object" ? value : {})
+            }
+      );
+  } else {
+    throw new Error("stocks.json 格式不正確。");
+  }
+
+  items.forEach(item => {
+    if (!item || typeof item !== "object") return;
+
+    const code = String(
+      item.stock_id ??
+      item.stockCode ??
+      item.stock_code ??
+      item.code ??
+      item.symbol ??
+      item.id ??
+      ""
+    ).trim();
+
+    if (!/^\d{4,6}$/.test(code)) return;
+
+    stockDatabase[code] = {
+      shortName: String(
+        item.short_name ??
+        item.shortName ??
+        item.stock_name ??
+        item.stockName ??
+        item.name ??
+        item.label ??
+        ""
+      ).trim(),
+      companyName: String(
+        item.company_name ??
+        item.companyName ??
+        item.full_name ??
+        item.fullName ??
+        ""
+      ).trim()
+    };
+  });
+
+  return Object.keys(stockDatabase).length;
+}
+
+async function loadStockDatabase() {
+  try {
+    const response = await fetch("./stocks.json", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const count = parseStockDatabase(await response.json());
+
+    showStatus(
+      "股票資料庫載入完成，共 " + count + " 筆。",
+      "success"
+    );
+
+    renderWatchlist();
+  } catch {
+    showStatus(
+      "無法載入 stocks.json。請確認檔案存在且 GitHub Pages 已部署。",
+      "warning"
+    );
+  }
+}
+
+function findStockInfo(code) {
+  const local = readLocalNames()[code] || {};
+  const database = stockDatabase[code] || {};
+
+  return {
+    shortName: local.shortName || database.shortName || "",
+    companyName: local.companyName || database.companyName || ""
+  };
+}
+
+function lookupCurrentStock() {
+  const code = document.getElementById("stockCode").value.trim();
+
+  if (!/^\d{4,6}$/.test(code)) {
+    showStatus("請先輸入 4～6 位數字的股票代碼。", "warning");
+    return;
+  }
+
+  const info = findStockInfo(code);
+
+  document.getElementById("shortName").value = info.shortName;
+  document.getElementById("companyName").value = info.companyName;
+
+  showStatus(
+    info.shortName || info.companyName
+      ? "已查到股票名稱資料。"
+      : "股票資料庫沒有這個代碼的名稱，您仍可手動輸入。",
+    info.shortName || info.companyName ? "success" : "warning"
+  );
+}
+
+async function fetchRemoteStocks() {
+  const result = await apiRequest("GET");
+
+  if (!Array.isArray(result.stocks)) {
+    throw new Error("API 回傳內容缺少有效的 stocks 陣列。");
+  }
+
+  const codes = result.stocks.map(item =>
+    String(
+      typeof item === "object"
+        ? item.stock_id ?? item.code ?? ""
+        : item
+    ).trim()
+  );
+
+  if (codes.some(code => !/^\d{4,6}$/.test(code))) {
+    throw new Error(
+      "GitHub 清單含有無效股票代碼，請檢查 config.json。"
+    );
+  }
+
+  return [...new Set(codes)];
+}
+
+function buildDisplayList(codes) {
+  const old = new Map(
+    watchlist.map(stock => [stock.code, stock])
+  );
+
+  return codes.map(code => {
+    const previous = old.get(code) || {};
+    const info = findStockInfo(code);
+
+    return {
+      code,
+      shortName: previous.shortName || info.shortName || "",
+      companyName: previous.companyName || info.companyName || ""
+    };
+  });
+}
+
+async function loadRemoteWatchlist() {
+  const codes = await fetchRemoteStocks();
+
+  watchlist = buildDisplayList(codes);
+  remoteLoaded = true;
+
+  saveLocalNames();
+  renderWatchlist();
+
+  return codes;
+}
+
+async function syncGitHub() {
+  if (busy) return;
+
+  setBusy(true);
+
+  try {
+    const codes = await loadRemoteWatchlist();
+
+    showStatus(
+      `已從 GitHub 載入 ${codes.length} 檔股票，清單已同步。`,
+      "success"
+    );
+  } catch (error) {
+    showStatus(error.message || "同步失敗。", "error");
+  } finally {
+    setBusy(false);
+  }
+}
+
+function getFormStock() {
+  return {
+    code: document.getElementById("stockCode").value.trim(),
+    shortName: document.getElementById("shortName").value.trim(),
+    companyName: document.getElementById("companyName").value.trim()
+  };
+}
+
+async function saveCurrentStock() {
+  if (busy) return;
+
+  const stock = getFormStock();
+
+  if (!/^\d{4,6}$/.test(stock.code)) {
+    showStatus("股票代碼必須是 4～6 位數字。", "warning");
+    return;
+  }
+
+  if (!remoteLoaded) {
+    showStatus("請先按「同步 GitHub」，再新增或編輯股票。", "warning");
+    return;
+  }
+
+  if (!stock.shortName && !stock.companyName) {
+    const info = findStockInfo(stock.code);
+    stock.shortName = info.shortName;
+    stock.companyName = info.companyName;
+  }
+
+  setBusy(true);
+
+  try {
+    if (editingCode !== null) {
+      const oldCode = editingCode;
+      const index = watchlist.findIndex(
+        item => item.code === oldCode
+      );
+
+      if (index < 0) {
+        throw new Error("找不到正在編輯的股票，請重新同步。");
+      }
+
+      if (
+        stock.code !== oldCode &&
+        watchlist.some(item => item.code === stock.code)
+      ) {
+        throw new Error("這個股票代碼已存在於觀察清單。");
+      }
+
+      if (stock.code !== oldCode) {
+        const codes = watchlist.map(item =>
+          item.code === oldCode ? stock.code : item.code
+        );
+
+        const result = await apiRequest("POST", {
+          action: "replace",
+          stocks: codes
+        });
+
+        const returnedCodes = (result.stocks || codes).map(item =>
+          String(
+            typeof item === "object"
+              ? item.stock_id ?? item.code ?? ""
+              : item
+          )
+        );
+
+        watchlist = buildDisplayList(returnedCodes);
+
+        const newIndex = watchlist.findIndex(
+          item => item.code === stock.code
+        );
+
+        if (newIndex >= 0) {
+          watchlist[newIndex] = stock;
+        }
+
+        showStatus(
+          "股票代碼已更新並儲存至 GitHub；尚未執行分析。",
+          "success"
+        );
+      } else {
+        watchlist[index] = stock;
+
+        showStatus(
+          "股票名稱已更新於目前瀏覽器；未修改 GitHub 股票清單。",
+          "success"
+        );
+      }
+
+      saveLocalNames();
+      renderWatchlist();
+      cancelEdit();
+      return;
+    }
+
+    if (watchlist.some(item => item.code === stock.code)) {
+      throw new Error("這個股票代碼已存在於觀察清單。");
+    }
+
+    const result = await apiRequest("POST", {
+      action: "add",
+      stock: stock.code
+    });
+
+    const returnedCodes = (result.stocks || [
+      ...watchlist.map(item => item.code),
+      stock.code
+    ]).map(item =>
+      String(
+        typeof item === "object"
+          ? item.stock_id ?? item.code ?? ""
+          : item
+      )
+    );
+
+    watchlist = buildDisplayList(returnedCodes);
+
+    const index = watchlist.findIndex(
+      item => item.code === stock.code
+    );
+
+    if (index >= 0) {
+      watchlist[index] = stock;
+    }
+
+    saveLocalNames();
+    renderWatchlist();
+    clearForm();
+
+    showStatus(
+      result.message ||
+      "股票已新增並儲存至 GitHub；尚未執行分析。",
+      "success"
+    );
+  } catch (error) {
+    showStatus(error.message || "儲存失敗。", "error");
+  } finally {
+    setBusy(false);
+  }
+}
+
+function editStock(code) {
+  const stock = watchlist.find(item => item.code === code);
+
+  if (!stock) {
+    showStatus("找不到這檔股票。", "warning");
+    return;
+  }
+
+  editingCode = code;
+
+  document.getElementById("stockCode").value = stock.code;
+  document.getElementById("shortName").value = stock.shortName;
+  document.getElementById("companyName").value = stock.companyName;
+  document.getElementById("formTitle").textContent = "編輯觀察股票";
+  document.getElementById("saveButton").textContent = "儲存修改";
+  document.getElementById("cancelButton").hidden = false;
+  document.getElementById("stockCode").focus();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function cancelEdit() {
+  editingCode = null;
+
+  document.getElementById("formTitle").textContent = "新增觀察股票";
+  document.getElementById("saveButton").textContent = "新增股票";
+  document.getElementById("cancelButton").hidden = true;
+
+  clearForm();
+}
+
+function clearForm() {
+  document.getElementById("stockCode").value = "";
+  document.getElementById("shortName").value = "";
+  document.getElementById("companyName").value = "";
+}
+
+async function deleteStock(code) {
+  if (busy) return;
+
+  const stock = watchlist.find(item => item.code === code);
+
+  if (!stock) {
+    showStatus("找不到這檔股票。", "warning");
+    return;
+  }
+
+  if (!remoteLoaded) {
+    showStatus("請先同步 GitHub，再刪除股票。", "warning");
+    return;
+  }
+
+  if (!confirm(
+    `確定要刪除 ${code} ${stock.shortName || ""} 嗎？\n\n` +
+    "此操作只會更新 GitHub 清單，不會自動執行分析。"
+  )) {
+    return;
+  }
+
+  setBusy(true);
+
+  try {
+    const result = await apiRequest("POST", {
+      action: "delete",
+      stock: code
+    });
+
+    const returnedCodes = (result.stocks ||
+      watchlist
+        .filter(item => item.code !== code)
+        .map(item => item.code)
+    ).map(item =>
+      String(
+        typeof item === "object"
+          ? item.stock_id ?? item.code ?? ""
+          : item
+      )
+    );
+
+    watchlist = buildDisplayList(returnedCodes);
+
+    saveLocalNames();
+    renderWatchlist();
+
+    if (editingCode === code) {
+      cancelEdit();
+    }
+
+    showStatus(
+      result.message ||
+      "股票已從 GitHub 清單刪除；尚未執行分析。",
+      "success"
+    );
+  } catch (error) {
+    showStatus(error.message || "刪除失敗。", "error");
+  } finally {
+    setBusy(false);
+  }
+}
+
+async function runAnalysis() {
+  if (busy) return;
+
+  if (!remoteLoaded) {
+    showStatus(
+      "請先按「同步 GitHub」，確認目前股票清單已同步，再執行分析。",
+      "warning"
+    );
+    return;
+  }
+
+  if (!confirm(
+    "確定要執行一次完整股票分析嗎？\n\n" +
+    "這會啟動 GitHub Actions；請勿連續重複點擊。"
+  )) {
+    return;
+  }
+
+  setBusy(true);
+  showStatus("正在送出分析工作，請稍候……", "warning");
+
+  try {
+    const result = await apiRequest("POST", {
+      action: "run_analysis"
+    });
+
+    showStatus(
+      result.message || "分析工作已送出。請稍後查看執行結果。",
+      "success",
+      result.workflow?.runUrl || null
+    );
+  } catch (error) {
+    showStatus(error.message || "分析工作觸發失敗。", "error");
+  } finally {
+    setBusy(false);
+  }
+}
+
+function renderWatchlist() {
+  const container = document.getElementById("stockList");
+
+  document.getElementById("stockCount").textContent =
+    watchlist.length + " 檔股票";
+
+  container.replaceChildren();
+
+  if (!watchlist.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = remoteLoaded
+      ? "GitHub 目前沒有觀察股票。"
+      : "尚未載入股票清單，請按「同步 GitHub」。";
+
+    container.appendChild(empty);
+    return;
+  }
+
+  watchlist.forEach(stock => {
+    const card = document.createElement("div");
+    card.className = "stock-card";
+
+    const top = document.createElement("div");
+    top.className = "stock-top";
+
+    const info = document.createElement("div");
+
+    const code = document.createElement("div");
+    code.className = "stock-code";
+    code.textContent = stock.code;
+
+    const name = document.createElement("div");
+    name.className = "stock-name";
+    name.textContent = stock.shortName || "尚無股票簡稱";
+
+    const company = document.createElement("div");
+    company.className = "stock-company";
+    company.textContent = stock.companyName || "尚無公司名稱";
+
+    info.append(code, name, company);
+
+    const actions = document.createElement("div");
+    actions.className = "stock-actions";
+
+    const edit = document.createElement("button");
+    edit.className = "secondary";
+    edit.textContent = "編輯";
+    edit.onclick = () => editStock(stock.code);
+
+    const del = document.createElement("button");
+    del.className = "danger";
+    del.textContent = "刪除";
+    del.onclick = () => deleteStock(stock.code);
+
+    actions.append(edit, del);
+    top.append(info, actions);
+    card.appendChild(top);
+    container.appendChild(card);
+  });
+}
+
+function init() {
+  loadLocalList();
+  renderWatchlist();
+  loadStockDatabase();
+}
+
+init();
+</script>
+</body>
+</html>
