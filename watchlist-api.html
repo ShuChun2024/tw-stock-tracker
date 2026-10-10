@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>台股 API 連線測試</title>
+<style>
+body {
+  font-family: sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 20px;
+}
+input, button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 16px;
+}
+input {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #64748b;
+}
+button {
+  background: #2563eb;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #1e293b;
+  padding: 12px;
+}
+</style>
+</head>
+<body>
+
+<h2>台股 API 連線測試</h2>
+
+<label for="adminKey">管理密鑰 ADMIN_KEY</label>
+<input id="adminKey" type="password"
+       autocomplete="off"
+       placeholder="輸入 Cloudflare 的 ADMIN_KEY">
+
+<button id="testBtn">測試讀取股票清單</button>
+
+<p id="status">尚未測試</p>
+<pre id="result"></pre>
+
+<script>
+const API =
+  "https://tw-stock-config-api.before2year.workers.dev";
+
+document.getElementById("testBtn").addEventListener(
+  "click", async () => {
+    const key = document.getElementById("adminKey").value;
+    const status = document.getElementById("status");
+    const result = document.getElementById("result");
+
+    if (!key) {
+      status.textContent = "請先輸入管理密鑰。";
+      return;
+    }
+
+    status.textContent = "連線中……";
+    result.textContent = "";
+
+    try {
+      const response = await fetch(API, {
+        method: "GET",
+        headers: { "X-Admin-Key": key },
+        cache: "no-store"
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.error || `HTTP ${response.status}`
+        );
+      }
+
+      status.textContent = "讀取成功";
+      result.textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+      status.textContent = "讀取失敗：" + error.message;
+    }
+  }
+);
+</script>
+
+</body>
+</html>
