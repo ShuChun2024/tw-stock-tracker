@@ -376,51 +376,76 @@ function addDatabaseEntry(code, shortName, companyName) {
 function parseStockDatabase(data) {
   stockDatabase = {};
 
-  // 支援格式一：陣列
-  // [{"code":"2330","name":"台積電","companyName":"..."}]
+  // 正確處理目前 stocks.json 的格式：
+  // { update_time, stock_count, stocks: [...] }
+  // 同時保留對舊格式的相容性。
+  let items;
+
   if (Array.isArray(data)) {
-    data.forEach(item => {
-      if (!item || typeof item !== "object") return;
+    items = data;
+  } else if (data && Array.isArray(data.stocks)) {
+    items = data.stocks;
+  } else if (data && typeof data === "object") {
+    // 舊格式：以股票代碼作為 key 的物件
+    items = Object.entries(data)
+      .filter(([key]) => /^\d{4,6}$/.test(key))
+      .map(([key, value]) => {
+        if (typeof value === "string") {
+          return {
+            stock_id: key,
+            short_name: value
+          };
+        }
 
-      const code =
-        item.code ?? item.stockCode ?? item.stock_code ??
-        item.symbol ?? item.id ?? item.stock_id;
-
-      const shortName =
-        item.shortName ?? item.short_name ?? item.name ??
-        item.stockName ?? item.stock_name ?? item.label ?? "";
-
-      const companyName =
-        item.companyName ?? item.company_name ??
-        item.fullName ?? item.full_name ?? "";
-
-      addDatabaseEntry(code, shortName, companyName);
-    });
-
-    return;
+        return {
+          stock_id: key,
+          ...(value && typeof value === "object" ? value : {})
+        };
+      });
+  } else {
+    throw new Error("stocks.json 格式不正確。");
   }
 
-  // 支援格式二：物件以股票代碼為 key
-  // {"2330":{"name":"台積電"}}
-  // 或 {"2330":"台積電"}
-  if (data && typeof data === "object") {
-    Object.entries(data).forEach(([code, item]) => {
-      if (typeof item === "string") {
-        addDatabaseEntry(code, item, "");
-        return;
-      }
+  items.forEach(item => {
+    if (!item || typeof item !== "object") return;
 
-      if (item && typeof item === "object") {
-        addDatabaseEntry(
-          code,
-          item.shortName ?? item.short_name ?? item.name ??
-            item.stockName ?? item.stock_name ?? "",
-          item.companyName ?? item.company_name ??
-            item.fullName ?? item.full_name ?? ""
-        );
-      }
-    });
-  }
+    const code = String(
+      item.stock_id ??
+      item.stockCode ??
+      item.stock_code ??
+      item.code ??
+      item.symbol ??
+      item.id ??
+      ""
+    ).trim();
+
+    if (!/^\d{4,6}$/.test(code)) return;
+
+    const shortName = String(
+      item.short_name ??
+      item.shortName ??
+      item.stock_name ??
+      item.stockName ??
+      item.name ??
+      item.label ??
+      ""
+    ).trim();
+
+    const companyName = String(
+      item.company_name ??
+      item.companyName ??
+      item.full_name ??
+      item.fullName ??
+      ""
+    ).trim();
+
+    stockDatabase[code] = {
+      shortName,
+      companyName
+    };
+  });
+
+  return Object.keys(stockDatabase).length;
 }
 
 async function loadStockDatabase() {
