@@ -1,11 +1,11 @@
 {
-  "update_time": "2026-10-09 22:26:00",
+  "update_time": "2026-10-10 11:21:18",
   "stock_count": 4,
   "complete_count": 4,
   "stocks": [
     {
       "stock_id": "2603",
-      "analysis_date": "2026-10-09",
+      "analysis_date": "2026-10-10",
       "revenue": {
         "score": 40,
         "latest_yoy": 65.03901404949326,
@@ -33,7 +33,7 @@
     },
     {
       "stock_id": "2330",
-      "analysis_date": "2026-10-09",
+      "analysis_date": "2026-10-10",
       "revenue": {
         "score": 25,
         "latest_yoy": 54.64861207105231,
@@ -61,7 +61,7 @@
     },
     {
       "stock_id": "2317",
-      "analysis_date": "2026-10-09",
+      "analysis_date": "2026-10-10",
       "revenue": {
         "score": 25,
         "latest_yoy": 38.415735330862866,
@@ -89,7 +89,7 @@
     },
     {
       "stock_id": "2454",
-      "analysis_date": "2026-10-09",
+      "analysis_date": "2026-10-10",
       "revenue": {
         "score": 8,
         "latest_yoy": 1.968413175049677,
