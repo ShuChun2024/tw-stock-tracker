@@ -1,0 +1,95 @@
+name: Run Stock Analysis
+
+on:
+  schedule:
+    # 每天台灣時間晚上 9 點自動執行 (UTC 13:00)
+    - cron: '0 13 * * *'
+
+  # 允許手動執行
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+
+    # =====================================================
+    # 1. 下載 GitHub Repository 程式碼
+    # =====================================================
+    - name: 檢查程式碼
+      uses: actions/checkout@v4
+
+
+    # =====================================================
+    # 2. 設定 Python
+    # =====================================================
+    - name: 設定 Python 環境
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+
+    # =====================================================
+    # 3. 安裝必要套件
+    # =====================================================
+    - name: 安裝必要套件
+      run: |
+        python -m pip install --upgrade pip
+        pip install FinMind pandas requests
+
+
+    # =====================================================
+    # 4. 更新股票名稱資料
+    #
+    # 產生：
+    # stocks.json
+    #
+    # TWSE + TPEx
+    # =====================================================
+    - name: 更新股票名稱資料
+      run: python update_stocks.py
+
+
+    # =====================================================
+    # 5. 執行股票分析
+    #
+    # 產生：
+    # analysis.json
+    # =====================================================
+    - name: 執行選股分析
+      run: python main.py
+
+
+    # =====================================================
+    # 6. 保存產生的資料
+    #
+    # analysis.json
+    # stocks.json
+    # stock_analysis.log
+    # =====================================================
+    - name: 保存股票分析資料
+      run: |
+
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+        # 加入股票分析結果
+        git add analysis.json
+
+        # 加入股票名稱資料
+        git add stocks.json
+
+        # 如果有 log 就加入
+        git add -f stock_analysis.log || true
+
+        # 有變更才 commit
+        git diff --cached --quiet || \
+          git commit -m "更新股票分析資料 [skip ci]"
+
+        # 推回 GitHub
+        git push
