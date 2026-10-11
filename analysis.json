@@ -1,11 +1,11 @@
 {
-  "update_time": "2026-10-11 18:27:53",
-  "stock_count": 11,
-  "complete_count": 10,
-  "technical_count": 11,
+  "update_time": "2026-10-11 19:32:33",
+  "stock_count": 10,
+  "complete_count": 9,
+  "technical_count": 10,
   "score_description": {
     "revenue": 40,
-    "foreign_holding": 20,
+    "chip": 20,
     "technical": 40,
     "total": 100
   },
@@ -1324,152 +1324,6 @@
         "missing_items": [
           "外資持股"
         ]
-      }
-    },
-    {
-      "stock_id": "2882",
-      "analysis_date": "2026-10-11",
-      "revenue": {
-        "score": 0,
-        "latest_yoy": -36.49045045616294,
-        "trend": "未連續增加",
-        "latest_revenue": 29486864000.0,
-        "latest_revenue_month": "2026-08",
-        "message": "營收年增率為負",
-        "data_available": true
-      },
-      "foreign_holding": {
-        "score": 8,
-        "trend": "大致持平",
-        "latest_percent": 23.11,
-        "change_periods": 0.0,
-        "latest_date": "2026-10-08",
-        "message": "最近 4 期外資持股比例大致持平",
-        "data_available": true
-      },
-      "institutional": {
-        "data_available": true,
-        "latest_date": "2026-10-08",
-        "foreign": {
-          "latest_net_shares": -9853855,
-          "latest_net_lots": -9853.9,
-          "net_5d_shares": 389561,
-          "net_5d_lots": 389.6,
-          "net_20d_shares": -17166768,
-          "net_20d_lots": -17166.8,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "trust": {
-          "latest_net_shares": 2832503,
-          "latest_net_lots": 2832.5,
-          "net_5d_shares": 7861603,
-          "net_5d_lots": 7861.6,
-          "net_20d_shares": 17065656,
-          "net_20d_lots": 17065.7,
-          "consecutive_days": 6,
-          "trend": "買超"
-        },
-        "dealer": {
-          "latest_net_shares": 292264,
-          "latest_net_lots": 292.3,
-          "net_5d_shares": 321313,
-          "net_5d_lots": 321.3,
-          "net_20d_shares": 1605823,
-          "net_20d_lots": 1605.8,
-          "consecutive_days": 3,
-          "trend": "買超"
-        },
-        "summary": "三大法人方向分歧",
-        "message": "分析完成"
-      },
-      "technical": {
-        "score": 19,
-        "data_available": true,
-        "latest_date": "2026-10-08",
-        "latest_close": 110.0,
-        "ma": {
-          "ma5": 111.6,
-          "ma10": 111.3,
-          "ma20": 111.35,
-          "ma60": 104.52,
-          "trend": "站上60日線",
-          "score": 8
-        },
-        "rsi": {
-          "value": 50.19,
-          "signal": "中性偏強",
-          "score": 6
-        },
-        "macd": {
-          "dif": 1.2668,
-          "dea": 1.7234,
-          "histogram": -0.4566,
-          "signal": "空方",
-          "score": 1
-        },
-        "kd": {
-          "k": 45.05,
-          "d": 47.43,
-          "signal": "偏弱",
-          "score": 1
-        },
-        "volume": {
-          "today": 19899995.0,
-          "avg5": 17474201.2,
-          "ratio": 1.14,
-          "signal": "量增",
-          "score": 3
-        },
-        "breakout": {
-          "high20": 115.5,
-          "low20": 108.0,
-          "distance_to_high20_percent": -4.76,
-          "distance_to_low20_percent": 1.85,
-          "signal": "接近20日低點"
-        },
-        "message": "技術面偏弱"
-      },
-      "chip_score": 15.4,
-      "chip_score_details": {
-        "foreign": {
-          "score": 2.45,
-          "max_score": 7.0,
-          "daily_signal": -1,
-          "5d_signal": 1,
-          "20d_signal": -1,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "trust": {
-          "score": 7.0,
-          "max_score": 7.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 6,
-          "trend": "買超"
-        },
-        "dealer": {
-          "score": 6.0,
-          "max_score": 6.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 3,
-          "trend": "買超"
-        }
-      },
-      "score_breakdown": {
-        "fundamental": 0.0,
-        "chip": 15.4,
-        "technical": 19.0
-      },
-      "score": 34.4,
-      "status": "🟠 偏弱",
-      "data_quality": {
-        "complete": true,
-        "missing_items": []
       }
     },
     {
