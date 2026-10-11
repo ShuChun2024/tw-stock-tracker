@@ -1167,8 +1167,26 @@ document.getElementById("refreshBtn").addEventListener("click", async () => {
   await loadStockDatabase();
   await refreshAnalysis();
 });
-
+<!--  
 document.getElementById("searchInput").addEventListener("input", render);
+-->
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+  try {
+    console.log("[搜尋] 關鍵字：", searchInput.value);
+    console.log("[搜尋] 分析資料筆數：", analysisMap.size);
+
+    render();
+  } catch (error) {
+    console.error("[搜尋] 渲染失敗：", error);
+
+    document.getElementById("message").textContent =
+      "搜尋時發生錯誤：" + error.message +
+      "\n請查看瀏覽器主控台的詳細錯誤。";
+  }
+}); 
 document.getElementById("sortSelect").addEventListener("change", render);
 
 window.addEventListener("storage", event => {
