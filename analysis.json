@@ -1,8 +1,8 @@
 {
-  "update_time": "2026-10-11 08:26:25",
-  "stock_count": 8,
-  "complete_count": 8,
-  "technical_count": 8,
+  "update_time": "2026-10-11 09:49:02",
+  "stock_count": 11,
+  "complete_count": 10,
+  "technical_count": 11,
   "score_description": {
     "revenue": 40,
     "foreign_holding": 20,
@@ -10,6 +10,81 @@
     "total": 100
   },
   "stocks": [
+    {
+      "stock_id": "2034",
+      "analysis_date": "2026-10-11",
+      "revenue": {
+        "score": 25,
+        "latest_yoy": 47.38803829917837,
+        "trend": "未連續增加",
+        "latest_revenue": 1464676000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 6.84,
+        "change_periods": 0.22999999999999954,
+        "latest_date": "2026-10-08",
+        "message": "最近 4 期外資持股比例整體增加",
+        "data_available": true
+      },
+      "technical": {
+        "score": 35,
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "latest_close": 24.05,
+        "ma": {
+          "ma5": 23.93,
+          "ma10": 23.62,
+          "ma20": 22.25,
+          "ma60": 20.67,
+          "trend": "多頭排列",
+          "score": 15
+        },
+        "rsi": {
+          "value": 68.05,
+          "signal": "偏強",
+          "score": 8
+        },
+        "macd": {
+          "dif": 0.9754,
+          "dea": 0.823,
+          "histogram": 0.1524,
+          "signal": "多方",
+          "score": 8
+        },
+        "kd": {
+          "k": 71.65,
+          "d": 73.05,
+          "signal": "中性",
+          "score": 3
+        },
+        "volume": {
+          "today": 2345348.0,
+          "avg5": 4126877.2,
+          "ratio": 0.57,
+          "signal": "量縮",
+          "score": 1
+        },
+        "breakout": {
+          "high20": 25.0,
+          "low20": 20.05,
+          "distance_to_high20_percent": -3.8,
+          "distance_to_low20_percent": 19.95,
+          "signal": "20日區間內"
+        },
+        "message": "技術面強勢"
+      },
+      "score": 75.0,
+      "status": "🟡 偏多",
+      "data_quality": {
+        "complete": true,
+        "missing_items": []
+      }
+    },
     {
       "stock_id": "2883",
       "analysis_date": "2026-10-11",
@@ -461,6 +536,81 @@
       }
     },
     {
+      "stock_id": "6117",
+      "analysis_date": "2026-10-11",
+      "revenue": {
+        "score": 23,
+        "latest_yoy": 2.4488638841641652,
+        "trend": "連續增加",
+        "latest_revenue": 281886000.0,
+        "latest_revenue_month": "2026-08",
+        "message": "營收年增率為正",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 0,
+        "trend": "整體減少",
+        "latest_percent": 1.08,
+        "change_periods": -0.18999999999999995,
+        "latest_date": "2026-10-08",
+        "message": "最近 4 期外資持股比例整體減少",
+        "data_available": true
+      },
+      "technical": {
+        "score": 30,
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "latest_close": 66.3,
+        "ma": {
+          "ma5": 65.54,
+          "ma10": 63.74,
+          "ma20": 62.54,
+          "ma60": 63.95,
+          "trend": "站上60日線",
+          "score": 8
+        },
+        "rsi": {
+          "value": 62.19,
+          "signal": "偏強",
+          "score": 8
+        },
+        "macd": {
+          "dif": 0.7064,
+          "dea": -0.0863,
+          "histogram": 0.7927,
+          "signal": "多方",
+          "score": 8
+        },
+        "kd": {
+          "k": 60.28,
+          "d": 59.06,
+          "signal": "偏強",
+          "score": 5
+        },
+        "volume": {
+          "today": 521416.0,
+          "avg5": 1049399.4,
+          "ratio": 0.5,
+          "signal": "量縮",
+          "score": 1
+        },
+        "breakout": {
+          "high20": 72.0,
+          "low20": 60.7,
+          "distance_to_high20_percent": -7.92,
+          "distance_to_low20_percent": 9.23,
+          "signal": "20日區間內"
+        },
+        "message": "技術面偏多"
+      },
+      "score": 53.0,
+      "status": "⚪ 中性",
+      "data_quality": {
+        "complete": true,
+        "missing_items": []
+      }
+    },
+    {
       "stock_id": "2882",
       "analysis_date": "2026-10-11",
       "revenue": {
@@ -608,6 +758,83 @@
       "data_quality": {
         "complete": true,
         "missing_items": []
+      }
+    },
+    {
+      "stock_id": "6750",
+      "analysis_date": "2026-10-11",
+      "revenue": {
+        "score": 25,
+        "latest_yoy": 35.530886302596244,
+        "trend": "未連續增加",
+        "latest_revenue": 340623000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": null,
+        "trend": "資料不足",
+        "latest_percent": null,
+        "change_periods": null,
+        "latest_date": null,
+        "message": "沒有外資持股資料",
+        "data_available": false
+      },
+      "technical": {
+        "score": 13,
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "latest_close": 55.0,
+        "ma": {
+          "ma5": 55.12,
+          "ma10": 55.61,
+          "ma20": 56.67,
+          "ma60": 56.29,
+          "trend": "盤整",
+          "score": 5
+        },
+        "rsi": {
+          "value": 38.99,
+          "signal": "偏弱",
+          "score": 2
+        },
+        "macd": {
+          "dif": -0.5473,
+          "dea": -0.3267,
+          "histogram": -0.2206,
+          "signal": "空方",
+          "score": 1
+        },
+        "kd": {
+          "k": 44.56,
+          "d": 43.8,
+          "signal": "短線轉強",
+          "score": 4
+        },
+        "volume": {
+          "today": 67030.0,
+          "avg5": 99824.6,
+          "ratio": 0.67,
+          "signal": "量縮",
+          "score": 1
+        },
+        "breakout": {
+          "high20": 60.1,
+          "low20": 53.5,
+          "distance_to_high20_percent": -8.49,
+          "distance_to_low20_percent": 2.8,
+          "signal": "20日區間內"
+        },
+        "message": "技術面弱勢"
+      },
+      "score": null,
+      "status": "⚪ 資料不足",
+      "data_quality": {
+        "complete": false,
+        "missing_items": [
+          "外資持股"
+        ]
       }
     }
   ]
