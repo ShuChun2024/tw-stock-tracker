@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-10-11 10:12:11",
+  "update_time": "2026-10-11 12:30:52",
   "stock_count": 11,
   "complete_count": 10,
   "technical_count": 11,
@@ -30,6 +30,42 @@
         "latest_date": "2026-10-08",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": 482108,
+          "latest_net_lots": 482.1,
+          "net_5d_shares": 2996354,
+          "net_5d_lots": 2996.4,
+          "net_20d_shares": 6974266,
+          "net_20d_lots": 6974.3,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "trust": {
+          "latest_net_shares": 0,
+          "latest_net_lots": 0.0,
+          "net_5d_shares": 0,
+          "net_5d_lots": 0.0,
+          "net_20d_shares": 0,
+          "net_20d_lots": 0.0,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "latest_net_shares": 12610,
+          "latest_net_lots": 12.6,
+          "net_5d_shares": -102789,
+          "net_5d_lots": -102.8,
+          "net_20d_shares": 44418,
+          "net_20d_lots": 44.4,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
       },
       "technical": {
         "score": 35,
@@ -106,6 +142,42 @@
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": -13827675,
+          "latest_net_lots": -13827.7,
+          "net_5d_shares": 15085023,
+          "net_5d_lots": 15085.0,
+          "net_20d_shares": -13934220,
+          "net_20d_lots": -13934.2,
+          "consecutive_days": 1,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 3515226,
+          "latest_net_lots": 3515.2,
+          "net_5d_shares": 13319648,
+          "net_5d_lots": 13319.6,
+          "net_20d_shares": 41167743,
+          "net_20d_lots": 41167.7,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "dealer": {
+          "latest_net_shares": 1316836,
+          "latest_net_lots": 1316.8,
+          "net_5d_shares": 4841149,
+          "net_5d_lots": 4841.1,
+          "net_20d_shares": 11159605,
+          "net_20d_lots": 11159.6,
+          "consecutive_days": 10,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
       "technical": {
         "score": 21,
         "data_available": true,
@@ -180,6 +252,42 @@
         "latest_date": "2026-10-08",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": 10143068,
+          "latest_net_lots": 10143.1,
+          "net_5d_shares": -9798727,
+          "net_5d_lots": -9798.7,
+          "net_20d_shares": 25010821,
+          "net_20d_lots": 25010.8,
+          "consecutive_days": 2,
+          "trend": "買超"
+        },
+        "trust": {
+          "latest_net_shares": -11000,
+          "latest_net_lots": -11.0,
+          "net_5d_shares": 4528000,
+          "net_5d_lots": 4528.0,
+          "net_20d_shares": 11627000,
+          "net_20d_lots": 11627.0,
+          "consecutive_days": 1,
+          "trend": "賣超"
+        },
+        "dealer": {
+          "latest_net_shares": 31045,
+          "latest_net_lots": 31.0,
+          "net_5d_shares": 244710,
+          "net_5d_lots": 244.7,
+          "net_20d_shares": 3966911,
+          "net_20d_lots": 3966.9,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
       },
       "technical": {
         "score": 29,
@@ -256,6 +364,42 @@
         "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
       },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": -12302987,
+          "latest_net_lots": -12303.0,
+          "net_5d_shares": -11282023,
+          "net_5d_lots": -11282.0,
+          "net_20d_shares": -36492446,
+          "net_20d_lots": -36492.4,
+          "consecutive_days": 3,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 792863,
+          "latest_net_lots": 792.9,
+          "net_5d_shares": 1857161,
+          "net_5d_lots": 1857.2,
+          "net_20d_shares": 2014149,
+          "net_20d_lots": 2014.1,
+          "consecutive_days": 8,
+          "trend": "買超"
+        },
+        "dealer": {
+          "latest_net_shares": 509848,
+          "latest_net_lots": 509.8,
+          "net_5d_shares": 2161427,
+          "net_5d_lots": 2161.4,
+          "net_20d_shares": 7653836,
+          "net_20d_lots": 7653.8,
+          "consecutive_days": 17,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
       "technical": {
         "score": 33,
         "data_available": true,
@@ -330,6 +474,42 @@
         "latest_date": "2026-10-08",
         "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": -2052230,
+          "latest_net_lots": -2052.2,
+          "net_5d_shares": -929447,
+          "net_5d_lots": -929.4,
+          "net_20d_shares": -8531849,
+          "net_20d_lots": -8531.8,
+          "consecutive_days": 2,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 234792,
+          "latest_net_lots": 234.8,
+          "net_5d_shares": -1511353,
+          "net_5d_lots": -1511.4,
+          "net_20d_shares": 15546815,
+          "net_20d_lots": 15546.8,
+          "consecutive_days": 3,
+          "trend": "買超"
+        },
+        "dealer": {
+          "latest_net_shares": 309572,
+          "latest_net_lots": 309.6,
+          "net_5d_shares": 476924,
+          "net_5d_lots": 476.9,
+          "net_20d_shares": 1938360,
+          "net_20d_lots": 1938.4,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
       },
       "technical": {
         "score": 16,
@@ -406,6 +586,42 @@
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": 7341816,
+          "latest_net_lots": 7341.8,
+          "net_5d_shares": 12237183,
+          "net_5d_lots": 12237.2,
+          "net_20d_shares": 37768874,
+          "net_20d_lots": 37768.9,
+          "consecutive_days": 3,
+          "trend": "買超"
+        },
+        "trust": {
+          "latest_net_shares": -80000,
+          "latest_net_lots": -80.0,
+          "net_5d_shares": -788151,
+          "net_5d_lots": -788.2,
+          "net_20d_shares": -2030488,
+          "net_20d_lots": -2030.5,
+          "consecutive_days": 6,
+          "trend": "賣超"
+        },
+        "dealer": {
+          "latest_net_shares": 173235,
+          "latest_net_lots": 173.2,
+          "net_5d_shares": 943834,
+          "net_5d_lots": 943.8,
+          "net_20d_shares": 1584833,
+          "net_20d_lots": 1584.8,
+          "consecutive_days": 15,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
       "technical": {
         "score": 40,
         "data_available": true,
@@ -480,6 +696,42 @@
         "latest_date": "2026-10-08",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": 674547,
+          "latest_net_lots": 674.5,
+          "net_5d_shares": 4422245,
+          "net_5d_lots": 4422.2,
+          "net_20d_shares": 12215412,
+          "net_20d_lots": 12215.4,
+          "consecutive_days": 6,
+          "trend": "買超"
+        },
+        "trust": {
+          "latest_net_shares": -497000,
+          "latest_net_lots": -497.0,
+          "net_5d_shares": -318576,
+          "net_5d_lots": -318.6,
+          "net_20d_shares": 126636,
+          "net_20d_lots": 126.6,
+          "consecutive_days": 4,
+          "trend": "賣超"
+        },
+        "dealer": {
+          "latest_net_shares": 67518,
+          "latest_net_lots": 67.5,
+          "net_5d_shares": 351770,
+          "net_5d_lots": 351.8,
+          "net_20d_shares": 635603,
+          "net_20d_lots": 635.6,
+          "consecutive_days": 2,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
       },
       "technical": {
         "score": 31,
@@ -556,6 +808,42 @@
         "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
       },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": -190063,
+          "latest_net_lots": -190.1,
+          "net_5d_shares": -249392,
+          "net_5d_lots": -249.4,
+          "net_20d_shares": 58684,
+          "net_20d_lots": 58.7,
+          "consecutive_days": 2,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 0,
+          "latest_net_lots": 0.0,
+          "net_5d_shares": 0,
+          "net_5d_lots": 0.0,
+          "net_20d_shares": 12,
+          "net_20d_lots": 0.0,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "latest_net_shares": -9600,
+          "latest_net_lots": -9.6,
+          "net_5d_shares": -184249,
+          "net_5d_lots": -184.2,
+          "net_20d_shares": -632196,
+          "net_20d_lots": -632.2,
+          "consecutive_days": 8,
+          "trend": "賣超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
       "technical": {
         "score": 30,
         "data_available": true,
@@ -630,6 +918,42 @@
         "latest_date": "2026-10-08",
         "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": -4690506,
+          "latest_net_lots": -4690.5,
+          "net_5d_shares": -30934391,
+          "net_5d_lots": -30934.4,
+          "net_20d_shares": -32630041,
+          "net_20d_lots": -32630.0,
+          "consecutive_days": 1,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 0,
+          "latest_net_lots": 0.0,
+          "net_5d_shares": -3000,
+          "net_5d_lots": -3.0,
+          "net_20d_shares": -4401267,
+          "net_20d_lots": -4401.3,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "latest_net_shares": -2000,
+          "latest_net_lots": -2.0,
+          "net_5d_shares": -15635,
+          "net_5d_lots": -15.6,
+          "net_20d_shares": 1213951,
+          "net_20d_lots": 1214.0,
+          "consecutive_days": 1,
+          "trend": "賣超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
       },
       "technical": {
         "score": 19,
@@ -706,6 +1030,42 @@
         "message": "最近 4 期外資持股比例大致持平",
         "data_available": true
       },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-08",
+        "foreign": {
+          "latest_net_shares": -9853855,
+          "latest_net_lots": -9853.9,
+          "net_5d_shares": 389561,
+          "net_5d_lots": 389.6,
+          "net_20d_shares": -17166768,
+          "net_20d_lots": -17166.8,
+          "consecutive_days": 1,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 2832503,
+          "latest_net_lots": 2832.5,
+          "net_5d_shares": 7861603,
+          "net_5d_lots": 7861.6,
+          "net_20d_shares": 17065656,
+          "net_20d_lots": 17065.7,
+          "consecutive_days": 6,
+          "trend": "買超"
+        },
+        "dealer": {
+          "latest_net_shares": 292264,
+          "latest_net_lots": 292.3,
+          "net_5d_shares": 321313,
+          "net_5d_lots": 321.3,
+          "net_20d_shares": 1605823,
+          "net_20d_lots": 1605.8,
+          "consecutive_days": 3,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
       "technical": {
         "score": 19,
         "data_available": true,
@@ -780,6 +1140,42 @@
         "latest_date": null,
         "message": "沒有外資持股資料",
         "data_available": false
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-05",
+        "foreign": {
+          "latest_net_shares": -3000,
+          "latest_net_lots": -3.0,
+          "net_5d_shares": -3000,
+          "net_5d_lots": -3.0,
+          "net_20d_shares": -3985,
+          "net_20d_lots": -4.0,
+          "consecutive_days": 1,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 0,
+          "latest_net_lots": 0.0,
+          "net_5d_shares": 0,
+          "net_5d_lots": 0.0,
+          "net_20d_shares": 0,
+          "net_20d_lots": 0.0,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "latest_net_shares": 0,
+          "latest_net_lots": 0.0,
+          "net_5d_shares": 0,
+          "net_5d_lots": 0.0,
+          "net_20d_shares": 0,
+          "net_20d_lots": 0.0,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
       },
       "technical": {
         "score": 13,
