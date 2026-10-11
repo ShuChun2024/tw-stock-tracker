@@ -1,0 +1,196 @@
+name: Run Stock Analysis
+
+on:
+  schedule:
+    # 每天台灣時間 21:07 自動執行（UTC 13:07）
+    - cron: '7 13 * * *'
+
+  # 允許手動執行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # =====================================================
+      # 1. 下載 GitHub Repository 程式碼
+      # =====================================================
+      - name: 檢查程式碼
+        uses: actions/checkout@v4
+
+      # =====================================================
+      # 2. 設定 Python
+      # =====================================================
+      - name: 設定 Python 環境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      # =====================================================
+      # 3. 安裝必要套件
+      # =====================================================
+      - name: 安裝必要套件
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      # =====================================================
+      # 4. 更新股票名稱資料
+      # 產生 stocks.json
+      # =====================================================
+      - name: 更新股票名稱資料
+        run: python update_stocks.py
+
+      # =====================================================
+      # 5. 檢查股票名稱資料
+      # =====================================================
+      - name: 檢查股票名稱資料
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("stocks.json")
+
+          if not path.exists():
+              raise FileNotFoundError("找不到 stocks.json")
+
+          with path.open("r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          if isinstance(data, dict):
+              stocks = data.get("stocks")
+              if not isinstance(stocks, list):
+                  raise ValueError(
+                      "stocks.json 格式錯誤：找不到 stocks 陣列"
+                  )
+          elif isinstance(data, list):
+              stocks = data
+          else:
+              raise ValueError(
+                  "stocks.json 必須是 JSON 物件或陣列"
+              )
+
+          if not stocks:
+              raise ValueError("stocks.json 沒有股票資料")
+
+          print("股票名稱資料檢查通過")
+          print("股票資料筆數：", len(stocks))
+          PY
+
+      # =====================================================
+      # 6. 執行股票分析
+      # 產生 analysis.json
+      # =====================================================
+      - name: 執行選股分析
+        run: python main.py
+
+      # =====================================================
+      # 7. 檢查分析資料完整性
+      # =====================================================
+      - name: 檢查分析資料完整性
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from math import isfinite
+
+          path = Path("analysis.json")
+
+          if not path.exists():
+              raise FileNotFoundError("找不到 analysis.json")
+
+          with path.open("r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          if not isinstance(data, dict):
+              raise ValueError("analysis.json 必須是 JSON 物件")
+
+          if not data.get("update_time"):
+              raise ValueError("analysis.json 缺少 update_time")
+
+          stocks = data.get("stocks")
+
+          if not isinstance(stocks, list):
+              raise ValueError(
+                  "analysis.json 缺少有效的 stocks 陣列"
+              )
+
+          stock_count = data.get("stock_count")
+
+          if stock_count != len(stocks):
+              raise ValueError(
+                  f"股票數量不一致：stock_count={stock_count}，"
+                  f"實際筆數={len(stocks)}"
+              )
+
+          ids = []
+
+          for stock in stocks:
+              if not isinstance(stock, dict):
+                  raise ValueError("stocks 陣列內有非物件資料")
+
+              stock_id = stock.get("stock_id")
+
+              if stock_id is None or not str(stock_id).strip():
+                  raise ValueError("有股票缺少 stock_id")
+
+              ids.append(str(stock_id).strip())
+
+              score = stock.get("score")
+
+              if score is not None:
+                  if (
+                      isinstance(score, bool)
+                      or not isinstance(score, (int, float))
+                      or not isfinite(score)
+                  ):
+                      raise ValueError(
+                          f"{stock_id} 的 score 不是有效數字"
+                      )
+
+                  if not 0 <= score <= 100:
+                      raise ValueError(
+                          f"{stock_id} 的 score 超出 0～100"
+                      )
+
+          if len(ids) != len(set(ids)):
+              raise ValueError("analysis.json 存在重複股票代碼")
+
+          print("分析資料完整性檢查通過")
+          print("更新時間：", data["update_time"])
+          print("股票數量：", len(stocks))
+          print("分析結果檢查完成")
+          PY
+
+      # =====================================================
+      # 8. 保存產生的資料
+      # analysis.json、stocks.json、stock_analysis.log
+      # =====================================================
+      - name: 保存股票分析資料
+        run: |
+          git config --local user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # 加入分析結果與股票名稱
+          git add analysis.json stocks.json
+
+          # 有 log 才加入
+          if [ -f stock_analysis.log ]; then
+            git add -f stock_analysis.log
+          fi
+
+          # 有變更才提交
+          if ! git diff --cached --quiet; then
+            git commit -m "更新股票分析資料 [skip ci]"
+            git push
+          else
+            echo "資料沒有變更，不需要提交"
+          fi
