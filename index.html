@@ -168,12 +168,18 @@ button:disabled{opacity:.6;cursor:wait}
 <body>
 <div class="container">
   <h1>台股分析儀表板</h1>
-  <div class="subtitle">基本面 × 籌碼面 × 技術面</div>
-
+  <div class="subtitle">基本面 × 籌碼面 × 技術面
+  
   <div class="toolbar">
     <button id="btnAll" class="active">全部</button>
     <button id="btnWatch">觀察清單</button>
     <button id="btnRefresh">重新整理</button>
+
+    <button
+       id="btnManageWatchlist"
+       onclick="window.location.href='./watchlist.html'">
+       管理觀察清單
+     </button>
   </div>
 
   <div id="status" class="status">載入資料中...</div>
