@@ -1,7 +1,9 @@
 {
-  "update_time": "2026-10-11 19:32:33",
+  "update_time": "2026-10-11 20:50:11",
   "stock_count": 10,
   "complete_count": 9,
+  "score_complete_count": 10,
+  "data_complete_count": 9,
   "technical_count": 10,
   "score_description": {
     "revenue": 40,
