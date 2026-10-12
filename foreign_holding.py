@@ -53,6 +53,10 @@ def analyze_foreign_holding(dl, stock_id, settings, today):
             stock_id=stock_id,
             start_date=start_date
         )
+        print(
+            f"[外資持股] {stock_id} 最後日期：",
+            df["date"].max() if df is not None and not df.empty else "無資料"
+        )
 
         if df is None or df.empty:
             result["message"] = "沒有外資持股資料"
