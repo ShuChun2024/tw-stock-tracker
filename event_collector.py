@@ -331,6 +331,12 @@ def fetch_stock_events(stock_id, year):
     response.encoding = response.apparent_encoding or "utf-8"
 
     html = response.text
+    
+    print("    HTTP 狀態碼：", response.status_code)
+    print("    最終網址：", response.url)
+    print("    回應長度：", len(html))
+    print("    回應前 500 字：")
+    print(repr(html[:500]))
 
     if not html:
         print("    [WARN] MOPS 回傳空白資料")
