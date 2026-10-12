@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-10-12 17:33:32",
+  "update_time": "2026-10-12 21:06:19",
   "stock_count": 11,
   "complete_count": 10,
   "score_complete_count": 11,
@@ -25,12 +25,12 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 0,
-        "trend": "整體減少",
-        "latest_percent": 25.69,
-        "change_periods": -0.00999999999999801,
-        "latest_date": "2026-10-08",
-        "message": "最近 4 期外資持股比例整體減少",
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 26.35,
+        "change_periods": 0.6000000000000014,
+        "latest_date": "2026-10-12",
+        "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
       "institutional": {
@@ -173,12 +173,12 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 15,
-        "trend": "整體增加",
-        "latest_percent": 12.96,
-        "change_periods": 0.22000000000000064,
-        "latest_date": "2026-10-08",
-        "message": "最近 4 期外資持股比例整體增加",
+        "score": 20,
+        "trend": "連續增加",
+        "latest_percent": 13.37,
+        "change_periods": 0.75,
+        "latest_date": "2026-10-12",
+        "message": "最近 4 期外資持股比例連續增加",
         "data_available": true
       },
       "institutional": {
@@ -321,12 +321,12 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 15,
-        "trend": "整體增加",
-        "latest_percent": 14.52,
-        "change_periods": 0.2699999999999996,
-        "latest_date": "2026-10-08",
-        "message": "最近 4 期外資持股比例整體增加",
+        "score": 20,
+        "trend": "連續增加",
+        "latest_percent": 14.54,
+        "change_periods": 0.29999999999999893,
+        "latest_date": "2026-10-12",
+        "message": "最近 4 期外資持股比例連續增加",
         "data_available": true
       },
       "institutional": {
@@ -471,9 +471,9 @@
       "foreign_holding": {
         "score": 0,
         "trend": "整體減少",
-        "latest_percent": 1.08,
-        "change_periods": -0.18999999999999995,
-        "latest_date": "2026-10-08",
+        "latest_percent": 1.03,
+        "change_periods": -0.52,
+        "latest_date": "2026-10-12",
         "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
       },
@@ -619,9 +619,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 29.56,
-        "change_periods": 0.00999999999999801,
-        "latest_date": "2026-10-08",
+        "latest_percent": 29.73,
+        "change_periods": 0.16000000000000014,
+        "latest_date": "2026-10-12",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -693,9 +693,9 @@
           "score": 4
         },
         "volume": {
-          "today": 57137594.0,
-          "avg5": 41891788.2,
-          "ratio": 1.36,
+          "today": 57745594.0,
+          "avg5": 42013388.2,
+          "ratio": 1.37,
           "signal": "量增",
           "score": 3
         },
@@ -765,12 +765,12 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 15,
-        "trend": "整體增加",
-        "latest_percent": 6.84,
-        "change_periods": 0.22999999999999954,
-        "latest_date": "2026-10-08",
-        "message": "最近 4 期外資持股比例整體增加",
+        "score": 0,
+        "trend": "整體減少",
+        "latest_percent": 6.82,
+        "change_periods": -0.04999999999999982,
+        "latest_date": "2026-10-12",
+        "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
       },
       "institutional": {
@@ -915,9 +915,9 @@
       "foreign_holding": {
         "score": 0,
         "trend": "整體減少",
-        "latest_percent": 69.14,
-        "change_periods": -0.060000000000002274,
-        "latest_date": "2026-10-08",
+        "latest_percent": 69.11,
+        "change_periods": -0.09000000000000341,
+        "latest_date": "2026-10-12",
         "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
       },
@@ -935,12 +935,12 @@
           "trend": "賣超"
         },
         "trust": {
-          "latest_net_shares": 587667,
-          "latest_net_lots": 587.7,
-          "net_5d_shares": 2191150,
-          "net_5d_lots": 2191.2,
-          "net_20d_shares": 2805409,
-          "net_20d_lots": 2805.4,
+          "latest_net_shares": 588078,
+          "latest_net_lots": 588.1,
+          "net_5d_shares": 2191561,
+          "net_5d_lots": 2191.6,
+          "net_20d_shares": 2805820,
+          "net_20d_lots": 2805.8,
           "consecutive_days": 9,
           "trend": "買超"
         },
@@ -989,9 +989,9 @@
           "score": 3
         },
         "volume": {
-          "today": 22573768.0,
-          "avg5": 22052426.6,
-          "ratio": 1.02,
+          "today": 23555768.0,
+          "avg5": 22248826.6,
+          "ratio": 1.06,
           "signal": "量能正常",
           "score": 2
         },
@@ -1213,9 +1213,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 19.82,
-        "change_periods": 0.21000000000000085,
-        "latest_date": "2026-10-08",
+        "latest_percent": 19.8,
+        "change_periods": 0.19000000000000128,
+        "latest_date": "2026-10-12",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -1359,12 +1359,12 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 8,
-        "trend": "大致持平",
-        "latest_percent": 23.11,
-        "change_periods": 0.0,
-        "latest_date": "2026-10-08",
-        "message": "最近 4 期外資持股比例大致持平",
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 23.15,
+        "change_periods": 0.029999999999997584,
+        "latest_date": "2026-10-12",
+        "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
       "institutional": {
@@ -1507,12 +1507,12 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 0,
-        "trend": "整體減少",
-        "latest_percent": 15.97,
-        "change_periods": -0.08000000000000007,
-        "latest_date": "2026-10-08",
-        "message": "最近 4 期外資持股比例整體減少",
+        "score": 8,
+        "trend": "大致持平",
+        "latest_percent": 16.02,
+        "change_periods": 0.0,
+        "latest_date": "2026-10-12",
+        "message": "最近 4 期外資持股比例大致持平",
         "data_available": true
       },
       "institutional": {
