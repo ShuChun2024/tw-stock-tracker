@@ -1,7 +1,24 @@
 {
-  "update_time": "2026-10-12 23:06:29",
-  "source": "TWSE / TPEx 官方 OpenAPI",
-  "days_back": 30,
-  "event_count": 0,
-  "events": []
+  "update_time": "2026-10-12T23:28:49",
+  "lookback_days": 30,
+  "stock_count": 4,
+  "event_count": 1,
+  "stocks": [
+    "1101",
+    "2317",
+    "2330",
+    "2454"
+  ],
+  "events": [
+    {
+      "stock_id": "2317",
+      "company_name": "鴻海",
+      "date": "2026-10-12",
+      "time": "180156",
+      "category": "重大訊息",
+      "title": "(補充115/7/17公告)代子公司Foxconn(Far East)Limited\r\n公告處分臻鼎科技控股股份有限公司股份",
+      "source": "TWSE",
+      "source_url": "https://mops.twse.com.tw/"
+    }
+  ]
 }
