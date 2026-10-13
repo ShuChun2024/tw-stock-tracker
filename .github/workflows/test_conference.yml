@@ -28,7 +28,7 @@ jobs:
       - name: Install test dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests pypdf
+          pip install requests 
 
       # ==========================================================
       # 4. 執行法人說明會資料測試
@@ -40,11 +40,12 @@ jobs:
       # ==========================================================
       # 5. 保存測試結果
       # ==========================================================
+  
       - name: Upload test result
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: conference-test-result
+          name: conference-event-detail
           path: |
-            conference_test_result.json
+            conference_event_detail.json
           if-no-files-found: ignore
