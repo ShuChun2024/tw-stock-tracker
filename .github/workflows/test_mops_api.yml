@@ -1,0 +1,272 @@
+name: Test MOPS t05st01 API Structure
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-mops-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Inspect MOPS API structure
+        shell: bash
+        run: |
+          python - <<'PY'
+          import requests
+          import re
+
+          BASE = "https://mops.twse.com.tw"
+
+          session = requests.Session()
+          session.headers.update({
+              "User-Agent": (
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/140.0 Safari/537.36"
+              ),
+              "Accept": "*/*",
+              "Referer": BASE + "/mops/"
+          })
+
+          def section(title):
+              print("\n" + "=" * 80)
+              print(title)
+              print("=" * 80)
+
+          def show_context(text, keyword, radius=1500):
+              positions = []
+              start = 0
+
+              while True:
+                  pos = text.find(keyword, start)
+
+                  if pos < 0:
+                      break
+
+                  positions.append(pos)
+                  start = pos + len(keyword)
+
+              print(f"Keyword: {keyword}")
+              print(f"Occurrences: {len(positions)}")
+
+              for i, pos in enumerate(positions[:10], 1):
+                  print("\n" + "-" * 80)
+                  print(f"MATCH {i} / POSITION {pos}")
+                  print("-" * 80)
+
+                  a = max(0, pos - radius)
+                  b = min(len(text), pos + radius)
+
+                  print(text[a:b])
+
+          # ============================================================
+          # STEP 1
+          # t05st01.js
+          # ============================================================
+
+          section("STEP 1 - Download t05st01.js")
+
+          url = BASE + "/mops/assets/t05st01.js"
+
+          r = session.get(url, timeout=30)
+
+          print("HTTP:", r.status_code)
+          print("Final URL:", r.url)
+          print("Content-Type:", r.headers.get("Content-Type"))
+          print("Content-Length:", len(r.content))
+
+          t05 = r.text
+
+          # ============================================================
+          # STEP 2
+          # Search API-related context
+          # ============================================================
+
+          section("STEP 2 - t05st01.js API context")
+
+          keywords = [
+              "apiName",
+              "method",
+              "type",
+              "companyId",
+              "year",
+              "month",
+              "firstDay",
+              "lastDay",
+              "anotherPopupWindow",
+              "search",
+              "base"
+          ]
+
+          for kw in keywords:
+              show_context(t05, kw, 1000)
+
+          # ============================================================
+          # STEP 3
+          # Download worker.js
+          # ============================================================
+
+          section("STEP 3 - Download /mops/api/worker.js")
+
+          worker_url = BASE + "/mops/api/worker.js"
+
+          r2 = session.get(worker_url, timeout=30)
+
+          print("HTTP:", r2.status_code)
+          print("Final URL:", r2.url)
+          print("Content-Type:", r2.headers.get("Content-Type"))
+          print("Content-Length:", len(r2.content))
+
+          worker = r2.text
+
+          print("\nFirst 5000 characters:")
+          print(worker[:5000])
+
+          # ============================================================
+          # STEP 4
+          # Search worker.js
+          # ============================================================
+
+          section("STEP 4 - worker.js API keywords")
+
+          worker_keywords = [
+              "t05st01",
+              "apiName",
+              "parameters",
+              "method",
+              "POST",
+              "GET",
+              "fetch",
+              "Request",
+              "Response",
+              "URL",
+              "mops",
+              "api",
+              "interinfo",
+              "8443",
+              "origin",
+              "body"
+          ]
+
+          for kw in worker_keywords:
+              show_context(worker, kw, 1500)
+
+          # ============================================================
+          # STEP 5
+          # Search index.js for shared API function
+          # ============================================================
+
+          section("STEP 5 - Download index.js")
+
+          index_url = BASE + "/mops/assets/index.js"
+
+          r3 = session.get(index_url, timeout=30)
+
+          print("HTTP:", r3.status_code)
+          print("Final URL:", r3.url)
+          print("Content-Type:", r3.headers.get("Content-Type"))
+          print("Content-Length:", len(r3.content))
+
+          index_js = r3.text
+
+          # ============================================================
+          # STEP 6
+          # Search shared API implementation
+          # ============================================================
+
+          section("STEP 6 - Shared API implementation")
+
+          index_keywords = [
+              "apiName",
+              "parameters",
+              "method",
+              "changeApi",
+              "companyId",
+              "dataType",
+              "fetch(",
+              "Request(",
+              "Headers(",
+              "JSON.stringify",
+              "/mops/api/",
+              "interinfo.com.tw",
+              "8443"
+          ]
+
+          for kw in index_keywords:
+              show_context(index_js, kw, 1800)
+
+          # ============================================================
+          # STEP 7
+          # Search for API endpoint construction
+          # ============================================================
+
+          section("STEP 7 - Possible API URL construction")
+
+          patterns = [
+              r'https?://[^"\']+',
+              r'/mops/api/[^"\']+',
+              r'api/[^"\']+',
+              r'baseURL.{0,500}',
+              r'url.{0,500}apiName',
+              r'apiName.{0,1000}parameters'
+          ]
+
+          for pattern in patterns:
+
+              print("\n" + "-" * 80)
+              print("REGEX:", pattern)
+              print("-" * 80)
+
+              matches = re.findall(pattern, index_js)
+
+              print("Matches:", len(matches))
+
+              for m in matches[:30]:
+                  print(m[:1000])
+
+          # ============================================================
+          # STEP 8
+          # Try to identify imported/shared chunks
+          # ============================================================
+
+          section("STEP 8 - JavaScript chunk references")
+
+          chunk_pattern = r'["\']([^"\']+\.js)["\']'
+
+          chunks = sorted(set(re.findall(chunk_pattern, index_js)))
+
+          for c in chunks:
+              if any(x in c.lower() for x in [
+                  "api",
+                  "common",
+                  "search",
+                  "query",
+                  "worker",
+                  "t05"
+              ]):
+                  print(c)
+
+          # ============================================================
+          # STEP 9
+          # Summary
+          # ============================================================
+
+          section("STEP 9 - SUMMARY")
+
+          print("""
+          已確認：
+            API name = t05st01
+            Method   = POST
+            Page     = 歷史重大訊息
+
+          本次要繼續確認：
+            1. API 真正 URL
+            2. POST body JSON 結構
+            3. companyId / year / month / firstDay / lastDay
+               實際傳送格式
+            4. 是否需要特殊 Header
+            5. 是否透過 /mops/api/worker.js proxy
+          """)
+
+          print("\nTEST FINISHED")
+          PY
