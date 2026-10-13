@@ -1,0 +1,96 @@
+name: Test MOPS Historical Access
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-mops:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test MOPS access methods
+        run: |
+          python - <<'PY'
+          import requests
+
+          session = requests.Session()
+
+          headers = {
+              "User-Agent": (
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/131.0.0.0 Safari/537.36"
+              ),
+              "Accept": (
+                  "text/html,application/xhtml+xml,"
+                  "application/xml;q=0.9,image/avif,image/webp,"
+                  "*/*;q=0.8"
+              ),
+              "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+              "Connection": "keep-alive",
+          }
+
+          session.headers.update(headers)
+
+          tests = [
+              (
+                  "MOPS root",
+                  "https://mops.twse.com.tw/mops"
+              ),
+              (
+                  "t05st01",
+                  "https://mops.twse.com.tw/mops/web/t05st01"
+              ),
+              (
+                  "t05st01 2330",
+                  "https://mops.twse.com.tw/mops/web/t05st01"
+                  "?TYPEK=all"
+                  "&co_id=2330"
+                  "&encodeURIComponent=1"
+                  "&firstin=1"
+                  "&inpuType=co_id"
+                  "&off=1"
+                  "&step=1"
+                  "&year=115"
+              ),
+          ]
+
+          for name, url in tests:
+
+              print()
+              print("=" * 80)
+              print(name)
+              print("=" * 80)
+              print("Request URL:")
+              print(url)
+
+              try:
+                  r = session.get(
+                      url,
+                      timeout=30,
+                      allow_redirects=True,
+                  )
+
+                  print()
+                  print("HTTP:", r.status_code)
+                  print("Final URL:", r.url)
+                  print("Content-Type:", r.headers.get("Content-Type"))
+                  print("Content-Length:", len(r.content))
+
+                  print()
+                  print("Cookies:")
+                  print(session.cookies.get_dict())
+
+                  print()
+                  print("Response:")
+                  print(r.text[:1000])
+
+              except Exception as e:
+                  print("ERROR:", repr(e))
+
+          print()
+          print("=" * 80)
+          print("SESSION COOKIES")
+          print("=" * 80)
+          print(session.cookies.get_dict())
+          PY
