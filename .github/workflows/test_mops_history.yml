@@ -1,0 +1,75 @@
+name: Test MOPS Historical News
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-mops:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test MOPS t05st01
+        run: |
+          python - <<'PY'
+          import requests
+
+          url = "https://mops.twse.com.tw/mops/web/t05st01"
+
+          headers = {
+              "User-Agent": (
+                  "Mozilla/5.0 (X11; Linux x86_64) "
+                  "AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) "
+                  "Chrome/131.0 Safari/537.36"
+              ),
+              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+              "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
+          }
+
+          print("=" * 70)
+          print("MOPS t05st01 connection test")
+          print("=" * 70)
+          print("URL:", url)
+
+          try:
+              r = requests.get(
+                  url,
+                  headers=headers,
+                  timeout=30,
+              )
+
+              print("HTTP status:", r.status_code)
+              print("Final URL:", r.url)
+              print("Content-Type:", r.headers.get("Content-Type"))
+              print("Content-Length:", len(r.content))
+              print("Encoding:", r.encoding)
+
+              print("-" * 70)
+              print("First 500 characters:")
+              print("-" * 70)
+
+              print(r.text[:500])
+
+              print("-" * 70)
+
+              text = r.text.lower()
+
+              checks = {
+                  "contains t05st01": "t05st01" in text,
+                  "contains 歷史重大訊息": "歷史重大訊息" in r.text,
+                  "contains 公司代號": "公司代號" in r.text,
+                  "contains 查詢": "查詢" in r.text,
+              }
+
+              for name, result in checks.items():
+                  print(f"{name}: {result}")
+
+              if r.status_code != 200:
+                  raise SystemExit(
+                      f"MOPS returned HTTP {r.status_code}"
+                  )
+
+          except Exception as e:
+              print("ERROR:", repr(e))
+              raise
+          PY
