@@ -1,0 +1,419 @@
+name: Test MOPS t05st01 API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  inspect-t05st01:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Inspect t05st01.js
+        run: |
+          python - <<'PY'
+          import re
+          import requests
+
+          BASE_URL = "https://mops.twse.com.tw"
+
+          headers = {
+              "User-Agent": (
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/131.0.0.0 Safari/537.36"
+              ),
+              "Accept": "*/*",
+              "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
+          }
+
+          session = requests.Session()
+          session.headers.update(headers)
+
+          # ============================================================
+          # 1. 下載 t05st01.js
+          # ============================================================
+
+          print("=" * 80)
+          print("STEP 1 - Download t05st01.js")
+          print("=" * 80)
+
+          url = BASE_URL + "/mops/assets/t05st01.js"
+
+          print("URL:")
+          print(url)
+
+          r = session.get(
+              url,
+              timeout=60,
+              allow_redirects=True,
+          )
+
+          print()
+          print("HTTP:", r.status_code)
+          print("Final URL:", r.url)
+          print("Content-Type:", r.headers.get("Content-Type"))
+          print("Content-Length:", len(r.content))
+
+          if r.status_code != 200:
+              raise SystemExit(
+                  f"Failed to download t05st01.js: HTTP {r.status_code}"
+              )
+
+          js = r.text
+
+          # ============================================================
+          # 2. 基本關鍵字
+          # ============================================================
+
+          print()
+          print("=" * 80)
+          print("STEP 2 - Keyword counts")
+          print("=" * 80)
+
+          keywords = [
+              "t05st01",
+              "重大訊息",
+              "歷史重大訊息",
+              "api",
+              "/api/",
+              "worker",
+              "apiName",
+              "changeApi",
+              "parameters",
+              "fetch",
+              "axios",
+              "XMLHttpRequest",
+              "POST",
+              "GET",
+              "asyncAjax",
+              "ajax",
+              "co_id",
+              "year",
+              "month",
+              "b_date",
+              "e_date",
+              "TYPEK",
+          ]
+
+          for keyword in keywords:
+              count = js.lower().count(
+                  keyword.lower()
+              )
+
+              print(
+                  f"{keyword}: {count}"
+              )
+
+          # ============================================================
+          # 3. 絕對 URL
+          # ============================================================
+
+          print()
+          print("=" * 80)
+          print("STEP 3 - Absolute URLs")
+          print("=" * 80)
+
+          urls = sorted(
+              set(
+                  re.findall(
+                      r'https?://[^"\'\\\s]+',
+                      js,
+                  )
+              )
+          )
+
+          if urls:
+              for item in urls:
+                  print(item)
+          else:
+              print("No absolute URLs found.")
+
+          # ============================================================
+          # 4. API 路徑
+          # ============================================================
+
+          print()
+          print("=" * 80)
+          print("STEP 4 - Potential API paths")
+          print("=" * 80)
+
+          patterns = [
+              r'["\']([^"\']*/api/[^"\']*)["\']',
+              r'["\']([^"\']*api[^"\']*)["\']',
+              r'["\']([^"\']*worker[^"\']*)["\']',
+              r'["\']([^"\']*ajax[^"\']*)["\']',
+          ]
+
+          paths = set()
+
+          for pattern in patterns:
+
+              matches = re.findall(
+                  pattern,
+                  js,
+                  re.IGNORECASE,
+              )
+
+              for value in matches:
+
+                  if len(value) < 500:
+                      paths.add(value)
+
+          if paths:
+
+              for path in sorted(paths):
+                  print(path)
+
+          else:
+              print("No potential API paths found.")
+
+          # ============================================================
+          # 5. 搜尋 fetch / axios / worker 呼叫
+          # ============================================================
+
+          print()
+          print("=" * 80)
+          print("STEP 5 - Network related code")
+          print("=" * 80)
+
+          network_keywords = [
+              "fetch(",
+              "axios",
+              "XMLHttpRequest",
+              "asyncAjax",
+              "worker.js",
+              "apiName",
+              "changeApi",
+          ]
+
+          found = set()
+
+          for keyword in network_keywords:
+
+              start = 0
+
+              while True:
+
+                  pos = js.lower().find(
+                      keyword.lower(),
+                      start,
+                  )
+
+                  if pos == -1:
+                      break
+
+                  begin = max(
+                      0,
+                      pos - 1000,
+                  )
+
+                  end = min(
+                      len(js),
+                      pos + 2500,
+                  )
+
+                  context = js[begin:end]
+
+                  if context not in found:
+
+                      found.add(context)
+
+                      print()
+                      print(
+                          "-" * 80
+                      )
+
+                      print(
+                          f"KEYWORD: {keyword}"
+                      )
+
+                      print(
+                          f"POSITION: {pos}"
+                      )
+
+                      print(
+                          "-" * 80
+                      )
+
+                      print(context)
+
+                  start = pos + len(keyword)
+
+                  # 避免同一關鍵字輸出太多
+                  if len(found) >= 30:
+                      break
+
+          # ============================================================
+          # 6. 搜尋 co_id / year / month 等參數附近內容
+          # ============================================================
+
+          print()
+          print("=" * 80)
+          print("STEP 6 - Query parameter context")
+          print("=" * 80)
+
+          query_keywords = [
+              "co_id",
+              "year",
+              "month",
+              "b_date",
+              "e_date",
+              "TYPEK",
+          ]
+
+          shown = set()
+
+          for keyword in query_keywords:
+
+              start = 0
+
+              while True:
+
+                  pos = js.lower().find(
+                      keyword.lower(),
+                      start,
+                  )
+
+                  if pos == -1:
+                      break
+
+                  begin = max(
+                      0,
+                      pos - 800,
+                  )
+
+                  end = min(
+                      len(js),
+                      pos + 1800,
+                  )
+
+                  context = js[begin:end]
+
+                  if context not in shown:
+
+                      shown.add(context)
+
+                      print()
+                      print(
+                          "-" * 80
+                      )
+
+                      print(
+                          f"PARAMETER: {keyword}"
+                      )
+
+                      print(
+                          f"POSITION: {pos}"
+                      )
+
+                      print(
+                          "-" * 80
+                      )
+
+                      print(context)
+
+                  start = pos + len(keyword)
+
+                  if len(shown) >= 30:
+                      break
+
+          # ============================================================
+          # 7. 搜尋 apiName
+          # ============================================================
+
+          print()
+          print("=" * 80)
+          print("STEP 7 - apiName context")
+          print("=" * 80)
+
+          positions = []
+
+          start = 0
+
+          while True:
+
+              pos = js.find(
+                  "apiName",
+                  start,
+              )
+
+              if pos == -1:
+                  break
+
+              positions.append(pos)
+
+              start = pos + 7
+
+          print(
+              "apiName occurrences:",
+              len(positions)
+          )
+
+          for pos in positions[:30]:
+
+              begin = max(
+                  0,
+                  pos - 1200,
+              )
+
+              end = min(
+                  len(js),
+                  pos + 2500,
+              )
+
+              print()
+              print(
+                  "-" * 80
+              )
+
+              print(
+                  f"apiName at position {pos}"
+              )
+
+              print(
+                  "-" * 80
+              )
+
+              print(
+                  js[begin:end]
+              )
+
+          # ============================================================
+          # 8. 尋找可能的 API endpoint
+          # ============================================================
+
+          print()
+          print("=" * 80)
+          print("STEP 8 - Endpoint-like strings")
+          print("=" * 80)
+
+          endpoint_patterns = [
+              r'["\']([^"\']*worker\.js[^"\']*)["\']',
+              r'["\']([^"\']*/mops/api/[^"\']*)["\']',
+              r'["\']([^"\']*api/worker[^"\']*)["\']',
+              r'["\']([^"\']*t05st01[^"\']*)["\']',
+          ]
+
+          endpoints = set()
+
+          for pattern in endpoint_patterns:
+
+              matches = re.findall(
+                  pattern,
+                  js,
+                  re.IGNORECASE,
+              )
+
+              for value in matches:
+
+                  if len(value) < 1000:
+                      endpoints.add(value)
+
+          for endpoint in sorted(endpoints):
+              print(endpoint)
+
+          print()
+          print("=" * 80)
+          print("TEST FINISHED")
+          print("=" * 80)
+          PY
