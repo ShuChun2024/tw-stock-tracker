@@ -1,0 +1,91 @@
+name: Test Investor Conference
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-conference:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ==================================================
+      # 1. 取得 GitHub Repository
+      # ==================================================
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ==================================================
+      # 2. 設定 Python 3.10
+      # ==================================================
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # ==================================================
+      # 3. 安裝 v11 所需套件
+      # ==================================================
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 python-docx pdfplumber
+
+      # ==================================================
+      # 4. 執行 test_conference.py v11
+      # ==================================================
+      - name: Run investor conference v11 test
+        run: |
+          python test_conference.py
+
+      # ==================================================
+      # 5. 顯示測試結果檔案
+      # ==================================================
+      - name: Show generated result files
+        if: always()
+        run: |
+          echo "===== Generated files ====="
+          ls -lah
+
+          echo ""
+          echo "===== v11 files directory ====="
+          if [ -d "twse_conference_v11_files" ]; then
+            find twse_conference_v11_files -maxdepth 1 -type f -print
+          else
+            echo "twse_conference_v11_files 不存在"
+          fi
+
+      # ==================================================
+      # 6. 顯示 TXT 最後 Summary
+      # ==================================================
+      - name: Show v11 summary
+        if: always()
+        run: |
+          if [ -f "twse_conference_v11_sessions.txt" ]; then
+            echo ""
+            echo "============================================================"
+            echo "===== v11 TXT SUMMARY ====="
+            echo "============================================================"
+
+            tail -n 30 twse_conference_v11_sessions.txt
+          else
+            echo "找不到 twse_conference_v11_sessions.txt"
+          fi
+
+      # ==================================================
+      # 7. 上傳 v11 測試結果
+      # ==================================================
+      - name: Upload v11 test result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: conference-event-detail-v11
+          path: |
+            twse_conference_v11_result.json
+            twse_conference_v11_sessions.txt
+            twse_conference_v11_files/
+          if-no-files-found: warn
+          retention-days: 7
