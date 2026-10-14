@@ -866,24 +866,16 @@ def pdf_to_tables_and_text(
 CODE_PATTERN = re.compile(
     r"(?<!\d)(\d{4,6})(?!\d)"
 )
-def normalize_header(
-    value,
-):
-    value = clean_text(
-        value
-    )
-    value = value.replace(
-        " ",
+def normalize_header(value):
+    value = clean_text(value)
+    # 移除一般空白、全形空白及常見換行
+    value = re.sub(
+        r"[\s\u3000]+",
         "",
-    )
-    value = value.replace(
-        "\u3000",
-        "",
+        value,
     )
     return value.lower()
-def find_header_indices(
-    row,
-):
+def find_header_indices(row):
     normalized = [
         normalize_header(cell)
         for cell in row
@@ -897,44 +889,38 @@ def find_header_indices(
         "股票代號",
         "公司編號",
     )
+    # 注意：
+    # 不可直接用「公司」作為包含式比對，
+    # 否則「公司代碼」會被誤認為公司名稱欄。
     name_keys = (
         "公司名稱",
         "公司簡稱",
-        "公司",
         "證券名稱",
         "股票名稱",
     )
-    for index, cell in enumerate(
-        normalized
-    ):
-        if (
-            code_index is None
-            and any(
-                key in cell
-                for key in code_keys
-            )
-        ):
-            code_index = index
-        if (
-            name_index is None
-            and any(
-                key in cell
-                for key in name_keys
-            )
-        ):
-            name_index = index
+    for index, cell in enumerate(normalized):
+        if not cell:
+            continue
+        # 優先辨識代碼欄
+        if code_index is None:
+            if any(key in cell for key in code_keys):
+                code_index = index
+        # 公司名稱使用明確標題比對
+        if name_index is None:
+            if any(key in cell for key in name_keys):
+                name_index = index
+            # 只有儲存格標題恰好為「公司」時，
+            # 才視為公司名稱欄。
+            elif cell == "公司":
+                name_index = index
+    # 不允許兩個欄位指向同一個索引
     if (
         code_index is not None
         and name_index is not None
+        and code_index != name_index
     ):
-        return (
-            code_index,
-            name_index,
-        )
-    return (
-        None,
-        None,
-    )
+        return code_index, name_index
+    return None, None
 # ============================================================
 # 12. 從表格辨識公司場次
 # ============================================================
@@ -946,24 +932,14 @@ def parse_table_sessions(
 ):
     sessions = []
     for table_info in tables:
-        # ----------------------------------------------------
-        # DOCX / PDF 統一成 rows
-        # ----------------------------------------------------
-        if isinstance(
-            table_info,
-            dict,
-        ):
-            rows = table_info.get(
-                "rows",
-                [],
-            )
+        # DOCX / PDF 統一取得 rows
+        if isinstance(table_info, dict):
+            rows = table_info.get("rows", [])
         else:
             rows = table_info
         header_indices = None
-        for row in rows:
-            code_index, name_index = (
-                find_header_indices(row)
-            )
+        for row_index, row in enumerate(rows, start=1):
+            code_index, name_index = find_header_indices(row)
             if (
                 code_index is not None
                 and name_index is not None
@@ -972,37 +948,41 @@ def parse_table_sessions(
                     code_index,
                     name_index,
                 )
-                continue
-            if not header_indices:
-                continue
-            code_index, name_index = (
-                header_indices
-            )
-            if max(
-                code_index,
-                name_index,
-            ) >= len(row):
-                continue
-            code_cell = clean_text(
-                row[code_index]
-            )
-            name_cell = clean_text(
-                row[name_index]
-            )
-            code_match = (
-                CODE_PATTERN.search(
-                    code_cell
+                log(
+                    "辨識到表格標題："
+                    f"代碼欄={code_index}，"
+                    f"名稱欄={name_index}，"
+                    f"標題列={row}"
                 )
-            )
+                continue
+            if header_indices is None:
+                continue
+            code_index, name_index = header_indices
+            if max(code_index, name_index) >= len(row):
+                continue
+            code_cell = clean_text(row[code_index])
+            name_cell = clean_text(row[name_index])
+            code_match = CODE_PATTERN.fullmatch(code_cell)
             if not code_match:
                 continue
-            stock_code = (
-                code_match.group(1)
-            )
+            stock_code = code_match.group(1)
             if not name_cell:
                 continue
-            if CODE_PATTERN.fullmatch(
-                name_cell
+            # 避免代碼欄與名稱欄誤指向相同內容
+            if name_cell == stock_code:
+                continue
+            # 避免將標題或說明列當成公司資料
+            normalized_name = normalize_header(name_cell)
+            if any(
+                keyword in normalized_name
+                for keyword in (
+                    "公司名稱",
+                    "公司代碼",
+                    "股票代碼",
+                    "證券代號",
+                    "報到時間",
+                    "法說會時間",
+                )
             ):
                 continue
             sessions.append(
@@ -1016,7 +996,12 @@ def parse_table_sessions(
                     "parse_method": "table",
                 }
             )
+    log(
+        f"表格解析完成："
+        f"共辨識 {len(sessions)} 筆公司場次"
+    )
     return sessions
+
 # ============================================================
 # 13. 文字備援辨識
 # ============================================================
