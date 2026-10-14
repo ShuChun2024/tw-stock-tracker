@@ -52,10 +52,10 @@ jobs:
 
           echo ""
           echo "===== v11 files directory ====="
-          if [ -d "twse_conference_v11_files" ]; then
-            find twse_conference_v11_files -maxdepth 1 -type f -print
+          if [ -d "twse_conference_v11_1_files" ]; then
+            find twse_conference_v11_1_files -maxdepth 1 -type f -print
           else
-            echo "twse_conference_v11_files 不存在"
+            echo "twse_conference_v11_1_files 不存在"
           fi
 
       # ==================================================
@@ -64,15 +64,15 @@ jobs:
       - name: Show v11 summary
         if: always()
         run: |
-          if [ -f "twse_conference_v11_sessions.txt" ]; then
+          if [ -f "twse_conference_v11_1_sessions.txt" ]; then
             echo ""
             echo "============================================================"
             echo "===== v11 TXT SUMMARY ====="
             echo "============================================================"
 
-            tail -n 30 twse_conference_v11_sessions.txt
+            tail -n 30 twse_conference_v11_1_sessions.txt
           else
-            echo "找不到 twse_conference_v11_sessions.txt"
+            echo "找不到 twse_conference_v11_1_sessions.txt"
           fi
 
       # ==================================================
@@ -84,8 +84,8 @@ jobs:
         with:
           name: conference-event-detail-v11
           path: |
-            twse_conference_v11_result.json
-            twse_conference_v11_sessions.txt
-            twse_conference_v11_files/
+            twse_conference_v11_1_result.json
+            twse_conference_v11_1_sessions.txt
+            twse_conference_v11_1_files/
           if-no-files-found: warn
           retention-days: 7
