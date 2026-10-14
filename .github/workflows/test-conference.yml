@@ -78,11 +78,11 @@ jobs:
       # ==================================================
       # 7. 上傳 v11 測試結果
       # ==================================================
-      - name: Upload v11 test result
+      - name: Upload v11 .1 test result
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: conference-event-detail-v11
+          name: conference-event-detail-v11-1
           path: |
             twse_conference_v11_1_result.json
             twse_conference_v11_1_sessions.txt
