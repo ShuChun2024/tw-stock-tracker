@@ -95,7 +95,6 @@ def fetch_json(url, params=None):
 # ============================================================
 # 1. 取得證交所活動列表
 # ============================================================
-
 def get_event_list():
     log("[1] 取得證交所活動列表")
     log(f"API URL: {API_LIST_URL}")
@@ -111,21 +110,75 @@ def get_event_list():
     try:
         payload = response.json()
     except ValueError as exc:
-        raise RuntimeError("活動列表回應不是有效 JSON") from exc
+        raise RuntimeError(
+            "活動列表回應不是有效 JSON"
+        ) from exc
 
+    # 支援 API 回傳的不同結構
     if isinstance(payload, list):
         events = payload
+
     elif isinstance(payload, dict):
-        events = payload.get("data", [])
-        if not isinstance(events, list):
-            events = []
+        fields = (
+            payload.get("fields")
+            or payload.get("columns")
+            or []
+        )
+
+        data = payload.get("data", [])
+
+        if not isinstance(data, list):
+            data = []
+
+        # 部分 API 格式：fields 定義欄位，data 使用陣列列出資料
+        if (
+            fields
+            and all(isinstance(row, (list, tuple)) for row in data)
+        ):
+            field_names = []
+
+            for field in fields:
+                if isinstance(field, dict):
+                    field_name = (
+                        field.get("name")
+                        or field.get("title")
+                        or field.get("field")
+                        or ""
+                    )
+                else:
+                    field_name = str(field)
+
+                field_names.append(field_name)
+
+            events = [
+                dict(zip(field_names, row))
+                for row in data
+            ]
+
+        else:
+            events = data
+
     else:
         events = []
 
     log(f"回傳活動筆數: {len(events)}")
 
-    return events
+    # 顯示前三筆實際資料，方便確認 API 結構
+    for index, event in enumerate(events[:3], start=1):
+        if isinstance(event, dict):
+            log(
+                f"活動樣本 {index}："
+                f"主題={event.get('活動主題', '')!r}，"
+                f"zhId={event.get('zhId', '')!r}"
+            )
+        else:
+            log(
+                f"活動樣本 {index}："
+                f"資料型態={type(event).__name__}，"
+                f"內容={str(event)[:300]}"
+            )
 
+    return events
 
 def get_event_title(event):
     if not isinstance(event, dict):
