@@ -1,0 +1,76 @@
+name: Daily TWSE Major News Collection
+
+on:
+  schedule:
+    # 台灣時間每天 18:30 執行
+    # GitHub Actions 使用 UTC，因此 18:30 = 10:30 UTC
+    - cron: "30 10 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect-major-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ======================================================
+      # 1. 取得目前專案
+      # ======================================================
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ======================================================
+      # 2. 設定 Python
+      # ======================================================
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # ======================================================
+      # 3. 安裝套件
+      # ======================================================
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # ======================================================
+      # 4. 執行每日重大訊息搜集
+      # ======================================================
+
+      - name: Collect TWSE major news
+        run: |
+          python collect_major_news.py
+
+      # ======================================================
+      # 5. 檢查 Git 差異
+      # ======================================================
+
+      - name: Check changes
+        run: |
+          git status --short
+
+      # ======================================================
+      # 6. 寫回歷史資料
+      # ======================================================
+
+      - name: Commit history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add major_news_history.json
+
+          if git diff --cached --quiet; then
+            echo "沒有新的歷史重大訊息"
+          else
+            git commit -m "chore: update TWSE major news history"
+            git push
+          fi
