@@ -1,23 +1,9 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-15T09:15:48.839767",
-  "stock_count": 2,
-  "event_count": 3,
+  "generated_at": "2026-10-15T11:49:44.188881",
+  "stock_count": 1,
+  "event_count": 2,
   "events": [
-    {
-      "stock_id": "1410",
-      "company_name": "南染",
-      "date": "2026-10-30",
-      "time": "15:30~17:00",
-      "category": "法人說明會",
-      "title": "2026年上市公司辦理法人說明會(10月1日至10月31日)",
-      "venue": "101 1F",
-      "status": "scheduled",
-      "cancelled": false,
-      "source": "TWSE",
-      "source_event_id": "8a8216d6a0bdcc0001a0c849c4ae001c",
-      "source_format": ""
-    },
     {
       "stock_id": "2317",
       "company_name": "鴻海",
@@ -25,8 +11,14 @@
       "time": "170948",
       "category": "重大投資/併購",
       "title": "公告本公司參與投資人說明會",
+      "speech_date": "2026-10-14",
+      "fact_date": "2026-10-20",
+      "published_date": "1151015",
+      "clause": "第12款",
+      "description": "符合條款第四條第XX款：12\r\n事實發生日：115/10/20\r\n1.召開法人說明會之日期：115/10/20\r\n2.召開法人說明會之時間：15 時 00 分 \r\n3.召開法人說明會之地點：凱基金融大樓\r\n4.法人說明會擇要訊息：115年10月20日受凱基證券邀請參加投資人會議，說明本公司營運概況。\r\n5.其他應敘明事項：無\r\n完整財務業務資訊請至公開資訊觀測站之法人說明會一覽表或法說會項目下查閱。",
       "source": "TWSE",
-      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L"
+      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
+      "collected_at": "2026-10-15T10:58:42.027026"
     },
     {
       "stock_id": "2317",
@@ -35,8 +27,14 @@
       "time": "170926",
       "category": "重大投資/併購",
       "title": "公告本公司參與投資人說明會",
+      "speech_date": "2026-10-14",
+      "fact_date": "2026-10-15",
+      "published_date": "1151015",
+      "clause": "第12款",
+      "description": "符合條款第四條第XX款：12\r\n事實發生日：115/10/15\r\n1.召開法人說明會之日期：115/10/15 ~ 115/10/20\r\n2.召開法人說明會之時間：09 時 00 分 \r\n3.召開法人說明會之地點：電話會議\r\n4.法人說明會擇要訊息：115年10月15日受Silver Points 邀請參加投資人會議，說明本公司營運概況。\r\n115年10月20日受Auerbach Grayson 邀請參加投資人會議，說明本公司營運概況。\r\n5.其他應敘明事項：無\r\n完整財務業務資訊請至公開資訊觀測站之法人說明會一覽表或法說會項目下查閱。",
       "source": "TWSE",
-      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L"
+      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
+      "collected_at": "2026-10-15T10:58:42.026988"
     }
   ]
 }
