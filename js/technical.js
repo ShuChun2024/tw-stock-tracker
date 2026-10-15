@@ -78,7 +78,7 @@ function renderTechnical(s) {
         type="button"
         aria-expanded="false"
       >
-        <span>展開技術分析明細</span>
+        <span>展開技術分析詳細資料</span>
         <span class="toggle-arrow" aria-hidden="true">⌄</span>
       </button>
       <!-- =====================================================
