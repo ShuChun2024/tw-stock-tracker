@@ -1,24 +1,28 @@
 {
-  "update_time": "2026-10-14T07:25:24",
-  "lookback_days": 30,
-  "stock_count": 4,
-  "event_count": 1,
-  "stocks": [
-    "1101",
-    "2317",
-    "2330",
-    "2454"
-  ],
+  "version": "1.0",
+  "generated_at": "2026-10-15T05:24:33.762080",
+  "stock_count": 1,
+  "event_count": 2,
   "events": [
     {
-      "stock_id": "1101",
-      "company_name": "台泥",
-      "date": "2026-10-13",
-      "time": "140144",
-      "category": "重大訊息",
-      "title": "本公司115年第一次股東臨時會重要決議事項",
+      "stock_id": "2317",
+      "company_name": "鴻海",
+      "date": "2026-10-14",
+      "time": "170948",
+      "category": "重大投資/併購",
+      "title": "公告本公司參與投資人說明會",
       "source": "TWSE",
-      "source_url": "https://mops.twse.com.tw/"
+      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L"
+    },
+    {
+      "stock_id": "2317",
+      "company_name": "鴻海",
+      "date": "2026-10-14",
+      "time": "170926",
+      "category": "重大投資/併購",
+      "title": "公告本公司參與投資人說明會",
+      "source": "TWSE",
+      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L"
     }
   ]
 }
