@@ -1,4 +1,4 @@
-name: 更新股票事件消息
+name: 更新股票事件消息old
 
 on:
   workflow_dispatch:
