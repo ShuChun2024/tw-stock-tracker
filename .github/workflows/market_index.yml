@@ -2,9 +2,9 @@ name: 更新每日大盤收盤行情
 
 on:
   schedule:
-    # 台灣時間每日 18:00
+    # 台灣時間每日 15:00
     # GitHub Actions 使用 UTC，因此為 10:00 UTC
-    - cron: "0 10 * * 1-5"
+    - cron: "0 7 * * 1-5"
 
   workflow_dispatch:
 
