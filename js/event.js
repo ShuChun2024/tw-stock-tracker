@@ -154,7 +154,7 @@ function renderEvents(stockId, events) {
       aria-expanded="false"
     >
       <span>
-        展開消息面明細
+        展開消息面詳細資料
         ${
           count
             ? `（${count}）`
@@ -188,8 +188,8 @@ function renderEvents(stockId, events) {
     const label = button.querySelector("span:first-child");
     if (label) {
       label.textContent = opened
-        ? `收合消息面明細${count ? `（${count}）` : ""}`
-        : `展開消息面明細${count ? `（${count}）` : ""}`;
+        ? `收合消息面詳細資料${count ? `（${count}）` : ""}`
+        : `展開消息面詳細資料${count ? `（${count}）` : ""}`;
     }
   });
 }
