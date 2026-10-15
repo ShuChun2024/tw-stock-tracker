@@ -28,7 +28,7 @@ jobs:
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           else
-            pip install requests python-docx pdfplumber
+            pip install requests pandas lxml beautifulsoup4 python-docx pdfplumber
           fi
       - name: Check required source files
         run: |
