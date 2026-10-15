@@ -1,0 +1,121 @@
+name: 更新每日大盤收盤行情
+
+on:
+  schedule:
+    # 台灣時間每日 18:00
+    # GitHub Actions 使用 UTC，因此為 10:00 UTC
+    - cron: "0 10 * * 1-5"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-market-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ============================================================
+      # 1. 取得 repository
+      # ============================================================
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ============================================================
+      # 2. 設定 Python
+      # ============================================================
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # ============================================================
+      # 3. 安裝套件
+      # ============================================================
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # ============================================================
+      # 4. 更新大盤資料
+      # ============================================================
+
+      - name: Update market index
+        run: |
+          python market_index.py
+
+      # ============================================================
+      # 5. 檢查輸出檔案
+      # ============================================================
+
+      - name: Validate market_index.json
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("market_index.json")
+
+          if not path.exists():
+              raise SystemExit("找不到 market_index.json")
+
+          with path.open("r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          if not isinstance(data, dict):
+              raise SystemExit("market_index.json 格式錯誤")
+
+          if not isinstance(data.get("market"), dict):
+              raise SystemExit("找不到 market 資料")
+
+          market = data["market"]
+
+          required = [
+              "name",
+              "code",
+              "date",
+              "open",
+              "high",
+              "low",
+              "close",
+              "change",
+              "change_percent",
+          ]
+
+          missing = [
+              key for key in required
+              if key not in market
+          ]
+
+          if missing:
+              raise SystemExit(
+                  "market_index.json 缺少欄位："
+                  + ", ".join(missing)
+              )
+
+          print("market_index.json 驗證成功")
+          print(json.dumps(data, ensure_ascii=False, indent=2))
+          PY
+
+      # ============================================================
+      # 6. 提交更新後的 JSON
+      # ============================================================
+
+      - name: Commit market index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add market_index.json
+
+          if git diff --cached --quiet; then
+            echo "market_index.json 沒有變更，不需要提交。"
+          else
+            git commit -m "Update daily market index"
+            git push
+          fi
