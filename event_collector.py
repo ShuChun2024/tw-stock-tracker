@@ -28,7 +28,7 @@ MAJOR_NEWS_HISTORY_FILE = (
 # 測試模式
 # ------------------------------------------------------------
 
-TEST_MODE = True
+TEST_MODE = False
 
 TEST_STOCKS = [
     "1101",
