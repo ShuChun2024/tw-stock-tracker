@@ -821,18 +821,7 @@ def load_conference_events(target_stocks):
     print(
         f"成功轉換法人說明會：{len(result)}"
     )
-print()
-print("法人說明會轉換結果：")
-for event in conference_events:
-    print(
-        f"  {event.get('stock_id')} | "
-        f"{event.get('company_name')} | "
-        f"{event.get('date')} | "
-        f"{event.get('time')} | "
-        f"status={event.get('status')} | "
-        f"cancelled={event.get('cancelled')}"
-    )
-    
+
     return result
 
 
