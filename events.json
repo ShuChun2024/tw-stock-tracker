@@ -1,9 +1,23 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-15T11:49:44.188881",
-  "stock_count": 1,
-  "event_count": 2,
+  "generated_at": "2026-10-15T12:04:00.986838",
+  "stock_count": 2,
+  "event_count": 3,
   "events": [
+    {
+      "stock_id": "1410",
+      "company_name": "南染",
+      "date": "2026-10-30",
+      "time": "15:30~17:00",
+      "category": "法人說明會",
+      "title": "2026年上市公司辦理法人說明會(10月1日至10月31日)",
+      "venue": "101 1F",
+      "status": "scheduled",
+      "cancelled": false,
+      "source": "TWSE",
+      "source_event_id": "8a8216d6a0bdcc0001a0c849c4ae001c",
+      "source_format": ""
+    },
     {
       "stock_id": "2317",
       "company_name": "鴻海",
