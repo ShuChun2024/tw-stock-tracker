@@ -1,6 +1,6 @@
 {
-  "update_time": "2026-10-14 17:58:51",
-  "stock_count": 1988,
+  "update_time": "2026-10-15 14:10:08",
+  "stock_count": 1989,
   "stocks": [
     {
       "stock_id": "1101",
@@ -10500,6 +10500,12 @@
       "stock_id": "7805",
       "short_name": "威聯通",
       "company_name": "威聯通科技股份有限公司",
+      "market": "TPEx"
+    },
+    {
+      "stock_id": "7806",
+      "short_name": "精華生醫",
+      "company_name": "精華生醫股份有限公司",
       "market": "TPEx"
     },
     {
