@@ -1,0 +1,31 @@
+name: 驗證股票事件資料
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "events.json"
+      - "validate_events.py"
+      - ".github/workflows/validate_events.yml"
+permissions:
+  contents: read
+jobs:
+  validate-events:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check events.json exists
+        run: |
+          if [ ! -f events.json ]; then
+            echo "錯誤：找不到 events.json"
+            exit 1
+          fi
+          echo "events.json 存在"
+          ls -lh events.json
+      - name: Validate events.json
+        run: |
+          python validate_events.py
