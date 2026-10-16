@@ -1,6 +1,6 @@
 {
-  "update_time": "2026-10-15 17:45:24",
-  "stock_count": 1989,
+  "update_time": "2026-10-16 17:22:43",
+  "stock_count": 1988,
   "stocks": [
     {
       "stock_id": "1101",
@@ -11484,12 +11484,6 @@
       "stock_id": "8906",
       "short_name": "花王",
       "company_name": "花王企業股份有限公司",
-      "market": "TPEx"
-    },
-    {
-      "stock_id": "8908",
-      "short_name": "欣雄",
-      "company_name": "欣雄天然氣股份有限公司",
       "market": "TPEx"
     },
     {
