@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-16T06:48:37.090009",
-  "stock_count": 2,
-  "event_count": 2,
+  "generated_at": "2026-10-16T15:00:34.508653",
+  "stock_count": 3,
+  "event_count": 4,
   "events": [
     {
       "stock_id": "1410",
@@ -17,6 +17,38 @@
       "source": "TWSE",
       "source_event_id": "8a8216d6a0bdcc0001a0c849c4ae001c",
       "source_format": ""
+    },
+    {
+      "stock_id": "2883",
+      "company_name": "凱基金",
+      "date": "2026-10-15",
+      "time": "163231",
+      "category": "董監/大股東異動",
+      "title": "代子公司開發資本所屬之CI II公告原董事會決議投資暨轉讓\r\nArtisan Holdings及Artisan Partners發行之可轉換公司\r\n債案不予執行",
+      "speech_date": "2026-10-15",
+      "fact_date": "2026-10-15",
+      "published_date": "1151016",
+      "clause": "第20款",
+      "description": "1. 原公告日期：\r\n115/08/07\r\n2. 簡述原公告申報內容：\r\nCI II已於民國115年5月29日經董事會決議並公告認購Artisan Holdings、\r\nArtisan Partners發行之可轉換公司債合計不超過美金23佰萬元，惟尚未執行。\r\n民國115年8月7日CI II董事會再決議並公告於執行前述投資後，\r\n以合計約美金23.05佰萬元移轉予NexGen Buyout Partners Fund II, L.P.，\r\n惟依NexGen Buyout Partners Fund II, L.P.之籌集時程，\r\n亦得由NexGen Buyout Partners Fund II, L.P.直接投資，\r\n則CI II前述投資及移轉將終止執行。\r\n3. 變動緣由及主要內容：\r\n因確認NexGen Buyout Partners Fund II, L.P.將直接投資Artisan Holdings、\r\nArtisan Partners發行之可轉換公司債，業於民國115年10月15日經權責經理階層核可，\r\nCI II不予執行投資及移轉Artisan Holdings、Artisan Partners發行之可轉換公司債。\r\n4. 變動後對公司財務業務之影響：\r\n無。\r\n5. 其他應敘明事項：\r\n1) CI II為CDIB Capital Investment II Limited之簡稱。\r\n2) Artisan Holdings為Artisan Investment Holdings Limited之簡稱。\r\n3) Artisan Partners為Artisan Investment Partners Limited之簡稱。",
+      "source": "TWSE",
+      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
+      "collected_at": "2026-10-16T14:58:15.580713"
+    },
+    {
+      "stock_id": "2330",
+      "company_name": "台積電",
+      "date": "2026-10-15",
+      "time": "152138",
+      "category": "其他",
+      "title": "台積公司2026年第三季每股盈餘新台幣29.43元",
+      "speech_date": "2026-10-15",
+      "fact_date": "2026-10-15",
+      "published_date": "1151016",
+      "clause": "第51款",
+      "description": "1.事實發生日:115/10/15\n2.公司名稱:台灣積體電路製造股份有限公司\n3.與公司關係(請輸入本公司或子公司):本公司\n4.相互持股比例:不適用\n5.發生緣由:不適用\n6.因應措施:不適用\n7.其他應敘明事項(若事件發生或決議之主體係屬公開發行以上公司，本則重大訊息同時\n  符合證券交易法施行細則第7條第9款所定對股東權益或證券價格有重大影響之事項):\n台積公司今（15）日公佈2026年第三季財務報告，合併營收約新台幣1兆4,942億4千\n萬元，稅後純益約新台幣7,630億6千萬元，每股盈餘為新台幣29.43元（折合美國存\n託憑證每單位為4.60美元）。\n\n與去年同期相較，2026年第三季營收增加了50.9%，稅後純益與每股盈餘皆增加了\n68.7%。與前一季相較，2026年第三季營收增加了17.6%，稅後純益則增加了8.0%。\n以上財務數字皆為合併財務報表數字，且係依照金管會認可之國際財務報導準則\n（TIFRS）所編製。\n\n若以美元計算，2026年第三季營收為467.2億，較去年同期增加了41.2%，較前一季增\n加了16.2%。\n\n2026年第三季毛利率為66.4%，營業利益率為58.7%，稅後純益率則為51.1%。\n\n2奈米製程出貨佔台積公司2026年第三季晶圓銷售金額的8%；3奈米製程出貨佔全季\n晶圓銷售金額的33%，5奈米製程出貨佔全季晶圓銷售金額的28%；7奈米製程出貨則\n佔全季晶圓銷售金額的10%。總體而言，先進製程（包含7奈米及更先進製程）的營\n收達到全季晶圓銷售金額的79%。\n\n台積公司財務長暨發言人黃仁昭資深副總經理表示：「台積公司2026年第三季的業\n績受惠於市場對我們先進製程技術的強大需求。進入2026年第四季，對台積公司先\n進製程技術持續的強勁需求，包含2奈米製程技術的快速產能提升，將繼續支持我們\n的業績表現。」\n\n根據對當前業務狀況的評估，台積公司2026年第四季的業績展望如下：\n\n‧合併營收預計介於523億美元到543億美元之間；\n若以新台幣31.8元兌1美元匯率假設，則\n‧毛利率預計介於65%到67%之間；\n‧營業利益率預計介於56.5%到58.5%之間。",
+      "source": "TWSE",
+      "source_url": "https://openapi.twse.com.tw/v1/opendata/t187ap04_L",
+      "collected_at": "2026-10-16T14:58:15.580201"
     },
     {
       "stock_id": "2883",
