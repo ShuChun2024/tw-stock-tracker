@@ -40,7 +40,7 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          path = Path("mops_briefing_2330_2025.json")
+          path = Path("mops_briefing_2330_2026.json")
           if not path.exists():
               raise SystemExit(
                   f"找不到輸出檔案：{path}"
