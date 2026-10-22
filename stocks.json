@@ -1,6 +1,6 @@
 {
-  "update_time": "2026-10-20 17:57:33",
-  "stock_count": 1989,
+  "update_time": "2026-10-22 17:58:02",
+  "stock_count": 1991,
   "stocks": [
     {
       "stock_id": "1101",
@@ -1807,6 +1807,12 @@
       "short_name": "華勝-KY",
       "company_name": "華勝汽車電子股份有限公司",
       "market": "TWSE"
+    },
+    {
+      "stock_id": "2249",
+      "short_name": "湧盛",
+      "company_name": "湧盛電機股份有限公司",
+      "market": "TPEx"
     },
     {
       "stock_id": "2250",
@@ -8617,6 +8623,12 @@
       "short_name": "威潤",
       "company_name": "威潤科技股份有限公司",
       "market": "TPEx"
+    },
+    {
+      "stock_id": "6467",
+      "short_name": "泰合",
+      "company_name": "泰合生技藥品股份有限公司",
+      "market": "TWSE"
     },
     {
       "stock_id": "6469",
