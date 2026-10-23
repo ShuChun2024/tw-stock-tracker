@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-10-23 01:58:03",
+  "update_time": "2026-10-24 01:52:07",
   "stock_count": 11,
   "complete_count": 10,
   "score_complete_count": 11,
@@ -14,7 +14,7 @@
   "stocks": [
     {
       "stock_id": "2603",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 40,
         "latest_yoy": 65.03901404949326,
@@ -162,7 +162,7 @@
     },
     {
       "stock_id": "2034",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 25,
         "latest_yoy": 47.38803829917837,
@@ -310,7 +310,7 @@
     },
     {
       "stock_id": "1102",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 23,
         "latest_yoy": 5.180647432609131,
@@ -458,7 +458,7 @@
     },
     {
       "stock_id": "6117",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 40,
         "latest_yoy": 36.02337019873198,
@@ -606,7 +606,7 @@
     },
     {
       "stock_id": "1101",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 8,
         "latest_yoy": 7.626848357922,
@@ -754,7 +754,7 @@
     },
     {
       "stock_id": "6750",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 25,
         "latest_yoy": 35.530886302596244,
@@ -904,7 +904,7 @@
     },
     {
       "stock_id": "1410",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 40,
         "latest_yoy": 109.17440660474718,
@@ -1052,7 +1052,7 @@
     },
     {
       "stock_id": "2377",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 8,
         "latest_yoy": 1.832841346248526,
@@ -1200,7 +1200,7 @@
     },
     {
       "stock_id": "2834",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 8,
         "latest_yoy": 6.5173333051895765,
@@ -1348,7 +1348,7 @@
     },
     {
       "stock_id": "2330",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 25,
         "latest_yoy": 54.64861207105231,
@@ -1496,7 +1496,7 @@
     },
     {
       "stock_id": "2883",
-      "analysis_date": "2026-10-23",
+      "analysis_date": "2026-10-24",
       "revenue": {
         "score": 0,
         "latest_yoy": -46.73068314507328,
