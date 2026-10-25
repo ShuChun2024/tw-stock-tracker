@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-10-25 08:59:56",
+  "update_time": "2026-10-26 01:02:48",
   "stock_count": 12,
   "complete_count": 11,
   "score_complete_count": 12,
@@ -14,7 +14,7 @@
   "stocks": [
     {
       "stock_id": "2603",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 40,
         "latest_yoy": 65.03901404949326,
@@ -88,9 +88,9 @@
           "score": 8
         },
         "macd": {
-          "dif": 7.0699,
-          "dea": 6.1137,
-          "histogram": 0.9561,
+          "dif": 7.0697,
+          "dea": 6.1135,
+          "histogram": 0.9562,
           "signal": "多方",
           "score": 8
         },
@@ -162,7 +162,7 @@
     },
     {
       "stock_id": "2034",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 25,
         "latest_yoy": 47.38803829917837,
@@ -231,13 +231,13 @@
           "score": 15
         },
         "rsi": {
-          "value": 66.39,
+          "value": 66.36,
           "signal": "偏強",
           "score": 8
         },
         "macd": {
-          "dif": 0.6668,
-          "dea": 0.725,
+          "dif": 0.6667,
+          "dea": 0.7249,
           "histogram": -0.0582,
           "signal": "空方",
           "score": 1
@@ -310,7 +310,7 @@
     },
     {
       "stock_id": "1102",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 23,
         "latest_yoy": 5.180647432609131,
@@ -379,12 +379,12 @@
           "score": 15
         },
         "rsi": {
-          "value": 74.66,
+          "value": 74.65,
           "signal": "超買",
           "score": 5
         },
         "macd": {
-          "dif": 0.8408,
+          "dif": 0.8407,
           "dea": 0.6623,
           "histogram": 0.1784,
           "signal": "多方",
@@ -458,7 +458,7 @@
     },
     {
       "stock_id": "6117",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 40,
         "latest_yoy": 36.02337019873198,
@@ -521,20 +521,20 @@
         "ma": {
           "ma5": 67.44,
           "ma10": 68.29,
-          "ma20": 65.81,
+          "ma20": 65.82,
           "ma60": 64.1,
           "trend": "中期偏多",
           "score": 11
         },
         "rsi": {
-          "value": 50.47,
+          "value": 50.45,
           "signal": "中性偏強",
           "score": 6
         },
         "macd": {
-          "dif": 1.2578,
-          "dea": 1.327,
-          "histogram": -0.0692,
+          "dif": 1.2577,
+          "dea": 1.3268,
+          "histogram": -0.0691,
           "signal": "空方",
           "score": 1
         },
@@ -606,7 +606,7 @@
     },
     {
       "stock_id": "1101",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 8,
         "latest_yoy": 7.626848357922,
@@ -680,7 +680,7 @@
           "score": 8
         },
         "macd": {
-          "dif": 0.6974,
+          "dif": 0.6973,
           "dea": 0.5726,
           "histogram": 0.1248,
           "signal": "多方",
@@ -754,7 +754,7 @@
     },
     {
       "stock_id": "6750",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 25,
         "latest_yoy": 35.530886302596244,
@@ -823,14 +823,14 @@
           "score": 11
         },
         "rsi": {
-          "value": 56.35,
+          "value": 56.34,
           "signal": "中性偏強",
           "score": 6
         },
         "macd": {
-          "dif": 0.8533,
-          "dea": 0.4315,
-          "histogram": 0.4218,
+          "dif": 0.8532,
+          "dea": 0.4313,
+          "histogram": 0.4219,
           "signal": "多方",
           "score": 8
         },
@@ -904,7 +904,7 @@
     },
     {
       "stock_id": "1410",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 40,
         "latest_yoy": 109.17440660474718,
@@ -973,13 +973,13 @@
           "score": 2
         },
         "rsi": {
-          "value": 38.51,
+          "value": 38.46,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": -0.2882,
-          "dea": -0.2976,
+          "dif": -0.2883,
+          "dea": -0.2977,
           "histogram": 0.0094,
           "signal": "多方",
           "score": 8
@@ -1052,7 +1052,7 @@
     },
     {
       "stock_id": "2377",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 8,
         "latest_yoy": 1.832841346248526,
@@ -1121,14 +1121,14 @@
           "score": 15
         },
         "rsi": {
-          "value": 61.99,
+          "value": 61.98,
           "signal": "偏強",
           "score": 8
         },
         "macd": {
-          "dif": 3.0106,
-          "dea": 2.1845,
-          "histogram": 0.8261,
+          "dif": 3.0104,
+          "dea": 2.1842,
+          "histogram": 0.8262,
           "signal": "多方",
           "score": 8
         },
@@ -1200,7 +1200,7 @@
     },
     {
       "stock_id": "2834",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 8,
         "latest_yoy": 6.5173333051895765,
@@ -1269,7 +1269,7 @@
           "score": 11
         },
         "rsi": {
-          "value": 54.97,
+          "value": 54.95,
           "signal": "中性偏強",
           "score": 6
         },
@@ -1348,7 +1348,7 @@
     },
     {
       "stock_id": "2330",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 25,
         "latest_yoy": 54.64861207105231,
@@ -1422,9 +1422,9 @@
           "score": 2
         },
         "macd": {
-          "dif": -9.5286,
-          "dea": 8.9106,
-          "histogram": -18.4391,
+          "dif": -9.5254,
+          "dea": 8.9152,
+          "histogram": -18.4406,
           "signal": "空方",
           "score": 1
         },
@@ -1496,7 +1496,7 @@
     },
     {
       "stock_id": "2883",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 0,
         "latest_yoy": -46.73068314507328,
@@ -1565,7 +1565,7 @@
           "score": 8
         },
         "rsi": {
-          "value": 50.47,
+          "value": 50.46,
           "signal": "中性偏強",
           "score": 6
         },
@@ -1644,7 +1644,7 @@
     },
     {
       "stock_id": "2812",
-      "analysis_date": "2026-10-25",
+      "analysis_date": "2026-10-26",
       "revenue": {
         "score": 0,
         "latest_yoy": -0.034342123869568475,
@@ -1713,7 +1713,7 @@
           "score": 2
         },
         "rsi": {
-          "value": 42.09,
+          "value": 42.08,
           "signal": "中性偏弱",
           "score": 4
         },
