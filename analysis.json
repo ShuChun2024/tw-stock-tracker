@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-10-26 14:14:06",
+  "update_time": "2026-10-26 14:34:49",
   "stock_count": 12,
   "complete_count": 11,
   "score_complete_count": 12,
@@ -117,16 +117,16 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "長榮",
+        "close_price": 260,
+        "pe_ratio": 10.31,
+        "pb_ratio": 1,
+        "dividend_yield": 6.15,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 18.6,
       "chip_score_details": {
@@ -277,16 +277,16 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "允強",
+        "close_price": 24.35,
+        "pe_ratio": 57.98,
+        "pb_ratio": 1.43,
+        "dividend_yield": 4.11,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 18.8,
       "chip_score_details": {
@@ -437,16 +437,16 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "亞泥",
+        "close_price": 38.55,
+        "pe_ratio": 10.65,
+        "pb_ratio": 0.74,
+        "dividend_yield": 5.97,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 13.0,
       "chip_score_details": {
@@ -597,16 +597,16 @@
         "message": "技術面中性"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "迎廣",
+        "close_price": 66,
+        "pe_ratio": 13.98,
+        "pb_ratio": 2.76,
+        "dividend_yield": 3.03,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 9.0,
       "chip_score_details": {
@@ -757,16 +757,16 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
+        "valuation_date": "2026-10-22",
+        "stock_name": "台泥",
+        "close_price": 27.95,
         "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "pb_ratio": 0.91,
+        "dividend_yield": 2.86,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 20.0,
       "chip_score_details": {
@@ -926,7 +926,7 @@
         "dividend_year": null,
         "financial_period": null,
         "data_available": false,
-        "message": "估值資料處理失敗"
+        "message": "估值 CSV 查無股票 6750"
       },
       "chip_score": 9.6,
       "chip_score_details": {
@@ -1079,16 +1079,16 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "南染",
+        "close_price": 23.5,
+        "pe_ratio": 32.19,
+        "pb_ratio": 1.39,
+        "dividend_yield": 0.85,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 7.6,
       "chip_score_details": {
@@ -1239,16 +1239,16 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "微星",
+        "close_price": 163,
+        "pe_ratio": 14.14,
+        "pb_ratio": 2.37,
+        "dividend_yield": 2.58,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 14.4,
       "chip_score_details": {
@@ -1399,16 +1399,16 @@
         "message": "技術面偏多"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "臺企銀",
+        "close_price": 17.9,
+        "pe_ratio": 13.16,
+        "pb_ratio": 1.13,
+        "dividend_yield": 5.59,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 12.1,
       "chip_score_details": {
@@ -1559,16 +1559,16 @@
         "message": "技術面弱勢"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "台積電",
+        "close_price": 2385,
+        "pe_ratio": 27.65,
+        "pb_ratio": 9.61,
+        "dividend_yield": 0.92,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 13.0,
       "chip_score_details": {
@@ -1719,16 +1719,16 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "凱基金",
+        "close_price": 37.75,
+        "pe_ratio": 13.2,
+        "pb_ratio": 1.49,
+        "dividend_yield": 2.65,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 10.6,
       "chip_score_details": {
@@ -1879,16 +1879,16 @@
         "message": "技術面弱勢"
       },
       "valuation": {
-        "valuation_date": null,
-        "stock_name": null,
-        "close_price": null,
-        "pe_ratio": null,
-        "pb_ratio": null,
-        "dividend_yield": null,
-        "dividend_year": null,
-        "financial_period": null,
-        "data_available": false,
-        "message": "估值資料處理失敗"
+        "valuation_date": "2026-10-22",
+        "stock_name": "台中銀",
+        "close_price": 18.6,
+        "pe_ratio": 11.07,
+        "pb_ratio": 1.17,
+        "dividend_yield": 5.7,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
       },
       "chip_score": 8.4,
       "chip_score_details": {
