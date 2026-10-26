@@ -565,8 +565,16 @@ def update_valuation_csv(start_date=None):
     if latest["data"].empty:
         raise RuntimeError(latest["message"])
     date_str = latest["date"]
-    valuation_df = latest["data"]
-    dated_file = BASE_DIR / f"twse_valuation_{date_str}.csv"
+    valuation_df = latest["data"].copy()
+
+    # 加入估值資料日期，供後續 analyzer.py 使用
+    valuation_df.insert(
+        0,
+        "valuation_date",
+        format_display_date(date_str),
+    )
+
+    dated_file = BASE_DIR / f"twse_valuation_{date_str}.csv"  
     # 先寫入暫存檔，避免中途失敗留下不完整 CSV
     dated_temp = dated_file.with_suffix(".csv.tmp")
     latest_temp = LATEST_OUTPUT_FILE.with_suffix(".csv.tmp")
