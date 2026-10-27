@@ -1,6 +1,6 @@
 {
-  "update_time": "2026-10-26 19:14:22",
-  "stock_count": 1991,
+  "update_time": "2026-10-27 12:01:05",
+  "stock_count": 1992,
   "stocks": [
     {
       "stock_id": "1101",
@@ -9858,6 +9858,12 @@
       "stock_id": "6895",
       "short_name": "宏碩系統",
       "company_name": "宏碩系統股份有限公司",
+      "market": "TPEx"
+    },
+    {
+      "stock_id": "6898",
+      "short_name": "程曦資訊",
+      "company_name": "程曦資訊整合股份有限公司",
       "market": "TPEx"
     },
     {
