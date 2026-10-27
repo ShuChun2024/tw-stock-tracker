@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-10-27 20:44:25",
+  "update_time": "2026-10-28 02:40:10",
   "stock_count": 13,
   "complete_count": 12,
   "score_complete_count": 13,
@@ -14,7 +14,7 @@
   "stocks": [
     {
       "stock_id": "2603",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 40,
         "latest_yoy": 65.03901404949326,
@@ -27,9 +27,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 27.12,
-        "change_periods": 0.060000000000002274,
-        "latest_date": "2026-10-22",
+        "latest_percent": 27.16,
+        "change_periods": 0.10999999999999943,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -88,9 +88,9 @@
           "score": 8
         },
         "macd": {
-          "dif": 7.0633,
-          "dea": 6.3034,
-          "histogram": 0.7599,
+          "dif": 7.0629,
+          "dea": 6.3029,
+          "histogram": 0.7601,
           "signal": "多方",
           "score": 8
         },
@@ -117,12 +117,12 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "長榮",
-        "close_price": 260,
-        "pe_ratio": 10.31,
-        "pb_ratio": 1,
-        "dividend_yield": 6.15,
+        "close_price": 261.5,
+        "pe_ratio": 10.37,
+        "pb_ratio": 1.01,
+        "dividend_yield": 6.12,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -174,7 +174,7 @@
     },
     {
       "stock_id": "2034",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 25,
         "latest_yoy": 47.38803829917837,
@@ -187,9 +187,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 7.79,
-        "change_periods": 0.5200000000000005,
-        "latest_date": "2026-10-22",
+        "latest_percent": 8.01,
+        "change_periods": 0.5899999999999999,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -243,7 +243,7 @@
           "score": 15
         },
         "rsi": {
-          "value": 67.54,
+          "value": 67.56,
           "signal": "偏強",
           "score": 8
         },
@@ -277,12 +277,12 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "允強",
-        "close_price": 24.35,
-        "pe_ratio": 57.98,
-        "pb_ratio": 1.43,
-        "dividend_yield": 4.11,
+        "close_price": 24.5,
+        "pe_ratio": 58.33,
+        "pb_ratio": 1.44,
+        "dividend_yield": 4.08,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -334,7 +334,7 @@
     },
     {
       "stock_id": "6750",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 25,
         "latest_yoy": 35.530886302596244,
@@ -408,9 +408,9 @@
           "score": 8
         },
         "macd": {
-          "dif": 0.9139,
-          "dea": 0.5279,
-          "histogram": 0.3861,
+          "dif": 0.9141,
+          "dea": 0.528,
+          "histogram": 0.386,
           "signal": "多方",
           "score": 8
         },
@@ -496,7 +496,7 @@
     },
     {
       "stock_id": "1102",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 23,
         "latest_yoy": 5.180647432609131,
@@ -509,9 +509,9 @@
       "foreign_holding": {
         "score": 20,
         "trend": "連續增加",
-        "latest_percent": 15.27,
-        "change_periods": 0.27999999999999936,
-        "latest_date": "2026-10-22",
+        "latest_percent": 15.29,
+        "change_periods": 0.21999999999999886,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例連續增加",
         "data_available": true
       },
@@ -599,10 +599,10 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "亞泥",
-        "close_price": 38.55,
-        "pe_ratio": 10.65,
+        "close_price": 38.5,
+        "pe_ratio": 10.64,
         "pb_ratio": 0.74,
         "dividend_yield": 5.97,
         "dividend_year": 114,
@@ -656,7 +656,7 @@
     },
     {
       "stock_id": "1410",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 40,
         "latest_yoy": 109.17440660474718,
@@ -669,9 +669,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 18.97,
-        "change_periods": 0.00999999999999801,
-        "latest_date": "2026-10-22",
+        "latest_percent": 18.98,
+        "change_periods": 0.019999999999999574,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -718,14 +718,14 @@
         "latest_close": 23.6,
         "ma": {
           "ma5": 23.53,
-          "ma10": 23.54,
+          "ma10": 23.55,
           "ma20": 23.79,
           "ma60": 24.64,
           "trend": "中期偏弱",
           "score": 2
         },
         "rsi": {
-          "value": 41.45,
+          "value": 41.55,
           "signal": "中性偏弱",
           "score": 4
         },
@@ -759,10 +759,10 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "南染",
-        "close_price": 23.5,
-        "pe_ratio": 32.19,
+        "close_price": 23.6,
+        "pe_ratio": 32.33,
         "pb_ratio": 1.39,
         "dividend_yield": 0.85,
         "dividend_year": 114,
@@ -816,7 +816,7 @@
     },
     {
       "stock_id": "6117",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 40,
         "latest_yoy": 36.02337019873198,
@@ -829,9 +829,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 1.33,
-        "change_periods": 0.1100000000000001,
-        "latest_date": "2026-10-22",
+        "latest_percent": 1.36,
+        "change_periods": 0.06000000000000005,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -885,13 +885,13 @@
           "score": 8
         },
         "rsi": {
-          "value": 46.88,
+          "value": 46.9,
           "signal": "中性偏弱",
           "score": 4
         },
         "macd": {
-          "dif": 0.9619,
-          "dea": 1.2541,
+          "dif": 0.9621,
+          "dea": 1.2543,
           "histogram": -0.2922,
           "signal": "空方",
           "score": 1
@@ -919,12 +919,12 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "迎廣",
-        "close_price": 66,
-        "pe_ratio": 13.98,
-        "pb_ratio": 2.76,
-        "dividend_yield": 3.03,
+        "close_price": 64.6,
+        "pe_ratio": 13.69,
+        "pb_ratio": 2.7,
+        "dividend_yield": 3.1,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -976,7 +976,7 @@
     },
     {
       "stock_id": "1101",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 8,
         "latest_yoy": 7.626848357922,
@@ -989,9 +989,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 13.62,
-        "change_periods": 0.27999999999999936,
-        "latest_date": "2026-10-22",
+        "latest_percent": 13.41,
+        "change_periods": 0.120000000000001,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -1079,12 +1079,12 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "台泥",
-        "close_price": 27.95,
+        "close_price": 28.1,
         "pe_ratio": null,
         "pb_ratio": 0.91,
-        "dividend_yield": 2.86,
+        "dividend_yield": 2.85,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -1136,7 +1136,7 @@
     },
     {
       "stock_id": "2377",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 8,
         "latest_yoy": 1.832841346248526,
@@ -1149,9 +1149,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 22.1,
-        "change_periods": 0.6000000000000014,
-        "latest_date": "2026-10-22",
+        "latest_percent": 22.37,
+        "change_periods": 0.2699999999999996,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -1205,14 +1205,14 @@
           "score": 15
         },
         "rsi": {
-          "value": 65.81,
+          "value": 65.82,
           "signal": "偏強",
           "score": 8
         },
         "macd": {
-          "dif": 3.2861,
-          "dea": 2.4048,
-          "histogram": 0.8812,
+          "dif": 3.2863,
+          "dea": 2.4052,
+          "histogram": 0.8811,
           "signal": "多方",
           "score": 8
         },
@@ -1239,12 +1239,12 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "微星",
-        "close_price": 163,
-        "pe_ratio": 14.14,
-        "pb_ratio": 2.37,
-        "dividend_yield": 2.58,
+        "close_price": 166,
+        "pe_ratio": 14.4,
+        "pb_ratio": 2.42,
+        "dividend_yield": 2.53,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -1296,7 +1296,7 @@
     },
     {
       "stock_id": "2330",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 25,
         "latest_yoy": 54.64861207105231,
@@ -1309,9 +1309,9 @@
       "foreign_holding": {
         "score": 0,
         "trend": "整體減少",
-        "latest_percent": 68.58,
-        "change_periods": -0.12000000000000455,
-        "latest_date": "2026-10-22",
+        "latest_percent": 68.56,
+        "change_periods": -0.09999999999999432,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
       },
@@ -1365,14 +1365,14 @@
           "score": 5
         },
         "rsi": {
-          "value": 40.83,
+          "value": 40.77,
           "signal": "中性偏弱",
           "score": 4
         },
         "macd": {
-          "dif": -12.6973,
-          "dea": 4.5979,
-          "histogram": -17.2951,
+          "dif": -12.7109,
+          "dea": 4.5778,
+          "histogram": -17.2887,
           "signal": "空方",
           "score": 1
         },
@@ -1399,11 +1399,11 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "台積電",
-        "close_price": 2385,
-        "pe_ratio": 27.65,
-        "pb_ratio": 9.61,
+        "close_price": 2400,
+        "pe_ratio": 27.82,
+        "pb_ratio": 9.68,
         "dividend_yield": 0.92,
         "dividend_year": 114,
         "financial_period": "115/2",
@@ -1456,7 +1456,7 @@
     },
     {
       "stock_id": "2834",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 8,
         "latest_yoy": 6.5173333051895765,
@@ -1469,9 +1469,9 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 16.04,
-        "change_periods": 0.019999999999999574,
-        "latest_date": "2026-10-22",
+        "latest_percent": 16.01,
+        "change_periods": 0.030000000000001137,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
@@ -1559,7 +1559,7 @@
         "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "臺企銀",
         "close_price": 17.9,
         "pe_ratio": 13.16,
@@ -1616,7 +1616,7 @@
     },
     {
       "stock_id": "2881",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 0,
         "latest_yoy": -45.39071293609148,
@@ -1627,12 +1627,12 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 15,
-        "trend": "整體增加",
-        "latest_percent": 18.87,
-        "change_periods": 0.019999999999999574,
-        "latest_date": "2026-10-22",
-        "message": "最近 4 期外資持股比例整體增加",
+        "score": 20,
+        "trend": "連續增加",
+        "latest_percent": 18.88,
+        "change_periods": 0.07000000000000028,
+        "latest_date": "2026-10-27",
+        "message": "最近 4 期外資持股比例連續增加",
         "data_available": true
       },
       "institutional": {
@@ -1685,14 +1685,14 @@
           "score": 11
         },
         "rsi": {
-          "value": 63.1,
+          "value": 63.11,
           "signal": "偏強",
           "score": 8
         },
         "macd": {
-          "dif": 3.335,
-          "dea": 3.5093,
-          "histogram": -0.1743,
+          "dif": 3.3349,
+          "dea": 3.5092,
+          "histogram": -0.1742,
           "signal": "空方",
           "score": 1
         },
@@ -1719,12 +1719,12 @@
         "message": "技術面偏多"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "富邦金",
-        "close_price": 158.5,
-        "pe_ratio": 14.81,
-        "pb_ratio": 1.95,
-        "dividend_yield": 2.68,
+        "close_price": 162,
+        "pe_ratio": 15.14,
+        "pb_ratio": 1.99,
+        "dividend_yield": 2.62,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -1776,7 +1776,7 @@
     },
     {
       "stock_id": "2883",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 0,
         "latest_yoy": -46.73068314507328,
@@ -1789,9 +1789,9 @@
       "foreign_holding": {
         "score": 0,
         "trend": "整體減少",
-        "latest_percent": 29.73,
-        "change_periods": -0.09999999999999787,
-        "latest_date": "2026-10-22",
+        "latest_percent": 29.74,
+        "change_periods": -0.05000000000000071,
+        "latest_date": "2026-10-27",
         "message": "最近 4 期外資持股比例整體減少",
         "data_available": true
       },
@@ -1879,12 +1879,12 @@
         "message": "技術面中性"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "凱基金",
-        "close_price": 37.75,
-        "pe_ratio": 13.2,
-        "pb_ratio": 1.49,
-        "dividend_yield": 2.65,
+        "close_price": 38.45,
+        "pe_ratio": 13.44,
+        "pb_ratio": 1.52,
+        "dividend_yield": 2.6,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -1936,7 +1936,7 @@
     },
     {
       "stock_id": "2812",
-      "analysis_date": "2026-10-27",
+      "analysis_date": "2026-10-28",
       "revenue": {
         "score": 0,
         "latest_yoy": -0.034342123869568475,
@@ -1947,12 +1947,12 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 0,
-        "trend": "整體減少",
-        "latest_percent": 8.61,
-        "change_periods": -0.10000000000000142,
-        "latest_date": "2026-10-22",
-        "message": "最近 4 期外資持股比例整體減少",
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 8.64,
+        "change_periods": 0.08000000000000007,
+        "latest_date": "2026-10-27",
+        "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
       "institutional": {
@@ -2039,7 +2039,7 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-10-22",
+        "valuation_date": "2026-10-27",
         "stock_name": "台中銀",
         "close_price": 18.6,
         "pe_ratio": 11.07,
