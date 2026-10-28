@@ -1,6 +1,6 @@
 {
-  "update_time": "2026-10-27 18:40:08",
-  "stock_count": 1992,
+  "update_time": "2026-10-28 18:49:14",
+  "stock_count": 1994,
   "stocks": [
     {
       "stock_id": "1101",
@@ -10029,6 +10029,12 @@
       "market": "TWSE"
     },
     {
+      "stock_id": "6938",
+      "short_name": "藍新資訊",
+      "company_name": "藍新資訊股份有限公司",
+      "market": "TPEx"
+    },
+    {
       "stock_id": "6944",
       "short_name": "兆聯實業",
       "company_name": "兆聯實業股份有限公司",
@@ -10249,6 +10255,12 @@
       "short_name": "榮田",
       "company_name": "榮田精機股份有限公司",
       "market": "TPEx"
+    },
+    {
+      "stock_id": "7710",
+      "short_name": "東擎科技",
+      "company_name": "東擎科技股份有限公司",
+      "market": "TWSE"
     },
     {
       "stock_id": "7711",
