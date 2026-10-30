@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-10-30 02:56:46",
+  "update_time": "2026-10-31 02:34:30",
   "stock_count": 13,
   "complete_count": 12,
   "score_complete_count": 13,
@@ -14,7 +14,7 @@
   "stocks": [
     {
       "stock_id": "2603",
-      "analysis_date": "2026-10-30",
+      "analysis_date": "2026-10-31",
       "revenue": {
         "score": 40,
         "latest_yoy": 65.03901404949326,
@@ -27,108 +27,108 @@
       "foreign_holding": {
         "score": 20,
         "trend": "連續增加",
-        "latest_percent": 27.26,
-        "change_periods": 0.14000000000000057,
-        "latest_date": "2026-10-29",
+        "latest_percent": 27.62,
+        "change_periods": 0.46000000000000085,
+        "latest_date": "2026-10-30",
         "message": "最近 4 期外資持股比例連續增加",
         "data_available": true
       },
       "institutional": {
         "data_available": true,
-        "latest_date": "2026-10-29",
+        "latest_date": "2026-10-30",
         "foreign": {
-          "latest_net_shares": 1077089,
-          "latest_net_lots": 1077.1,
-          "net_5d_shares": 6647467,
-          "net_5d_lots": 6647.5,
-          "net_20d_shares": 29927019,
-          "net_20d_lots": 29927.0,
-          "consecutive_days": 6,
+          "latest_net_shares": 7919899,
+          "latest_net_lots": 7919.9,
+          "net_5d_shares": 14137789,
+          "net_5d_lots": 14137.8,
+          "net_20d_shares": 41068773,
+          "net_20d_lots": 41068.8,
+          "consecutive_days": 7,
           "trend": "買超"
         },
         "trust": {
-          "latest_net_shares": 107189,
-          "latest_net_lots": 107.2,
-          "net_5d_shares": -163518,
-          "net_5d_lots": -163.5,
-          "net_20d_shares": 11169061,
-          "net_20d_lots": 11169.1,
-          "consecutive_days": 3,
+          "latest_net_shares": 1861200,
+          "latest_net_lots": 1861.2,
+          "net_5d_shares": 1565692,
+          "net_5d_lots": 1565.7,
+          "net_20d_shares": 13030361,
+          "net_20d_lots": 13030.4,
+          "consecutive_days": 4,
           "trend": "買超"
         },
         "dealer": {
-          "latest_net_shares": 68981,
-          "latest_net_lots": 69.0,
-          "net_5d_shares": 1344252,
-          "net_5d_lots": 1344.3,
-          "net_20d_shares": 5109873,
-          "net_20d_lots": 5109.9,
-          "consecutive_days": 9,
+          "latest_net_shares": 790880,
+          "latest_net_lots": 790.9,
+          "net_5d_shares": 1806200,
+          "net_5d_lots": 1806.2,
+          "net_20d_shares": 5881431,
+          "net_20d_lots": 5881.4,
+          "consecutive_days": 10,
           "trend": "買超"
         },
         "summary": "三大法人同步買超",
         "message": "分析完成"
       },
       "technical": {
-        "score": 31,
+        "score": 40,
         "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 261.0,
+        "latest_date": "2026-10-30",
+        "latest_close": 271.5,
         "ma": {
-          "ma5": 260.6,
-          "ma10": 261.0,
-          "ma20": 251.05,
-          "ma60": 237.29,
-          "trend": "中期偏多",
-          "score": 11
+          "ma5": 263.4,
+          "ma10": 261.85,
+          "ma20": 252.72,
+          "ma60": 238.42,
+          "trend": "多頭排列",
+          "score": 15
         },
         "rsi": {
-          "value": 61.17,
+          "value": 68.19,
           "signal": "偏強",
           "score": 8
         },
         "macd": {
-          "dif": 6.8835,
-          "dea": 6.5461,
-          "histogram": 0.3374,
+          "dif": 7.4753,
+          "dea": 6.7319,
+          "histogram": 0.7434,
           "signal": "多方",
           "score": 8
         },
         "kd": {
-          "k": 55.85,
-          "d": 63.56,
-          "signal": "中性",
-          "score": 3
+          "k": 70.57,
+          "d": 65.89,
+          "signal": "偏強",
+          "score": 5
         },
         "volume": {
-          "today": 5150170.0,
-          "avg5": 8353780.8,
-          "ratio": 0.62,
-          "signal": "量縮",
-          "score": 1
+          "today": 23405895.0,
+          "avg5": 10907689.2,
+          "ratio": 2.15,
+          "signal": "明顯量增",
+          "score": 4
         },
         "breakout": {
           "high20": 270.5,
           "low20": 231.0,
-          "distance_to_high20_percent": -3.51,
-          "distance_to_low20_percent": 12.99,
-          "signal": "20日區間內"
+          "distance_to_high20_percent": 0.37,
+          "distance_to_low20_percent": 17.53,
+          "signal": "突破20日高點"
         },
-        "message": "技術面偏多"
+        "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": "2026-10-29",
+        "valuation_date": "2026-10-30",
         "stock_name": "長榮",
-        "close_price": 261,
-        "pe_ratio": 10.35,
-        "pb_ratio": 1.01,
-        "dividend_yield": 6.13,
+        "close_price": 271.5,
+        "pe_ratio": 10.77,
+        "pb_ratio": 1.05,
+        "dividend_yield": 5.89,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
         "message": ""
       },
-      "chip_score": 17.6,
+      "chip_score": 20.0,
       "chip_score_details": {
         "foreign": {
           "score": 7.0,
@@ -136,16 +136,16 @@
           "daily_signal": 1,
           "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 6,
+          "consecutive_days": 7,
           "trend": "買超"
         },
         "trust": {
-          "score": 4.62,
+          "score": 7.0,
           "max_score": 7.0,
           "daily_signal": 1,
-          "5d_signal": -1,
+          "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 3,
+          "consecutive_days": 4,
           "trend": "買超"
         },
         "dealer": {
@@ -154,16 +154,16 @@
           "daily_signal": 1,
           "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 9,
+          "consecutive_days": 10,
           "trend": "買超"
         }
       },
       "score_breakdown": {
         "fundamental": 40.0,
-        "chip": 17.6,
-        "technical": 31.0
+        "chip": 20.0,
+        "technical": 40.0
       },
-      "score": 88.6,
+      "score": 100.0,
       "status": "🟢 強勢",
       "data_quality": {
         "complete": true,
@@ -174,7 +174,7 @@
     },
     {
       "stock_id": "1410",
-      "analysis_date": "2026-10-30",
+      "analysis_date": "2026-10-31",
       "revenue": {
         "score": 40,
         "latest_yoy": 109.17440660474718,
@@ -185,26 +185,26 @@
         "data_available": true
       },
       "foreign_holding": {
-        "score": 20,
-        "trend": "連續增加",
+        "score": 15,
+        "trend": "整體增加",
         "latest_percent": 19.02,
-        "change_periods": 0.05000000000000071,
-        "latest_date": "2026-10-29",
-        "message": "最近 4 期外資持股比例連續增加",
+        "change_periods": 0.03999999999999915,
+        "latest_date": "2026-10-30",
+        "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
       "institutional": {
         "data_available": true,
-        "latest_date": "2026-10-29",
+        "latest_date": "2026-10-30",
         "foreign": {
-          "latest_net_shares": 6000,
-          "latest_net_lots": 6.0,
-          "net_5d_shares": 37333,
-          "net_5d_lots": 37.3,
-          "net_20d_shares": 17667,
-          "net_20d_lots": 17.7,
-          "consecutive_days": 3,
-          "trend": "買超"
+          "latest_net_shares": -1000,
+          "latest_net_lots": -1.0,
+          "net_5d_shares": 32333,
+          "net_5d_lots": 32.3,
+          "net_20d_shares": 23667,
+          "net_20d_lots": 23.7,
+          "consecutive_days": 1,
+          "trend": "賣超"
         },
         "trust": {
           "latest_net_shares": 0,
@@ -232,72 +232,72 @@
       "technical": {
         "score": 20,
         "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 23.7,
+        "latest_date": "2026-10-30",
+        "latest_close": 23.65,
         "ma": {
           "ma5": 23.66,
           "ma10": 23.56,
-          "ma20": 23.76,
-          "ma60": 24.6,
+          "ma20": 23.73,
+          "ma60": 24.56,
           "trend": "中期偏弱",
           "score": 2
         },
         "rsi": {
-          "value": 44.93,
+          "value": 43.84,
           "signal": "中性偏弱",
           "score": 4
         },
         "macd": {
-          "dif": -0.2139,
-          "dea": -0.2671,
-          "histogram": 0.0532,
+          "dif": -0.2001,
+          "dea": -0.2537,
+          "histogram": 0.0536,
           "signal": "多方",
           "score": 8
         },
         "kd": {
-          "k": 51.49,
-          "d": 38.41,
+          "k": 53.38,
+          "d": 43.4,
           "signal": "偏強",
           "score": 5
         },
         "volume": {
-          "today": 17171.0,
-          "avg5": 34974.4,
-          "ratio": 0.49,
+          "today": 19305.0,
+          "avg5": 31575.4,
+          "ratio": 0.61,
           "signal": "量縮",
           "score": 1
         },
         "breakout": {
           "high20": 24.6,
           "low20": 23.25,
-          "distance_to_high20_percent": -3.66,
-          "distance_to_low20_percent": 1.94,
+          "distance_to_high20_percent": -3.86,
+          "distance_to_low20_percent": 1.72,
           "signal": "接近20日低點"
         },
         "message": "技術面中性"
       },
       "valuation": {
-        "valuation_date": "2026-10-29",
+        "valuation_date": "2026-10-30",
         "stock_name": "南染",
-        "close_price": 23.7,
-        "pe_ratio": 32.47,
+        "close_price": 23.65,
+        "pe_ratio": 32.4,
         "pb_ratio": 1.4,
-        "dividend_yield": 0.84,
+        "dividend_yield": 0.85,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
         "message": ""
       },
-      "chip_score": 13.5,
+      "chip_score": 12.1,
       "chip_score_details": {
         "foreign": {
-          "score": 7.0,
+          "score": 5.6,
           "max_score": 7.0,
-          "daily_signal": 1,
+          "daily_signal": -1,
           "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 3,
-          "trend": "買超"
+          "consecutive_days": 1,
+          "trend": "賣超"
         },
         "trust": {
           "score": 3.5,
@@ -320,651 +320,11 @@
       },
       "score_breakdown": {
         "fundamental": 40.0,
-        "chip": 13.5,
+        "chip": 12.1,
         "technical": 20.0
       },
-      "score": 73.5,
+      "score": 72.1,
       "status": "🟡 偏多",
-      "data_quality": {
-        "complete": true,
-        "data_complete": true,
-        "score_complete": true,
-        "missing_items": []
-      }
-    },
-    {
-      "stock_id": "6117",
-      "analysis_date": "2026-10-30",
-      "revenue": {
-        "score": 40,
-        "latest_yoy": 36.02337019873198,
-        "trend": "連續增加",
-        "latest_revenue": 382748000.0,
-        "latest_revenue_month": "2026-09",
-        "message": "年增率達標且營收連續增加",
-        "data_available": true
-      },
-      "foreign_holding": {
-        "score": 15,
-        "trend": "整體增加",
-        "latest_percent": 1.37,
-        "change_periods": 0.040000000000000036,
-        "latest_date": "2026-10-29",
-        "message": "最近 4 期外資持股比例整體增加",
-        "data_available": true
-      },
-      "institutional": {
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "foreign": {
-          "latest_net_shares": -26789,
-          "latest_net_lots": -26.8,
-          "net_5d_shares": 105431,
-          "net_5d_lots": 105.4,
-          "net_20d_shares": -50395,
-          "net_20d_lots": -50.4,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "trust": {
-          "latest_net_shares": 0,
-          "latest_net_lots": 0.0,
-          "net_5d_shares": 0,
-          "net_5d_lots": 0.0,
-          "net_20d_shares": 12,
-          "net_20d_lots": 0.0,
-          "consecutive_days": 0,
-          "trend": "持平"
-        },
-        "dealer": {
-          "latest_net_shares": -6000,
-          "latest_net_lots": -6.0,
-          "net_5d_shares": -86000,
-          "net_5d_lots": -86.0,
-          "net_20d_shares": -471946,
-          "net_20d_lots": -471.9,
-          "consecutive_days": 10,
-          "trend": "賣超"
-        },
-        "summary": "三大法人方向分歧",
-        "message": "分析完成"
-      },
-      "technical": {
-        "score": 20,
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 66.7,
-        "ma": {
-          "ma5": 66.26,
-          "ma10": 67.92,
-          "ma20": 66.45,
-          "ma60": 64.16,
-          "trend": "中期偏多",
-          "score": 11
-        },
-        "rsi": {
-          "value": 52.19,
-          "signal": "中性偏強",
-          "score": 6
-        },
-        "macd": {
-          "dif": 0.8422,
-          "dea": 1.1182,
-          "histogram": -0.2759,
-          "signal": "空方",
-          "score": 1
-        },
-        "kd": {
-          "k": 22.1,
-          "d": 25.07,
-          "signal": "偏弱",
-          "score": 1
-        },
-        "volume": {
-          "today": 200201.0,
-          "avg5": 285920.8,
-          "ratio": 0.7,
-          "signal": "量縮",
-          "score": 1
-        },
-        "breakout": {
-          "high20": 78.2,
-          "low20": 61.4,
-          "distance_to_high20_percent": -14.71,
-          "distance_to_low20_percent": 8.63,
-          "signal": "20日區間內"
-        },
-        "message": "技術面中性"
-      },
-      "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "迎廣",
-        "close_price": 66.7,
-        "pe_ratio": 14.13,
-        "pb_ratio": 2.78,
-        "dividend_yield": 3,
-        "dividend_year": 114,
-        "financial_period": "115/2",
-        "data_available": true,
-        "message": ""
-      },
-      "chip_score": 7.5,
-      "chip_score_details": {
-        "foreign": {
-          "score": 2.45,
-          "max_score": 7.0,
-          "daily_signal": -1,
-          "5d_signal": 1,
-          "20d_signal": -1,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "trust": {
-          "score": 5.08,
-          "max_score": 7.0,
-          "daily_signal": 0,
-          "5d_signal": 0,
-          "20d_signal": 1,
-          "consecutive_days": 0,
-          "trend": "持平"
-        },
-        "dealer": {
-          "score": 0.0,
-          "max_score": 6.0,
-          "daily_signal": -1,
-          "5d_signal": -1,
-          "20d_signal": -1,
-          "consecutive_days": 10,
-          "trend": "賣超"
-        }
-      },
-      "score_breakdown": {
-        "fundamental": 40.0,
-        "chip": 7.5,
-        "technical": 20.0
-      },
-      "score": 67.5,
-      "status": "🟡 偏多",
-      "data_quality": {
-        "complete": true,
-        "data_complete": true,
-        "score_complete": true,
-        "missing_items": []
-      }
-    },
-    {
-      "stock_id": "1102",
-      "analysis_date": "2026-10-30",
-      "revenue": {
-        "score": 23,
-        "latest_yoy": 5.180647432609131,
-        "trend": "連續增加",
-        "latest_revenue": 6719168000.0,
-        "latest_revenue_month": "2026-09",
-        "message": "營收年增率為正",
-        "data_available": true
-      },
-      "foreign_holding": {
-        "score": 15,
-        "trend": "整體增加",
-        "latest_percent": 15.28,
-        "change_periods": 0.009999999999999787,
-        "latest_date": "2026-10-29",
-        "message": "最近 4 期外資持股比例整體增加",
-        "data_available": true
-      },
-      "institutional": {
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "foreign": {
-          "latest_net_shares": 731580,
-          "latest_net_lots": 731.6,
-          "net_5d_shares": 6952480,
-          "net_5d_lots": 6952.5,
-          "net_20d_shares": 49105328,
-          "net_20d_lots": 49105.3,
-          "consecutive_days": 1,
-          "trend": "買超"
-        },
-        "trust": {
-          "latest_net_shares": -1000,
-          "latest_net_lots": -1.0,
-          "net_5d_shares": -2542051,
-          "net_5d_lots": -2542.1,
-          "net_20d_shares": -8770355,
-          "net_20d_lots": -8770.4,
-          "consecutive_days": 7,
-          "trend": "賣超"
-        },
-        "dealer": {
-          "latest_net_shares": 79105,
-          "latest_net_lots": 79.1,
-          "net_5d_shares": 1379630,
-          "net_5d_lots": 1379.6,
-          "net_20d_shares": 6981448,
-          "net_20d_lots": 6981.4,
-          "consecutive_days": 27,
-          "trend": "買超"
-        },
-        "summary": "三大法人方向分歧",
-        "message": "分析完成"
-      },
-      "technical": {
-        "score": 31,
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 37.8,
-        "ma": {
-          "ma5": 38.12,
-          "ma10": 37.96,
-          "ma20": 36.91,
-          "ma60": 35.2,
-          "trend": "中期偏多",
-          "score": 11
-        },
-        "rsi": {
-          "value": 62.1,
-          "signal": "偏強",
-          "score": 8
-        },
-        "macd": {
-          "dif": 0.772,
-          "dea": 0.735,
-          "histogram": 0.0371,
-          "signal": "多方",
-          "score": 8
-        },
-        "kd": {
-          "k": 65.44,
-          "d": 79.78,
-          "signal": "中性",
-          "score": 3
-        },
-        "volume": {
-          "today": 5399952.0,
-          "avg5": 6970807.6,
-          "ratio": 0.77,
-          "signal": "量縮",
-          "score": 1
-        },
-        "breakout": {
-          "high20": 38.7,
-          "low20": 34.9,
-          "distance_to_high20_percent": -2.33,
-          "distance_to_low20_percent": 8.31,
-          "signal": "20日區間內"
-        },
-        "message": "技術面偏多"
-      },
-      "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "亞泥",
-        "close_price": 37.8,
-        "pe_ratio": 10.44,
-        "pb_ratio": 0.73,
-        "dividend_yield": 6.08,
-        "dividend_year": 114,
-        "financial_period": "115/2",
-        "data_available": true,
-        "message": ""
-      },
-      "chip_score": 13.0,
-      "chip_score_details": {
-        "foreign": {
-          "score": 7.0,
-          "max_score": 7.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 1,
-          "trend": "買超"
-        },
-        "trust": {
-          "score": 0.0,
-          "max_score": 7.0,
-          "daily_signal": -1,
-          "5d_signal": -1,
-          "20d_signal": -1,
-          "consecutive_days": 7,
-          "trend": "賣超"
-        },
-        "dealer": {
-          "score": 6.0,
-          "max_score": 6.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 27,
-          "trend": "買超"
-        }
-      },
-      "score_breakdown": {
-        "fundamental": 23.0,
-        "chip": 13.0,
-        "technical": 31.0
-      },
-      "score": 67.0,
-      "status": "🟡 偏多",
-      "data_quality": {
-        "complete": true,
-        "data_complete": true,
-        "score_complete": true,
-        "missing_items": []
-      }
-    },
-    {
-      "stock_id": "1101",
-      "analysis_date": "2026-10-30",
-      "revenue": {
-        "score": 8,
-        "latest_yoy": 7.626848357922,
-        "trend": "未連續增加",
-        "latest_revenue": 14321556000.0,
-        "latest_revenue_month": "2026-09",
-        "message": "營收年增率為正",
-        "data_available": true
-      },
-      "foreign_holding": {
-        "score": 0,
-        "trend": "整體減少",
-        "latest_percent": 13.37,
-        "change_periods": -0.25,
-        "latest_date": "2026-10-29",
-        "message": "最近 4 期外資持股比例整體減少",
-        "data_available": true
-      },
-      "institutional": {
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "foreign": {
-          "latest_net_shares": 4047089,
-          "latest_net_lots": 4047.1,
-          "net_5d_shares": 26341630,
-          "net_5d_lots": 26341.6,
-          "net_20d_shares": 71552486,
-          "net_20d_lots": 71552.5,
-          "consecutive_days": 2,
-          "trend": "買超"
-        },
-        "trust": {
-          "latest_net_shares": 11000,
-          "latest_net_lots": 11.0,
-          "net_5d_shares": 9159000,
-          "net_5d_lots": 9159.0,
-          "net_20d_shares": 29628767,
-          "net_20d_lots": 29628.8,
-          "consecutive_days": 7,
-          "trend": "買超"
-        },
-        "dealer": {
-          "latest_net_shares": 138163,
-          "latest_net_lots": 138.2,
-          "net_5d_shares": 3826740,
-          "net_5d_lots": 3826.7,
-          "net_20d_shares": 7565817,
-          "net_20d_lots": 7565.8,
-          "consecutive_days": 2,
-          "trend": "買超"
-        },
-        "summary": "三大法人同步買超",
-        "message": "分析完成"
-      },
-      "technical": {
-        "score": 37,
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 28.2,
-        "ma": {
-          "ma5": 27.81,
-          "ma10": 27.41,
-          "ma20": 26.57,
-          "ma60": 25.13,
-          "trend": "多頭排列",
-          "score": 15
-        },
-        "rsi": {
-          "value": 68.07,
-          "signal": "偏強",
-          "score": 8
-        },
-        "macd": {
-          "dif": 0.8174,
-          "dea": 0.6794,
-          "histogram": 0.138,
-          "signal": "多方",
-          "score": 8
-        },
-        "kd": {
-          "k": 79.4,
-          "d": 76.75,
-          "signal": "偏強",
-          "score": 5
-        },
-        "volume": {
-          "today": 31963999.0,
-          "avg5": 50888498.8,
-          "ratio": 0.63,
-          "signal": "量縮",
-          "score": 1
-        },
-        "breakout": {
-          "high20": 28.5,
-          "low20": 24.8,
-          "distance_to_high20_percent": -1.05,
-          "distance_to_low20_percent": 13.71,
-          "signal": "接近20日高點"
-        },
-        "message": "技術面強勢"
-      },
-      "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "台泥",
-        "close_price": 28.2,
-        "pe_ratio": null,
-        "pb_ratio": 0.91,
-        "dividend_yield": 2.84,
-        "dividend_year": 114,
-        "financial_period": "115/2",
-        "data_available": true,
-        "message": ""
-      },
-      "chip_score": 20.0,
-      "chip_score_details": {
-        "foreign": {
-          "score": 7.0,
-          "max_score": 7.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 2,
-          "trend": "買超"
-        },
-        "trust": {
-          "score": 7.0,
-          "max_score": 7.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 7,
-          "trend": "買超"
-        },
-        "dealer": {
-          "score": 6.0,
-          "max_score": 6.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 2,
-          "trend": "買超"
-        }
-      },
-      "score_breakdown": {
-        "fundamental": 8.0,
-        "chip": 20.0,
-        "technical": 37.0
-      },
-      "score": 65.0,
-      "status": "🟡 偏多",
-      "data_quality": {
-        "complete": true,
-        "data_complete": true,
-        "score_complete": true,
-        "missing_items": []
-      }
-    },
-    {
-      "stock_id": "2034",
-      "analysis_date": "2026-10-30",
-      "revenue": {
-        "score": 25,
-        "latest_yoy": 47.38803829917837,
-        "trend": "未連續增加",
-        "latest_revenue": 1464676000.0,
-        "latest_revenue_month": "2026-09",
-        "message": "營收年增率為正",
-        "data_available": true
-      },
-      "foreign_holding": {
-        "score": 15,
-        "trend": "整體增加",
-        "latest_percent": 7.95,
-        "change_periods": 0.16000000000000014,
-        "latest_date": "2026-10-29",
-        "message": "最近 4 期外資持股比例整體增加",
-        "data_available": true
-      },
-      "institutional": {
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "foreign": {
-          "latest_net_shares": 97609,
-          "latest_net_lots": 97.6,
-          "net_5d_shares": 2192615,
-          "net_5d_lots": 2192.6,
-          "net_20d_shares": 7020473,
-          "net_20d_lots": 7020.5,
-          "consecutive_days": 1,
-          "trend": "買超"
-        },
-        "trust": {
-          "latest_net_shares": 0,
-          "latest_net_lots": 0.0,
-          "net_5d_shares": 549000,
-          "net_5d_lots": 549.0,
-          "net_20d_shares": 1766000,
-          "net_20d_lots": 1766.0,
-          "consecutive_days": 0,
-          "trend": "持平"
-        },
-        "dealer": {
-          "latest_net_shares": -6022,
-          "latest_net_lots": -6.0,
-          "net_5d_shares": 168588,
-          "net_5d_lots": 168.6,
-          "net_20d_shares": 206752,
-          "net_20d_lots": 206.8,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "summary": "三大法人方向分歧",
-        "message": "分析完成"
-      },
-      "technical": {
-        "score": 19,
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 23.5,
-        "ma": {
-          "ma5": 24.16,
-          "ma10": 23.88,
-          "ma20": 23.87,
-          "ma60": 21.55,
-          "trend": "站上60日線",
-          "score": 8
-        },
-        "rsi": {
-          "value": 53.2,
-          "signal": "中性偏強",
-          "score": 6
-        },
-        "macd": {
-          "dif": 0.5953,
-          "dea": 0.6861,
-          "histogram": -0.0909,
-          "signal": "空方",
-          "score": 1
-        },
-        "kd": {
-          "k": 51.69,
-          "d": 55.44,
-          "signal": "中性",
-          "score": 3
-        },
-        "volume": {
-          "today": 1586043.0,
-          "avg5": 3880698.0,
-          "ratio": 0.41,
-          "signal": "量縮",
-          "score": 1
-        },
-        "breakout": {
-          "high20": 25.0,
-          "low20": 21.95,
-          "distance_to_high20_percent": -6.0,
-          "distance_to_low20_percent": 7.06,
-          "signal": "20日區間內"
-        },
-        "message": "技術面偏弱"
-      },
-      "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "允強",
-        "close_price": 23.5,
-        "pe_ratio": 55.95,
-        "pb_ratio": 1.38,
-        "dividend_yield": 4.26,
-        "dividend_year": 114,
-        "financial_period": "115/2",
-        "data_available": true,
-        "message": ""
-      },
-      "chip_score": 18.1,
-      "chip_score_details": {
-        "foreign": {
-          "score": 7.0,
-          "max_score": 7.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 1,
-          "trend": "買超"
-        },
-        "trust": {
-          "score": 6.3,
-          "max_score": 7.0,
-          "daily_signal": 0,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 0,
-          "trend": "持平"
-        },
-        "dealer": {
-          "score": 4.8,
-          "max_score": 6.0,
-          "daily_signal": -1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        }
-      },
-      "score_breakdown": {
-        "fundamental": 25.0,
-        "chip": 18.1,
-        "technical": 19.0
-      },
-      "score": 62.1,
-      "status": "⚪ 中性",
       "data_quality": {
         "complete": true,
         "data_complete": true,
@@ -974,7 +334,7 @@
     },
     {
       "stock_id": "6750",
-      "analysis_date": "2026-10-30",
+      "analysis_date": "2026-10-31",
       "revenue": {
         "score": 25,
         "latest_yoy": 35.530886302596244,
@@ -995,16 +355,16 @@
       },
       "institutional": {
         "data_available": true,
-        "latest_date": "2026-10-29",
+        "latest_date": "2026-10-30",
         "foreign": {
-          "latest_net_shares": -3000,
-          "latest_net_lots": -3.0,
-          "net_5d_shares": -12843,
-          "net_5d_lots": -12.8,
-          "net_20d_shares": -2100,
-          "net_20d_lots": -2.1,
-          "consecutive_days": 2,
-          "trend": "賣超"
+          "latest_net_shares": 9000,
+          "latest_net_lots": 9.0,
+          "net_5d_shares": 2157,
+          "net_5d_lots": 2.2,
+          "net_20d_shares": 11900,
+          "net_20d_lots": 11.9,
+          "consecutive_days": 1,
+          "trend": "買超"
         },
         "trust": {
           "latest_net_shares": 0,
@@ -1032,46 +392,46 @@
       "technical": {
         "score": 29,
         "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 59.0,
+        "latest_date": "2026-10-30",
+        "latest_close": 58.4,
         "ma": {
-          "ma5": 59.4,
-          "ma10": 59.6,
-          "ma20": 57.62,
-          "ma60": 56.83,
+          "ma5": 59.0,
+          "ma10": 59.59,
+          "ma20": 57.76,
+          "ma60": 56.93,
           "trend": "中期偏多",
           "score": 11
         },
         "rsi": {
-          "value": 54.13,
+          "value": 51.47,
           "signal": "中性偏強",
           "score": 6
         },
         "macd": {
-          "dif": 0.7567,
-          "dea": 0.6172,
-          "histogram": 0.1395,
+          "dif": 0.6666,
+          "dea": 0.6271,
+          "histogram": 0.0395,
           "signal": "多方",
           "score": 8
         },
         "kd": {
-          "k": 58.24,
-          "d": 67.74,
+          "k": 50.9,
+          "d": 62.12,
           "signal": "中性",
           "score": 3
         },
         "volume": {
-          "today": 94756.0,
-          "avg5": 210940.2,
-          "ratio": 0.45,
+          "today": 142662.0,
+          "avg5": 196547.6,
+          "ratio": 0.73,
           "signal": "量縮",
           "score": 1
         },
         "breakout": {
           "high20": 62.1,
           "low20": 53.2,
-          "distance_to_high20_percent": -4.99,
-          "distance_to_low20_percent": 10.9,
+          "distance_to_high20_percent": -5.96,
+          "distance_to_low20_percent": 9.77,
           "signal": "20日區間內"
         },
         "message": "技術面偏多"
@@ -1088,16 +448,16 @@
         "data_available": false,
         "message": "估值 CSV 查無股票 6750"
       },
-      "chip_score": 6.5,
+      "chip_score": 13.5,
       "chip_score_details": {
         "foreign": {
-          "score": 0.0,
+          "score": 7.0,
           "max_score": 7.0,
-          "daily_signal": -1,
-          "5d_signal": -1,
-          "20d_signal": -1,
-          "consecutive_days": 2,
-          "trend": "賣超"
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 1,
+          "trend": "買超"
         },
         "trust": {
           "score": 3.5,
@@ -1120,11 +480,11 @@
       },
       "score_breakdown": {
         "fundamental": 25.0,
-        "chip": 6.5,
+        "chip": 13.5,
         "technical": 29.0
       },
-      "score": 60.5,
-      "status": "⚪ 中性",
+      "score": 67.5,
+      "status": "🟡 偏多",
       "data_quality": {
         "complete": false,
         "data_complete": false,
@@ -1135,13 +495,13 @@
       }
     },
     {
-      "stock_id": "2377",
-      "analysis_date": "2026-10-30",
+      "stock_id": "1102",
+      "analysis_date": "2026-10-31",
       "revenue": {
-        "score": 8,
-        "latest_yoy": 1.832841346248526,
-        "trend": "未連續增加",
-        "latest_revenue": 19910016000.0,
+        "score": 23,
+        "latest_yoy": 5.180647432609131,
+        "trend": "連續增加",
+        "latest_revenue": 6719168000.0,
         "latest_revenue_month": "2026-09",
         "message": "營收年增率為正",
         "data_available": true
@@ -1149,44 +509,44 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 22.52,
-        "change_periods": 0.41999999999999815,
-        "latest_date": "2026-10-29",
+        "latest_percent": 15.33,
+        "change_periods": 0.040000000000000924,
+        "latest_date": "2026-10-30",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
       "institutional": {
         "data_available": true,
-        "latest_date": "2026-10-29",
+        "latest_date": "2026-10-30",
         "foreign": {
-          "latest_net_shares": -3349747,
-          "latest_net_lots": -3349.7,
-          "net_5d_shares": 2168372,
-          "net_5d_lots": 2168.4,
-          "net_20d_shares": 27069942,
-          "net_20d_lots": 27069.9,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "trust": {
-          "latest_net_shares": 491000,
-          "latest_net_lots": 491.0,
-          "net_5d_shares": 1025588,
-          "net_5d_lots": 1025.6,
-          "net_20d_shares": 419133,
-          "net_20d_lots": 419.1,
-          "consecutive_days": 1,
+          "latest_net_shares": 2087003,
+          "latest_net_lots": 2087.0,
+          "net_5d_shares": 7931535,
+          "net_5d_lots": 7931.5,
+          "net_20d_shares": 50794175,
+          "net_20d_lots": 50794.2,
+          "consecutive_days": 2,
           "trend": "買超"
         },
-        "dealer": {
-          "latest_net_shares": -311276,
-          "latest_net_lots": -311.3,
-          "net_5d_shares": 154531,
-          "net_5d_lots": 154.5,
-          "net_20d_shares": 2032779,
-          "net_20d_lots": 2032.8,
-          "consecutive_days": 1,
+        "trust": {
+          "latest_net_shares": -92200,
+          "latest_net_lots": -92.2,
+          "net_5d_shares": -1614872,
+          "net_5d_lots": -1614.9,
+          "net_20d_shares": -8887555,
+          "net_20d_lots": -8887.6,
+          "consecutive_days": 8,
           "trend": "賣超"
+        },
+        "dealer": {
+          "latest_net_shares": 472755,
+          "latest_net_lots": 472.8,
+          "net_5d_shares": 1711892,
+          "net_5d_lots": 1711.9,
+          "net_20d_shares": 7121109,
+          "net_20d_lots": 7121.1,
+          "consecutive_days": 28,
+          "trend": "買超"
         },
         "summary": "三大法人方向分歧",
         "message": "分析完成"
@@ -1194,418 +554,258 @@
       "technical": {
         "score": 31,
         "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 160.0,
+        "latest_date": "2026-10-30",
+        "latest_close": 38.05,
         "ma": {
-          "ma5": 164.5,
-          "ma10": 162.5,
-          "ma20": 158.35,
-          "ma60": 153.74,
+          "ma5": 38.12,
+          "ma10": 38.04,
+          "ma20": 37.05,
+          "ma60": 35.28,
           "trend": "中期偏多",
           "score": 11
         },
         "rsi": {
-          "value": 52.66,
-          "signal": "中性偏強",
-          "score": 6
+          "value": 64.26,
+          "signal": "偏強",
+          "score": 8
         },
         "macd": {
-          "dif": 3.2402,
-          "dea": 2.7736,
-          "histogram": 0.4666,
+          "dif": 0.7498,
+          "dea": 0.7379,
+          "histogram": 0.0118,
           "signal": "多方",
           "score": 8
         },
         "kd": {
-          "k": 63.37,
-          "d": 70.76,
+          "k": 62.52,
+          "d": 74.03,
           "signal": "中性",
           "score": 3
         },
         "volume": {
-          "today": 9480449.0,
-          "avg5": 7738319.4,
-          "ratio": 1.23,
-          "signal": "量增",
-          "score": 3
+          "today": 4884772.0,
+          "avg5": 7080895.2,
+          "ratio": 0.69,
+          "signal": "量縮",
+          "score": 1
         },
         "breakout": {
-          "high20": 170.0,
-          "low20": 150.0,
-          "distance_to_high20_percent": -5.88,
-          "distance_to_low20_percent": 6.67,
-          "signal": "20日區間內"
+          "high20": 38.7,
+          "low20": 34.9,
+          "distance_to_high20_percent": -1.68,
+          "distance_to_low20_percent": 9.03,
+          "signal": "接近20日高點"
         },
         "message": "技術面偏多"
       },
       "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "微星",
-        "close_price": 160,
-        "pe_ratio": 13.88,
-        "pb_ratio": 2.33,
-        "dividend_yield": 2.63,
+        "valuation_date": "2026-10-30",
+        "stock_name": "亞泥",
+        "close_price": 38.05,
+        "pe_ratio": 10.51,
+        "pb_ratio": 0.73,
+        "dividend_yield": 6.04,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
         "message": ""
       },
-      "chip_score": 17.4,
+      "chip_score": 13.0,
       "chip_score_details": {
         "foreign": {
-          "score": 5.6,
-          "max_score": 7.0,
-          "daily_signal": -1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "trust": {
           "score": 7.0,
           "max_score": 7.0,
           "daily_signal": 1,
           "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 1,
-          "trend": "買超"
-        },
-        "dealer": {
-          "score": 4.8,
-          "max_score": 6.0,
-          "daily_signal": -1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        }
-      },
-      "score_breakdown": {
-        "fundamental": 8.0,
-        "chip": 17.4,
-        "technical": 31.0
-      },
-      "score": 56.4,
-      "status": "⚪ 中性",
-      "data_quality": {
-        "complete": true,
-        "data_complete": true,
-        "score_complete": true,
-        "missing_items": []
-      }
-    },
-    {
-      "stock_id": "2834",
-      "analysis_date": "2026-10-30",
-      "revenue": {
-        "score": 8,
-        "latest_yoy": 6.5173333051895765,
-        "trend": "未連續增加",
-        "latest_revenue": 3229662000.0,
-        "latest_revenue_month": "2026-09",
-        "message": "營收年增率為正",
-        "data_available": true
-      },
-      "foreign_holding": {
-        "score": 0,
-        "trend": "整體減少",
-        "latest_percent": 16.03,
-        "change_periods": -0.00999999999999801,
-        "latest_date": "2026-10-29",
-        "message": "最近 4 期外資持股比例整體減少",
-        "data_available": true
-      },
-      "institutional": {
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "foreign": {
-          "latest_net_shares": 2044476,
-          "latest_net_lots": 2044.5,
-          "net_5d_shares": 5427927,
-          "net_5d_lots": 5427.9,
-          "net_20d_shares": -51084511,
-          "net_20d_lots": -51084.5,
           "consecutive_days": 2,
           "trend": "買超"
         },
         "trust": {
-          "latest_net_shares": 7000,
-          "latest_net_lots": 7.0,
-          "net_5d_shares": -46542,
-          "net_5d_lots": -46.5,
-          "net_20d_shares": 5840344,
-          "net_20d_lots": 5840.3,
-          "consecutive_days": 1,
-          "trend": "買超"
-        },
-        "dealer": {
-          "latest_net_shares": 91110,
-          "latest_net_lots": 91.1,
-          "net_5d_shares": 32943,
-          "net_5d_lots": 32.9,
-          "net_20d_shares": -879162,
-          "net_20d_lots": -879.2,
-          "consecutive_days": 4,
-          "trend": "買超"
-        },
-        "summary": "三大法人同步買超",
-        "message": "分析完成"
-      },
-      "technical": {
-        "score": 36,
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 18.0,
-        "ma": {
-          "ma5": 17.94,
-          "ma10": 17.88,
-          "ma20": 17.71,
-          "ma60": 17.37,
-          "trend": "多頭排列",
-          "score": 15
-        },
-        "rsi": {
-          "value": 57.3,
-          "signal": "中性偏強",
-          "score": 6
-        },
-        "macd": {
-          "dif": 0.0994,
-          "dea": 0.0832,
-          "histogram": 0.0161,
-          "signal": "多方",
-          "score": 8
-        },
-        "kd": {
-          "k": 66.58,
-          "d": 63.8,
-          "signal": "偏強",
-          "score": 5
-        },
-        "volume": {
-          "today": 15576621.0,
-          "avg5": 15799464.4,
-          "ratio": 0.99,
-          "signal": "量能正常",
-          "score": 2
-        },
-        "breakout": {
-          "high20": 18.2,
-          "low20": 17.25,
-          "distance_to_high20_percent": -1.1,
-          "distance_to_low20_percent": 4.35,
-          "signal": "接近20日高點"
-        },
-        "message": "技術面強勢"
-      },
-      "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "臺企銀",
-        "close_price": 18,
-        "pe_ratio": 13.24,
-        "pb_ratio": 1.13,
-        "dividend_yield": 5.56,
-        "dividend_year": 114,
-        "financial_period": "115/2",
-        "data_available": true,
-        "message": ""
-      },
-      "chip_score": 11.8,
-      "chip_score_details": {
-        "foreign": {
-          "score": 3.89,
-          "max_score": 7.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": -1,
-          "consecutive_days": 2,
-          "trend": "買超"
-        },
-        "trust": {
-          "score": 4.55,
-          "max_score": 7.0,
-          "daily_signal": 1,
-          "5d_signal": -1,
-          "20d_signal": 1,
-          "consecutive_days": 1,
-          "trend": "買超"
-        },
-        "dealer": {
-          "score": 3.39,
-          "max_score": 6.0,
-          "daily_signal": 1,
-          "5d_signal": 1,
-          "20d_signal": -1,
-          "consecutive_days": 4,
-          "trend": "買超"
-        }
-      },
-      "score_breakdown": {
-        "fundamental": 8.0,
-        "chip": 11.8,
-        "technical": 36.0
-      },
-      "score": 55.8,
-      "status": "⚪ 中性",
-      "data_quality": {
-        "complete": true,
-        "data_complete": true,
-        "score_complete": true,
-        "missing_items": []
-      }
-    },
-    {
-      "stock_id": "2330",
-      "analysis_date": "2026-10-30",
-      "revenue": {
-        "score": 25,
-        "latest_yoy": 54.64861207105231,
-        "trend": "未連續增加",
-        "latest_revenue": 511857399000.0,
-        "latest_revenue_month": "2026-09",
-        "message": "營收年增率為正",
-        "data_available": true
-      },
-      "foreign_holding": {
-        "score": 0,
-        "trend": "整體減少",
-        "latest_percent": 68.55,
-        "change_periods": -0.030000000000001137,
-        "latest_date": "2026-10-29",
-        "message": "最近 4 期外資持股比例整體減少",
-        "data_available": true
-      },
-      "institutional": {
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "foreign": {
-          "latest_net_shares": -10199,
-          "latest_net_lots": -10.2,
-          "net_5d_shares": -23652175,
-          "net_5d_lots": -23652.2,
-          "net_20d_shares": -152050387,
-          "net_20d_lots": -152050.4,
-          "consecutive_days": 15,
-          "trend": "賣超"
-        },
-        "trust": {
-          "latest_net_shares": 443114,
-          "latest_net_lots": 443.1,
-          "net_5d_shares": 6455048,
-          "net_5d_lots": 6455.0,
-          "net_20d_shares": 23552434,
-          "net_20d_lots": 23552.4,
-          "consecutive_days": 20,
-          "trend": "買超"
-        },
-        "dealer": {
-          "latest_net_shares": -281233,
-          "latest_net_lots": -281.2,
-          "net_5d_shares": 2035858,
-          "net_5d_lots": 2035.9,
-          "net_20d_shares": 17413056,
-          "net_20d_lots": 17413.1,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "summary": "三大法人方向分歧",
-        "message": "分析完成"
-      },
-      "technical": {
-        "score": 15,
-        "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 2415.0,
-        "ma": {
-          "ma5": 2409.0,
-          "ma10": 2422.0,
-          "ma20": 2475.5,
-          "ma60": 2432.5,
-          "trend": "盤整",
-          "score": 5
-        },
-        "rsi": {
-          "value": 43.95,
-          "signal": "中性偏弱",
-          "score": 4
-        },
-        "macd": {
-          "dif": -13.9814,
-          "dea": -1.956,
-          "histogram": -12.0254,
-          "signal": "空方",
-          "score": 1
-        },
-        "kd": {
-          "k": 27.98,
-          "d": 20.14,
-          "signal": "短線轉強",
-          "score": 4
-        },
-        "volume": {
-          "today": 18403916.0,
-          "avg5": 27067098.6,
-          "ratio": 0.68,
-          "signal": "量縮",
-          "score": 1
-        },
-        "breakout": {
-          "high20": 2590.0,
-          "low20": 2380.0,
-          "distance_to_high20_percent": -6.76,
-          "distance_to_low20_percent": 1.47,
-          "signal": "接近20日低點"
-        },
-        "message": "技術面偏弱"
-      },
-      "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "台積電",
-        "close_price": 2415,
-        "pe_ratio": 27.99,
-        "pb_ratio": 9.74,
-        "dividend_yield": 0.91,
-        "dividend_year": 114,
-        "financial_period": "115/2",
-        "data_available": true,
-        "message": ""
-      },
-      "chip_score": 11.8,
-      "chip_score_details": {
-        "foreign": {
           "score": 0.0,
           "max_score": 7.0,
           "daily_signal": -1,
           "5d_signal": -1,
           "20d_signal": -1,
-          "consecutive_days": 15,
+          "consecutive_days": 8,
           "trend": "賣超"
         },
-        "trust": {
-          "score": 7.0,
-          "max_score": 7.0,
+        "dealer": {
+          "score": 6.0,
+          "max_score": 6.0,
           "daily_signal": 1,
           "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 20,
+          "consecutive_days": 28,
+          "trend": "買超"
+        }
+      },
+      "score_breakdown": {
+        "fundamental": 23.0,
+        "chip": 13.0,
+        "technical": 31.0
+      },
+      "score": 67.0,
+      "status": "🟡 偏多",
+      "data_quality": {
+        "complete": true,
+        "data_complete": true,
+        "score_complete": true,
+        "missing_items": []
+      }
+    },
+    {
+      "stock_id": "6117",
+      "analysis_date": "2026-10-31",
+      "revenue": {
+        "score": 40,
+        "latest_yoy": 36.02337019873198,
+        "trend": "連續增加",
+        "latest_revenue": 382748000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "年增率達標且營收連續增加",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 1.38,
+        "change_periods": 0.019999999999999796,
+        "latest_date": "2026-10-30",
+        "message": "最近 4 期外資持股比例整體增加",
+        "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "foreign": {
+          "latest_net_shares": 15503,
+          "latest_net_lots": 15.5,
+          "net_5d_shares": 90934,
+          "net_5d_lots": 90.9,
+          "net_20d_shares": -76892,
+          "net_20d_lots": -76.9,
+          "consecutive_days": 1,
           "trend": "買超"
         },
+        "trust": {
+          "latest_net_shares": 0,
+          "latest_net_lots": 0.0,
+          "net_5d_shares": 0,
+          "net_5d_lots": 0.0,
+          "net_20d_shares": 12,
+          "net_20d_lots": 0.0,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
         "dealer": {
-          "score": 4.8,
+          "latest_net_shares": -16000,
+          "latest_net_lots": -16.0,
+          "net_5d_shares": -71000,
+          "net_5d_lots": -71.0,
+          "net_20d_shares": -461946,
+          "net_20d_lots": -461.9,
+          "consecutive_days": 11,
+          "trend": "賣超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
+      "technical": {
+        "score": 16,
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "latest_close": 64.8,
+        "ma": {
+          "ma5": 65.84,
+          "ma10": 67.0,
+          "ma20": 66.6,
+          "ma60": 64.18,
+          "trend": "站上60日線",
+          "score": 8
+        },
+        "rsi": {
+          "value": 47.29,
+          "signal": "中性偏弱",
+          "score": 4
+        },
+        "macd": {
+          "dif": 0.6212,
+          "dea": 1.0188,
+          "histogram": -0.3976,
+          "signal": "空方",
+          "score": 1
+        },
+        "kd": {
+          "k": 18.35,
+          "d": 22.83,
+          "signal": "偏弱",
+          "score": 1
+        },
+        "volume": {
+          "today": 284392.0,
+          "avg5": 278233.2,
+          "ratio": 1.02,
+          "signal": "量能正常",
+          "score": 2
+        },
+        "breakout": {
+          "high20": 78.2,
+          "low20": 61.6,
+          "distance_to_high20_percent": -17.14,
+          "distance_to_low20_percent": 5.19,
+          "signal": "20日區間內"
+        },
+        "message": "技術面偏弱"
+      },
+      "valuation": {
+        "valuation_date": "2026-10-30",
+        "stock_name": "迎廣",
+        "close_price": 64.8,
+        "pe_ratio": 13.73,
+        "pb_ratio": 2.71,
+        "dividend_yield": 3.09,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
+      },
+      "chip_score": 8.9,
+      "chip_score_details": {
+        "foreign": {
+          "score": 3.85,
+          "max_score": 7.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": -1,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "trust": {
+          "score": 5.08,
+          "max_score": 7.0,
+          "daily_signal": 0,
+          "5d_signal": 0,
+          "20d_signal": 1,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "score": 0.0,
           "max_score": 6.0,
           "daily_signal": -1,
-          "5d_signal": 1,
-          "20d_signal": 1,
-          "consecutive_days": 1,
+          "5d_signal": -1,
+          "20d_signal": -1,
+          "consecutive_days": 11,
           "trend": "賣超"
         }
       },
       "score_breakdown": {
-        "fundamental": 25.0,
-        "chip": 11.8,
-        "technical": 15.0
+        "fundamental": 40.0,
+        "chip": 8.9,
+        "technical": 16.0
       },
-      "score": 51.8,
+      "score": 64.9,
       "status": "⚪ 中性",
       "data_quality": {
         "complete": true,
@@ -1615,116 +815,116 @@
       }
     },
     {
-      "stock_id": "2881",
-      "analysis_date": "2026-10-30",
+      "stock_id": "1101",
+      "analysis_date": "2026-10-31",
       "revenue": {
-        "score": 0,
-        "latest_yoy": -45.39071293609148,
+        "score": 8,
+        "latest_yoy": 7.626848357922,
         "trend": "未連續增加",
-        "latest_revenue": 19467727000.0,
+        "latest_revenue": 14321556000.0,
         "latest_revenue_month": "2026-09",
-        "message": "營收年增率為負",
+        "message": "營收年增率為正",
         "data_available": true
       },
       "foreign_holding": {
-        "score": 20,
-        "trend": "連續增加",
-        "latest_percent": 18.93,
-        "change_periods": 0.05999999999999872,
-        "latest_date": "2026-10-29",
-        "message": "最近 4 期外資持股比例連續增加",
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 13.54,
+        "change_periods": 0.129999999999999,
+        "latest_date": "2026-10-30",
+        "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
       "institutional": {
         "data_available": true,
-        "latest_date": "2026-10-29",
+        "latest_date": "2026-10-30",
         "foreign": {
-          "latest_net_shares": 4943605,
-          "latest_net_lots": 4943.6,
-          "net_5d_shares": 18715382,
-          "net_5d_lots": 18715.4,
-          "net_20d_shares": 27023514,
-          "net_20d_lots": 27023.5,
-          "consecutive_days": 5,
+          "latest_net_shares": 13122966,
+          "latest_net_lots": 13123.0,
+          "net_5d_shares": 34001929,
+          "net_5d_lots": 34001.9,
+          "net_20d_shares": 84976695,
+          "net_20d_lots": 84976.7,
+          "consecutive_days": 3,
           "trend": "買超"
         },
         "trust": {
-          "latest_net_shares": -299547,
-          "latest_net_lots": -299.5,
-          "net_5d_shares": 346880,
-          "net_5d_lots": 346.9,
-          "net_20d_shares": 5267844,
-          "net_20d_lots": 5267.8,
+          "latest_net_shares": -4560000,
+          "latest_net_lots": -4560.0,
+          "net_5d_shares": 2983000,
+          "net_5d_lots": 2983.0,
+          "net_20d_shares": 25067767,
+          "net_20d_lots": 25067.8,
           "consecutive_days": 1,
           "trend": "賣超"
         },
         "dealer": {
-          "latest_net_shares": 91732,
-          "latest_net_lots": 91.7,
-          "net_5d_shares": 1214268,
-          "net_5d_lots": 1214.3,
-          "net_20d_shares": 3832634,
-          "net_20d_lots": 3832.6,
-          "consecutive_days": 5,
+          "latest_net_shares": 988080,
+          "latest_net_lots": 988.1,
+          "net_5d_shares": 4528691,
+          "net_5d_lots": 4528.7,
+          "net_20d_shares": 8773899,
+          "net_20d_lots": 8773.9,
+          "consecutive_days": 3,
           "trend": "買超"
         },
         "summary": "三大法人方向分歧",
         "message": "分析完成"
       },
       "technical": {
-        "score": 30,
+        "score": 37,
         "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 162.0,
+        "latest_date": "2026-10-30",
+        "latest_close": 28.35,
         "ma": {
-          "ma5": 160.4,
-          "ma10": 159.55,
-          "ma20": 156.62,
-          "ma60": 145.53,
+          "ma5": 28.12,
+          "ma10": 27.54,
+          "ma20": 26.72,
+          "ma60": 25.2,
           "trend": "多頭排列",
           "score": 15
         },
         "rsi": {
-          "value": 62.37,
+          "value": 69.0,
           "signal": "偏強",
           "score": 8
         },
         "macd": {
-          "dif": 3.3893,
-          "dea": 3.4584,
-          "histogram": -0.0692,
-          "signal": "空方",
-          "score": 1
+          "dif": 0.844,
+          "dea": 0.7124,
+          "histogram": 0.1316,
+          "signal": "多方",
+          "score": 8
         },
         "kd": {
-          "k": 67.34,
-          "d": 62.48,
+          "k": 83.7,
+          "d": 79.07,
           "signal": "偏強",
           "score": 5
         },
         "volume": {
-          "today": 11226501.0,
-          "avg5": 14654289.2,
-          "ratio": 0.77,
+          "today": 41966086.0,
+          "avg5": 53312987.8,
+          "ratio": 0.79,
           "signal": "量縮",
           "score": 1
         },
         "breakout": {
-          "high20": 164.5,
-          "low20": 147.5,
-          "distance_to_high20_percent": -1.52,
-          "distance_to_low20_percent": 9.83,
+          "high20": 28.5,
+          "low20": 24.8,
+          "distance_to_high20_percent": -0.53,
+          "distance_to_low20_percent": 14.31,
           "signal": "接近20日高點"
         },
-        "message": "技術面偏多"
+        "message": "技術面強勢"
       },
       "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "富邦金",
-        "close_price": 162,
-        "pe_ratio": 15.14,
-        "pb_ratio": 1.99,
-        "dividend_yield": 2.62,
+        "valuation_date": "2026-10-30",
+        "stock_name": "台泥",
+        "close_price": 28.35,
+        "pe_ratio": null,
+        "pb_ratio": 0.92,
+        "dividend_yield": 2.82,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -1738,7 +938,7 @@
           "daily_signal": 1,
           "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 5,
+          "consecutive_days": 3,
           "trend": "買超"
         },
         "trust": {
@@ -1756,17 +956,17 @@
           "daily_signal": 1,
           "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 5,
+          "consecutive_days": 3,
           "trend": "買超"
         }
       },
       "score_breakdown": {
-        "fundamental": 0.0,
+        "fundamental": 8.0,
         "chip": 18.6,
-        "technical": 30.0
+        "technical": 37.0
       },
-      "score": 48.6,
-      "status": "🟠 偏弱",
+      "score": 63.6,
+      "status": "⚪ 中性",
       "data_quality": {
         "complete": true,
         "data_complete": true,
@@ -1775,13 +975,493 @@
       }
     },
     {
-      "stock_id": "2883",
-      "analysis_date": "2026-10-30",
+      "stock_id": "2034",
+      "analysis_date": "2026-10-31",
+      "revenue": {
+        "score": 25,
+        "latest_yoy": 47.38803829917837,
+        "trend": "未連續增加",
+        "latest_revenue": 1464676000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 8.08,
+        "change_periods": 0.07000000000000028,
+        "latest_date": "2026-10-30",
+        "message": "最近 4 期外資持股比例整體增加",
+        "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "foreign": {
+          "latest_net_shares": 608289,
+          "latest_net_lots": 608.3,
+          "net_5d_shares": 3250062,
+          "net_5d_lots": 3250.1,
+          "net_20d_shares": 9816983,
+          "net_20d_lots": 9817.0,
+          "consecutive_days": 2,
+          "trend": "買超"
+        },
+        "trust": {
+          "latest_net_shares": 0,
+          "latest_net_lots": 0.0,
+          "net_5d_shares": 374000,
+          "net_5d_lots": 374.0,
+          "net_20d_shares": 1766000,
+          "net_20d_lots": 1766.0,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "latest_net_shares": 11502,
+          "latest_net_lots": 11.5,
+          "net_5d_shares": -11374,
+          "net_5d_lots": -11.4,
+          "net_20d_shares": 190109,
+          "net_20d_lots": 190.1,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
+      "technical": {
+        "score": 15,
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "latest_close": 23.15,
+        "ma": {
+          "ma5": 23.99,
+          "ma10": 23.82,
+          "ma20": 23.86,
+          "ma60": 21.63,
+          "trend": "站上60日線",
+          "score": 8
+        },
+        "rsi": {
+          "value": 49.24,
+          "signal": "中性偏弱",
+          "score": 4
+        },
+        "macd": {
+          "dif": 0.4945,
+          "dea": 0.6478,
+          "histogram": -0.1533,
+          "signal": "空方",
+          "score": 1
+        },
+        "kd": {
+          "k": 35.34,
+          "d": 48.74,
+          "signal": "偏弱",
+          "score": 1
+        },
+        "volume": {
+          "today": 1546865.0,
+          "avg5": 3760989.8,
+          "ratio": 0.41,
+          "signal": "量縮",
+          "score": 1
+        },
+        "breakout": {
+          "high20": 25.0,
+          "low20": 22.85,
+          "distance_to_high20_percent": -7.4,
+          "distance_to_low20_percent": 1.31,
+          "signal": "接近20日低點"
+        },
+        "message": "技術面偏弱"
+      },
+      "valuation": {
+        "valuation_date": "2026-10-30",
+        "stock_name": "允強",
+        "close_price": 23.15,
+        "pe_ratio": 55.12,
+        "pb_ratio": 1.36,
+        "dividend_yield": 4.32,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
+      },
+      "chip_score": 17.2,
+      "chip_score_details": {
+        "foreign": {
+          "score": 7.0,
+          "max_score": 7.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 2,
+          "trend": "買超"
+        },
+        "trust": {
+          "score": 6.3,
+          "max_score": 7.0,
+          "daily_signal": 0,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "score": 3.9,
+          "max_score": 6.0,
+          "daily_signal": 1,
+          "5d_signal": -1,
+          "20d_signal": 1,
+          "consecutive_days": 1,
+          "trend": "買超"
+        }
+      },
+      "score_breakdown": {
+        "fundamental": 25.0,
+        "chip": 17.2,
+        "technical": 15.0
+      },
+      "score": 57.2,
+      "status": "⚪ 中性",
+      "data_quality": {
+        "complete": true,
+        "data_complete": true,
+        "score_complete": true,
+        "missing_items": []
+      }
+    },
+    {
+      "stock_id": "2834",
+      "analysis_date": "2026-10-31",
+      "revenue": {
+        "score": 8,
+        "latest_yoy": 6.5173333051895765,
+        "trend": "未連續增加",
+        "latest_revenue": 3229662000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 16.12,
+        "change_periods": 0.10999999999999943,
+        "latest_date": "2026-10-30",
+        "message": "最近 4 期外資持股比例整體增加",
+        "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "foreign": {
+          "latest_net_shares": 9125405,
+          "latest_net_lots": 9125.4,
+          "net_5d_shares": 13304113,
+          "net_5d_lots": 13304.1,
+          "net_20d_shares": -33770831,
+          "net_20d_lots": -33770.8,
+          "consecutive_days": 3,
+          "trend": "買超"
+        },
+        "trust": {
+          "latest_net_shares": 0,
+          "latest_net_lots": 0.0,
+          "net_5d_shares": -26542,
+          "net_5d_lots": -26.5,
+          "net_20d_shares": 5831344,
+          "net_20d_lots": 5831.3,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "latest_net_shares": -62367,
+          "latest_net_lots": -62.4,
+          "net_5d_shares": 228394,
+          "net_5d_lots": 228.4,
+          "net_20d_shares": -936770,
+          "net_20d_lots": -936.8,
+          "consecutive_days": 1,
+          "trend": "賣超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
+      "technical": {
+        "score": 37,
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "latest_close": 18.05,
+        "ma": {
+          "ma5": 17.97,
+          "ma10": 17.91,
+          "ma20": 17.73,
+          "ma60": 17.36,
+          "trend": "多頭排列",
+          "score": 15
+        },
+        "rsi": {
+          "value": 58.55,
+          "signal": "中性偏強",
+          "score": 6
+        },
+        "macd": {
+          "dif": 0.1068,
+          "dea": 0.0879,
+          "histogram": 0.0189,
+          "signal": "多方",
+          "score": 8
+        },
+        "kd": {
+          "k": 69.38,
+          "d": 65.66,
+          "signal": "偏強",
+          "score": 5
+        },
+        "volume": {
+          "today": 28095280.0,
+          "avg5": 18954416.4,
+          "ratio": 1.48,
+          "signal": "量增",
+          "score": 3
+        },
+        "breakout": {
+          "high20": 18.2,
+          "low20": 17.25,
+          "distance_to_high20_percent": -0.82,
+          "distance_to_low20_percent": 4.64,
+          "signal": "接近20日高點"
+        },
+        "message": "技術面強勢"
+      },
+      "valuation": {
+        "valuation_date": "2026-10-30",
+        "stock_name": "臺企銀",
+        "close_price": 18.05,
+        "pe_ratio": 13.27,
+        "pb_ratio": 1.14,
+        "dividend_yield": 5.54,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
+      },
+      "chip_score": 9.9,
+      "chip_score_details": {
+        "foreign": {
+          "score": 3.92,
+          "max_score": 7.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": -1,
+          "consecutive_days": 3,
+          "trend": "買超"
+        },
+        "trust": {
+          "score": 3.85,
+          "max_score": 7.0,
+          "daily_signal": 0,
+          "5d_signal": -1,
+          "20d_signal": 1,
+          "consecutive_days": 0,
+          "trend": "持平"
+        },
+        "dealer": {
+          "score": 2.1,
+          "max_score": 6.0,
+          "daily_signal": -1,
+          "5d_signal": 1,
+          "20d_signal": -1,
+          "consecutive_days": 1,
+          "trend": "賣超"
+        }
+      },
+      "score_breakdown": {
+        "fundamental": 8.0,
+        "chip": 9.9,
+        "technical": 37.0
+      },
+      "score": 54.9,
+      "status": "⚪ 中性",
+      "data_quality": {
+        "complete": true,
+        "data_complete": true,
+        "score_complete": true,
+        "missing_items": []
+      }
+    },
+    {
+      "stock_id": "2330",
+      "analysis_date": "2026-10-31",
+      "revenue": {
+        "score": 25,
+        "latest_yoy": 54.64861207105231,
+        "trend": "未連續增加",
+        "latest_revenue": 511857399000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 0,
+        "trend": "整體減少",
+        "latest_percent": 68.51,
+        "change_periods": -0.04999999999999716,
+        "latest_date": "2026-10-30",
+        "message": "最近 4 期外資持股比例整體減少",
+        "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "foreign": {
+          "latest_net_shares": -8632834,
+          "latest_net_lots": -8632.8,
+          "net_5d_shares": -26131111,
+          "net_5d_lots": -26131.1,
+          "net_20d_shares": -156946839,
+          "net_20d_lots": -156946.8,
+          "consecutive_days": 16,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 1854677,
+          "latest_net_lots": 1854.7,
+          "net_5d_shares": 6912213,
+          "net_5d_lots": 6912.2,
+          "net_20d_shares": 24778435,
+          "net_20d_lots": 24778.4,
+          "consecutive_days": 21,
+          "trend": "買超"
+        },
+        "dealer": {
+          "latest_net_shares": 922012,
+          "latest_net_lots": 922.0,
+          "net_5d_shares": 4005503,
+          "net_5d_lots": 4005.5,
+          "net_20d_shares": 18217571,
+          "net_20d_lots": 18217.6,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
+      "technical": {
+        "score": 15,
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "latest_close": 2370.0,
+        "ma": {
+          "ma5": 2399.0,
+          "ma10": 2410.0,
+          "ma20": 2470.25,
+          "ma60": 2431.58,
+          "trend": "盤整",
+          "score": 5
+        },
+        "rsi": {
+          "value": 37.9,
+          "signal": "偏弱",
+          "score": 2
+        },
+        "macd": {
+          "dif": -18.1341,
+          "dea": -5.1916,
+          "histogram": -12.9425,
+          "signal": "空方",
+          "score": 1
+        },
+        "kd": {
+          "k": 22.58,
+          "d": 20.95,
+          "signal": "短線轉強",
+          "score": 4
+        },
+        "volume": {
+          "today": 36615931.0,
+          "avg5": 28971283.8,
+          "ratio": 1.26,
+          "signal": "量增",
+          "score": 3
+        },
+        "breakout": {
+          "high20": 2590.0,
+          "low20": 2380.0,
+          "distance_to_high20_percent": -8.49,
+          "distance_to_low20_percent": -0.42,
+          "signal": "跌破20日低點"
+        },
+        "message": "技術面偏弱"
+      },
+      "valuation": {
+        "valuation_date": "2026-10-30",
+        "stock_name": "台積電",
+        "close_price": 2370,
+        "pe_ratio": 27.47,
+        "pb_ratio": 9.55,
+        "dividend_yield": 0.93,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
+      },
+      "chip_score": 13.0,
+      "chip_score_details": {
+        "foreign": {
+          "score": 0.0,
+          "max_score": 7.0,
+          "daily_signal": -1,
+          "5d_signal": -1,
+          "20d_signal": -1,
+          "consecutive_days": 16,
+          "trend": "賣超"
+        },
+        "trust": {
+          "score": 7.0,
+          "max_score": 7.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 21,
+          "trend": "買超"
+        },
+        "dealer": {
+          "score": 6.0,
+          "max_score": 6.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 1,
+          "trend": "買超"
+        }
+      },
+      "score_breakdown": {
+        "fundamental": 25.0,
+        "chip": 13.0,
+        "technical": 15.0
+      },
+      "score": 53.0,
+      "status": "⚪ 中性",
+      "data_quality": {
+        "complete": true,
+        "data_complete": true,
+        "score_complete": true,
+        "missing_items": []
+      }
+    },
+    {
+      "stock_id": "2881",
+      "analysis_date": "2026-10-31",
       "revenue": {
         "score": 0,
-        "latest_yoy": -46.73068314507328,
+        "latest_yoy": -45.39071293609148,
         "trend": "未連續增加",
-        "latest_revenue": 7598077000.0,
+        "latest_revenue": 19467727000.0,
         "latest_revenue_month": "2026-09",
         "message": "營收年增率為負",
         "data_available": true
@@ -1789,108 +1469,108 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 29.78,
-        "change_periods": 0.05000000000000071,
-        "latest_date": "2026-10-29",
+        "latest_percent": 18.92,
+        "change_periods": 0.0400000000000027,
+        "latest_date": "2026-10-30",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
       "institutional": {
         "data_available": true,
-        "latest_date": "2026-10-29",
+        "latest_date": "2026-10-30",
         "foreign": {
-          "latest_net_shares": -2410211,
-          "latest_net_lots": -2410.2,
-          "net_5d_shares": 85612,
-          "net_5d_lots": 85.6,
-          "net_20d_shares": 20732214,
-          "net_20d_lots": 20732.2,
+          "latest_net_shares": -1305079,
+          "latest_net_lots": -1305.1,
+          "net_5d_shares": 10407853,
+          "net_5d_lots": 10407.9,
+          "net_20d_shares": 21504397,
+          "net_20d_lots": 21504.4,
           "consecutive_days": 1,
           "trend": "賣超"
         },
         "trust": {
-          "latest_net_shares": 713743,
-          "latest_net_lots": 713.7,
-          "net_5d_shares": 9599254,
-          "net_5d_lots": 9599.3,
-          "net_20d_shares": 30193261,
-          "net_20d_lots": 30193.3,
-          "consecutive_days": 5,
+          "latest_net_shares": 1929171,
+          "latest_net_lots": 1929.2,
+          "net_5d_shares": 2119663,
+          "net_5d_lots": 2119.7,
+          "net_20d_shares": 8884015,
+          "net_20d_lots": 8884.0,
+          "consecutive_days": 1,
           "trend": "買超"
         },
         "dealer": {
-          "latest_net_shares": -152075,
-          "latest_net_lots": -152.1,
-          "net_5d_shares": 6143491,
-          "net_5d_lots": 6143.5,
-          "net_20d_shares": 36320807,
-          "net_20d_lots": 36320.8,
-          "consecutive_days": 2,
-          "trend": "賣超"
+          "latest_net_shares": 615938,
+          "latest_net_lots": 615.9,
+          "net_5d_shares": 1558671,
+          "net_5d_lots": 1558.7,
+          "net_20d_shares": 5010693,
+          "net_20d_lots": 5010.7,
+          "consecutive_days": 6,
+          "trend": "買超"
         },
         "summary": "三大法人方向分歧",
         "message": "分析完成"
       },
       "technical": {
-        "score": 24,
+        "score": 31,
         "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 38.5,
+        "latest_date": "2026-10-30",
+        "latest_close": 161.5,
         "ma": {
-          "ma5": 38.3,
-          "ma10": 38.31,
-          "ma20": 38.19,
-          "ma60": 35.59,
-          "trend": "中期偏多",
-          "score": 11
+          "ma5": 161.0,
+          "ma10": 159.65,
+          "ma20": 157.12,
+          "ma60": 146.06,
+          "trend": "多頭排列",
+          "score": 15
         },
         "rsi": {
-          "value": 54.58,
-          "signal": "中性偏強",
-          "score": 6
+          "value": 61.25,
+          "signal": "偏強",
+          "score": 8
         },
         "macd": {
-          "dif": 0.3995,
-          "dea": 0.5436,
-          "histogram": -0.1441,
+          "dif": 3.3478,
+          "dea": 3.4363,
+          "histogram": -0.0885,
           "signal": "空方",
           "score": 1
         },
         "kd": {
-          "k": 51.68,
-          "d": 49.29,
+          "k": 69.13,
+          "d": 64.7,
           "signal": "偏強",
           "score": 5
         },
         "volume": {
-          "today": 24345468.0,
-          "avg5": 40431197.8,
-          "ratio": 0.6,
-          "signal": "量縮",
-          "score": 1
+          "today": 13263693.0,
+          "avg5": 13937688.4,
+          "ratio": 0.95,
+          "signal": "量能正常",
+          "score": 2
         },
         "breakout": {
-          "high20": 39.75,
-          "low20": 36.4,
-          "distance_to_high20_percent": -3.14,
-          "distance_to_low20_percent": 5.77,
-          "signal": "20日區間內"
+          "high20": 164.5,
+          "low20": 147.5,
+          "distance_to_high20_percent": -1.82,
+          "distance_to_low20_percent": 9.49,
+          "signal": "接近20日高點"
         },
-        "message": "技術面中性"
+        "message": "技術面偏多"
       },
       "valuation": {
-        "valuation_date": "2026-10-29",
-        "stock_name": "凱基金",
-        "close_price": 38.5,
-        "pe_ratio": 13.46,
-        "pb_ratio": 1.52,
-        "dividend_yield": 2.6,
+        "valuation_date": "2026-10-30",
+        "stock_name": "富邦金",
+        "close_price": 161.5,
+        "pe_ratio": 15.09,
+        "pb_ratio": 1.99,
+        "dividend_yield": 2.63,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
         "message": ""
       },
-      "chip_score": 17.4,
+      "chip_score": 18.6,
       "chip_score_details": {
         "foreign": {
           "score": 5.6,
@@ -1907,7 +1587,167 @@
           "daily_signal": 1,
           "5d_signal": 1,
           "20d_signal": 1,
-          "consecutive_days": 5,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "dealer": {
+          "score": 6.0,
+          "max_score": 6.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 6,
+          "trend": "買超"
+        }
+      },
+      "score_breakdown": {
+        "fundamental": 0.0,
+        "chip": 18.6,
+        "technical": 31.0
+      },
+      "score": 49.6,
+      "status": "🟠 偏弱",
+      "data_quality": {
+        "complete": true,
+        "data_complete": true,
+        "score_complete": true,
+        "missing_items": []
+      }
+    },
+    {
+      "stock_id": "2377",
+      "analysis_date": "2026-10-31",
+      "revenue": {
+        "score": 8,
+        "latest_yoy": 1.832841346248526,
+        "trend": "未連續增加",
+        "latest_revenue": 19910016000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為正",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 15,
+        "trend": "整體增加",
+        "latest_percent": 22.52,
+        "change_periods": 0.14999999999999858,
+        "latest_date": "2026-10-30",
+        "message": "最近 4 期外資持股比例整體增加",
+        "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "foreign": {
+          "latest_net_shares": -125970,
+          "latest_net_lots": -126.0,
+          "net_5d_shares": 2409431,
+          "net_5d_lots": 2409.4,
+          "net_20d_shares": 26879424,
+          "net_20d_lots": 26879.4,
+          "consecutive_days": 2,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 523687,
+          "latest_net_lots": 523.7,
+          "net_5d_shares": 1015275,
+          "net_5d_lots": 1015.3,
+          "net_20d_shares": 945820,
+          "net_20d_lots": 945.8,
+          "consecutive_days": 2,
+          "trend": "買超"
+        },
+        "dealer": {
+          "latest_net_shares": -82040,
+          "latest_net_lots": -82.0,
+          "net_5d_shares": 72445,
+          "net_5d_lots": 72.4,
+          "net_20d_shares": 1844159,
+          "net_20d_lots": 1844.2,
+          "consecutive_days": 2,
+          "trend": "賣超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
+      "technical": {
+        "score": 15,
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "latest_close": 157.5,
+        "ma": {
+          "ma5": 163.0,
+          "ma10": 162.35,
+          "ma20": 158.68,
+          "ma60": 154.0,
+          "trend": "站上60日線",
+          "score": 8
+        },
+        "rsi": {
+          "value": 49.04,
+          "signal": "中性偏弱",
+          "score": 4
+        },
+        "macd": {
+          "dif": 2.6718,
+          "dea": 2.7533,
+          "histogram": -0.0815,
+          "signal": "空方",
+          "score": 1
+        },
+        "kd": {
+          "k": 48.7,
+          "d": 63.4,
+          "signal": "偏弱",
+          "score": 1
+        },
+        "volume": {
+          "today": 5625997.0,
+          "avg5": 7220479.2,
+          "ratio": 0.78,
+          "signal": "量縮",
+          "score": 1
+        },
+        "breakout": {
+          "high20": 170.0,
+          "low20": 150.5,
+          "distance_to_high20_percent": -7.35,
+          "distance_to_low20_percent": 4.65,
+          "signal": "20日區間內"
+        },
+        "message": "技術面偏弱"
+      },
+      "valuation": {
+        "valuation_date": "2026-10-30",
+        "stock_name": "微星",
+        "close_price": 157.5,
+        "pe_ratio": 13.66,
+        "pb_ratio": 2.29,
+        "dividend_yield": 2.67,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
+      },
+      "chip_score": 17.3,
+      "chip_score_details": {
+        "foreign": {
+          "score": 5.56,
+          "max_score": 7.0,
+          "daily_signal": -1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 2,
+          "trend": "賣超"
+        },
+        "trust": {
+          "score": 7.0,
+          "max_score": 7.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 2,
           "trend": "買超"
         },
         "dealer": {
@@ -1921,11 +1761,171 @@
         }
       },
       "score_breakdown": {
-        "fundamental": 0.0,
-        "chip": 17.4,
-        "technical": 24.0
+        "fundamental": 8.0,
+        "chip": 17.3,
+        "technical": 15.0
       },
-      "score": 41.4,
+      "score": 40.3,
+      "status": "🟠 偏弱",
+      "data_quality": {
+        "complete": true,
+        "data_complete": true,
+        "score_complete": true,
+        "missing_items": []
+      }
+    },
+    {
+      "stock_id": "2883",
+      "analysis_date": "2026-10-31",
+      "revenue": {
+        "score": 0,
+        "latest_yoy": -46.73068314507328,
+        "trend": "未連續增加",
+        "latest_revenue": 7598077000.0,
+        "latest_revenue_month": "2026-09",
+        "message": "營收年增率為負",
+        "data_available": true
+      },
+      "foreign_holding": {
+        "score": 8,
+        "trend": "大致持平",
+        "latest_percent": 29.74,
+        "change_periods": 0.0,
+        "latest_date": "2026-10-30",
+        "message": "最近 4 期外資持股比例大致持平",
+        "data_available": true
+      },
+      "institutional": {
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "foreign": {
+          "latest_net_shares": -8169500,
+          "latest_net_lots": -8169.5,
+          "net_5d_shares": -10274410,
+          "net_5d_lots": -10274.4,
+          "net_20d_shares": 11015866,
+          "net_20d_lots": 11015.9,
+          "consecutive_days": 2,
+          "trend": "賣超"
+        },
+        "trust": {
+          "latest_net_shares": 1045000,
+          "latest_net_lots": 1045.0,
+          "net_5d_shares": 7190979,
+          "net_5d_lots": 7191.0,
+          "net_20d_shares": 30506261,
+          "net_20d_lots": 30506.3,
+          "consecutive_days": 6,
+          "trend": "買超"
+        },
+        "dealer": {
+          "latest_net_shares": 2768600,
+          "latest_net_lots": 2768.6,
+          "net_5d_shares": 7972406,
+          "net_5d_lots": 7972.4,
+          "net_20d_shares": 37862774,
+          "net_20d_lots": 37862.8,
+          "consecutive_days": 1,
+          "trend": "買超"
+        },
+        "summary": "三大法人方向分歧",
+        "message": "分析完成"
+      },
+      "technical": {
+        "score": 16,
+        "data_available": true,
+        "latest_date": "2026-10-30",
+        "latest_close": 37.8,
+        "ma": {
+          "ma5": 38.21,
+          "ma10": 38.23,
+          "ma20": 38.13,
+          "ma60": 35.71,
+          "trend": "站上60日線",
+          "score": 8
+        },
+        "rsi": {
+          "value": 49.76,
+          "signal": "中性偏弱",
+          "score": 4
+        },
+        "macd": {
+          "dif": 0.331,
+          "dea": 0.5011,
+          "histogram": -0.1701,
+          "signal": "空方",
+          "score": 1
+        },
+        "kd": {
+          "k": 43.15,
+          "d": 47.25,
+          "signal": "偏弱",
+          "score": 1
+        },
+        "volume": {
+          "today": 35655612.0,
+          "avg5": 38077616.2,
+          "ratio": 0.94,
+          "signal": "量能正常",
+          "score": 2
+        },
+        "breakout": {
+          "high20": 39.75,
+          "low20": 36.4,
+          "distance_to_high20_percent": -4.91,
+          "distance_to_low20_percent": 3.85,
+          "signal": "20日區間內"
+        },
+        "message": "技術面偏弱"
+      },
+      "valuation": {
+        "valuation_date": "2026-10-30",
+        "stock_name": "凱基金",
+        "close_price": 37.8,
+        "pe_ratio": 13.22,
+        "pb_ratio": 1.5,
+        "dividend_yield": 2.65,
+        "dividend_year": 114,
+        "financial_period": "115/2",
+        "data_available": true,
+        "message": ""
+      },
+      "chip_score": 16.1,
+      "chip_score_details": {
+        "foreign": {
+          "score": 3.11,
+          "max_score": 7.0,
+          "daily_signal": -1,
+          "5d_signal": -1,
+          "20d_signal": 1,
+          "consecutive_days": 2,
+          "trend": "賣超"
+        },
+        "trust": {
+          "score": 7.0,
+          "max_score": 7.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 6,
+          "trend": "買超"
+        },
+        "dealer": {
+          "score": 6.0,
+          "max_score": 6.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": 1,
+          "consecutive_days": 1,
+          "trend": "買超"
+        }
+      },
+      "score_breakdown": {
+        "fundamental": 0.0,
+        "chip": 16.1,
+        "technical": 16.0
+      },
+      "score": 32.1,
       "status": "🟠 偏弱",
       "data_quality": {
         "complete": true,
@@ -1936,7 +1936,7 @@
     },
     {
       "stock_id": "2812",
-      "analysis_date": "2026-10-30",
+      "analysis_date": "2026-10-31",
       "revenue": {
         "score": 0,
         "latest_yoy": -0.034342123869568475,
@@ -1949,143 +1949,143 @@
       "foreign_holding": {
         "score": 15,
         "trend": "整體增加",
-        "latest_percent": 8.67,
-        "change_periods": 0.0600000000000005,
-        "latest_date": "2026-10-29",
+        "latest_percent": 8.72,
+        "change_periods": 0.08000000000000007,
+        "latest_date": "2026-10-30",
         "message": "最近 4 期外資持股比例整體增加",
         "data_available": true
       },
       "institutional": {
         "data_available": true,
-        "latest_date": "2026-10-29",
+        "latest_date": "2026-10-30",
         "foreign": {
-          "latest_net_shares": 3191585,
-          "latest_net_lots": 3191.6,
-          "net_5d_shares": 6875825,
-          "net_5d_lots": 6875.8,
-          "net_20d_shares": -38305141,
-          "net_20d_lots": -38305.1,
-          "consecutive_days": 1,
+          "latest_net_shares": 2853100,
+          "latest_net_lots": 2853.1,
+          "net_5d_shares": 11304175,
+          "net_5d_lots": 11304.2,
+          "net_20d_shares": -23818922,
+          "net_20d_lots": -23818.9,
+          "consecutive_days": 2,
           "trend": "買超"
         },
         "trust": {
-          "latest_net_shares": -1000,
-          "latest_net_lots": -1.0,
-          "net_5d_shares": -45746,
-          "net_5d_lots": -45.7,
-          "net_20d_shares": 3549156,
-          "net_20d_lots": 3549.2,
-          "consecutive_days": 1,
+          "latest_net_shares": -159,
+          "latest_net_lots": -0.2,
+          "net_5d_shares": -16905,
+          "net_5d_lots": -16.9,
+          "net_20d_shares": 3548997,
+          "net_20d_lots": 3549.0,
+          "consecutive_days": 2,
           "trend": "賣超"
         },
         "dealer": {
-          "latest_net_shares": 0,
-          "latest_net_lots": 0.0,
-          "net_5d_shares": 94984,
-          "net_5d_lots": 95.0,
-          "net_20d_shares": -160502,
-          "net_20d_lots": -160.5,
-          "consecutive_days": 0,
-          "trend": "持平"
+          "latest_net_shares": 26000,
+          "latest_net_lots": 26.0,
+          "net_5d_shares": 69984,
+          "net_5d_lots": 70.0,
+          "net_20d_shares": -86356,
+          "net_20d_lots": -86.4,
+          "consecutive_days": 1,
+          "trend": "買超"
         },
         "summary": "三大法人方向分歧",
         "message": "分析完成"
       },
       "technical": {
-        "score": 17,
+        "score": 19,
         "data_available": true,
-        "latest_date": "2026-10-29",
-        "latest_close": 18.65,
+        "latest_date": "2026-10-30",
+        "latest_close": 18.6,
         "ma": {
           "ma5": 18.61,
           "ma10": 18.64,
-          "ma20": 18.69,
-          "ma60": 18.97,
+          "ma20": 18.68,
+          "ma60": 18.94,
           "trend": "中期偏弱",
           "score": 2
         },
         "rsi": {
-          "value": 44.2,
+          "value": 42.53,
           "signal": "中性偏弱",
           "score": 4
         },
         "macd": {
-          "dif": -0.1265,
-          "dea": -0.1368,
-          "histogram": 0.0103,
+          "dif": -0.1221,
+          "dea": -0.1338,
+          "histogram": 0.0117,
           "signal": "多方",
           "score": 8
         },
         "kd": {
-          "k": 30.25,
-          "d": 32.03,
+          "k": 30.17,
+          "d": 31.41,
           "signal": "偏弱",
           "score": 1
         },
         "volume": {
-          "today": 7277514.0,
-          "avg5": 7346246.2,
-          "ratio": 0.99,
-          "signal": "量能正常",
-          "score": 2
+          "today": 13274935.0,
+          "avg5": 8517693.6,
+          "ratio": 1.56,
+          "signal": "明顯量增",
+          "score": 4
         },
         "breakout": {
-          "high20": 19.2,
+          "high20": 19.05,
           "low20": 18.45,
-          "distance_to_high20_percent": -2.86,
-          "distance_to_low20_percent": 1.08,
+          "distance_to_high20_percent": -2.36,
+          "distance_to_low20_percent": 0.81,
           "signal": "接近20日低點"
         },
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-10-29",
+        "valuation_date": "2026-10-30",
         "stock_name": "台中銀",
-        "close_price": 18.65,
-        "pe_ratio": 11.1,
+        "close_price": 18.6,
+        "pe_ratio": 11.07,
         "pb_ratio": 1.17,
-        "dividend_yield": 5.68,
+        "dividend_yield": 5.7,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
         "message": ""
       },
-      "chip_score": 9.7,
+      "chip_score": 10.3,
       "chip_score_details": {
         "foreign": {
-          "score": 3.85,
+          "score": 3.89,
           "max_score": 7.0,
+          "daily_signal": 1,
+          "5d_signal": 1,
+          "20d_signal": -1,
+          "consecutive_days": 2,
+          "trend": "買超"
+        },
+        "trust": {
+          "score": 3.11,
+          "max_score": 7.0,
+          "daily_signal": -1,
+          "5d_signal": -1,
+          "20d_signal": 1,
+          "consecutive_days": 2,
+          "trend": "賣超"
+        },
+        "dealer": {
+          "score": 3.3,
+          "max_score": 6.0,
           "daily_signal": 1,
           "5d_signal": 1,
           "20d_signal": -1,
           "consecutive_days": 1,
           "trend": "買超"
-        },
-        "trust": {
-          "score": 3.15,
-          "max_score": 7.0,
-          "daily_signal": -1,
-          "5d_signal": -1,
-          "20d_signal": 1,
-          "consecutive_days": 1,
-          "trend": "賣超"
-        },
-        "dealer": {
-          "score": 2.7,
-          "max_score": 6.0,
-          "daily_signal": 0,
-          "5d_signal": 1,
-          "20d_signal": -1,
-          "consecutive_days": 0,
-          "trend": "持平"
         }
       },
       "score_breakdown": {
         "fundamental": 0.0,
-        "chip": 9.7,
-        "technical": 17.0
+        "chip": 10.3,
+        "technical": 19.0
       },
-      "score": 26.7,
+      "score": 29.3,
       "status": "🔴 弱勢",
       "data_quality": {
         "complete": true,
