@@ -1,6 +1,6 @@
 {
-  "update_time": "2026-10-30 18:34:29",
-  "stock_count": 1995,
+  "update_time": "2026-10-31 17:41:24",
+  "stock_count": 1996,
   "stocks": [
     {
       "stock_id": "1101",
@@ -10651,6 +10651,12 @@
       "short_name": "漢測",
       "company_name": "漢民測試系統股份有限公司",
       "market": "TPEx"
+    },
+    {
+      "stock_id": "7867",
+      "short_name": "特力屋",
+      "company_name": "特力屋股份有限公司",
+      "market": "TWSE"
     },
     {
       "stock_id": "8011",
