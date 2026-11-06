@@ -1,0 +1,110 @@
+name: Update Stock Price History
+
+on:
+  # 每個交易日台灣時間 18:00 執行
+  # GitHub Actions 使用 UTC，因此設定 10:00
+  schedule:
+    - cron: "0 10 * * 1-5"
+
+  # 允許手動執行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stock-price-history
+  cancel-in-progress: false
+
+jobs:
+  update-stock-price:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 取得 GitHub 專案
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      # 2. 設定 Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      # 3. 安裝必要套件
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # 4. 測試四檔股票
+      - name: Test stock price API
+        run: |
+          python test_stock_price.py
+
+      # 5. 執行正式行情資料收集
+      - name: Update stock price history
+        run: |
+          python stock_price.py
+
+      # 6. 檢查輸出檔案
+      - name: Verify output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          file = Path("stock_prices.json")
+
+          if not file.exists():
+              raise SystemExit("錯誤：找不到 stock_prices.json")
+
+          with file.open("r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          print("更新時間：", data.get("update_time"))
+          print("成功股票：", data.get("stock_count"))
+          print("失敗股票：", data.get("failed_count"))
+
+          if data.get("stock_count", 0) == 0:
+              raise SystemExit("錯誤：沒有任何成功取得行情的股票")
+
+          if data.get("failed_count", 0) > 0:
+              print("警告：部分股票取得行情失敗")
+
+          for stock in data.get("stocks", []):
+              if len(stock.get("data", [])) != 5:
+                  raise SystemExit(
+                      f"錯誤：{stock.get('stock_id')} 行情不足五日"
+                  )
+
+          print("行情資料檢查完成")
+          PY
+
+      # 7. 上傳測試結果
+      - name: Upload test result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stock-price-test-result
+          path: stock_prices_test.json
+          if-no-files-found: ignore
+          retention-days: 7
+
+      # 8. 提交正式行情 JSON
+      - name: Commit stock price data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add stock_prices.json
+
+          if git diff --cached --quiet; then
+            echo "行情資料沒有變動，不需要提交"
+          else
+            git commit -m "Update stock price history"
+            git push origin HEAD:main
+          fi
