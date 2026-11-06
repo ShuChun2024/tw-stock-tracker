@@ -77,9 +77,13 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: esb-6750-api-diagnostic
+          name: esb-6750-full-js-diagnostic
           path: |
             esb_6750_response.txt
-            esb_6750_api_diagnostic.txt
+            esb_inline_scripts.txt
+            esb_main.js.txt
+            esb_global.js.txt
+            esb_tables.js.txt
+            esb_6750_full_js_diagnostic.txt
           if-no-files-found: warn
           retention-days: 7
