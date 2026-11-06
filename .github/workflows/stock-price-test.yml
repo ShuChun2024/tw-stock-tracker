@@ -1,0 +1,63 @@
+name: Test Stock Price TWSE TPEX ESB
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-stock-price:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 下載 GitHub 專案
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # 2. 設定 Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      # 3. 安裝必要套件
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      # 4. 執行行情測試
+      - name: Run stock price test
+        run: |
+          python stock_price_test.py
+      # 5. 顯示測試輸出摘要
+      - name: Show stock price test result
+        if: always()
+        run: |
+          if [ -f stock_prices_test.json ]; then
+            python - <<'PY'
+          import json
+          with open("stock_prices_test.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+          print("更新時間：", data.get("update_time"))
+          print("成功股票：", data.get("stock_count"))
+          print("失敗股票：", data.get("failed_count"))
+          for stock in data.get("stocks", []):
+              print(
+                  stock["stock_id"],
+                  stock["stock_name"],
+                  stock["market"],
+                  "行情筆數：",
+                  len(stock.get("data", []))
+              )
+          print("\n失敗清單：")
+          for item in data.get("failed_stocks", []):
+              print(item)
+          PY
+          else
+            echo "找不到 stock_prices_test.json"
+          fi
+      # 6. 上傳測試結果
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stock-price-test-results
+          path: |
+            stock_prices_test.json
+          if-no-files-found: warn
+          retention-days: 7
