@@ -19,7 +19,7 @@ CONFIG_FILE = BASE_DIR / "config.json"
 STOCK_LIST_FILE = BASE_DIR / "stocks.json"  # 僅供補充股票名稱
 
 # 測試專用輸出檔案，不覆蓋正式 stock_prices.json
-OUTPUT_FILE = BASE_DIR / "stock_prices_test.json"
+OUTPUT_FILE = BASE_DIR / "stock_prices.json"
 
 DAYS_TO_OUTPUT = 5
 
