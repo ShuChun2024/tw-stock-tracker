@@ -1,0 +1,54 @@
+name: Test Emerging Stock Market API
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-esb:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 取得專案程式碼
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 設定 Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3. 安裝 requests
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # 4. 執行 6750 興櫃行情測試
+      - name: Test Emerging Stock API
+        run: |
+          python test_esb.py
+
+      # 5. 確認診斷結果
+      - name: Check test output
+        if: always()
+        run: |
+          if [ -f esb_6750_response.txt ]; then
+            echo "找到興櫃 API 原始回應"
+            ls -lh esb_6750_response.txt
+          else
+            echo "尚未產生原始回應檔"
+          fi
+
+      # 6. 上傳原始回應供除錯
+      - name: Upload ESB diagnostic result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: esb-6750-diagnostic
+          path: esb_6750_response.txt
+          if-no-files-found: warn
+          retention-days: 7
