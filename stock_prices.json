@@ -1,14 +1,8 @@
 {
-  "update_time": "2026-11-06 16:21:11",
-  "stock_count": 12,
-  "failed_count": 1,
-  "failed_stocks": [
-    {
-      "stock_id": "6750",
-      "stock_name": "6750",
-      "error": "6750 無法判斷上市或上櫃市場，已檢查最近 4 個月份"
-    }
-  ],
+  "update_time": "2026-11-07 00:47:57",
+  "stock_count": 13,
+  "failed_count": 0,
+  "failed_stocks": [],
   "days": 5,
   "stocks": [
     {
@@ -344,6 +338,48 @@
           "close": 22.9,
           "change": -0.25,
           "change_percent": -1.08
+        }
+      ]
+    },
+    {
+      "stock_id": "6750",
+      "stock_name": "6750",
+      "market": "ESB",
+      "data": [
+        {
+          "date": "2026-11-06",
+          "weekday": "五",
+          "close": 53.26,
+          "change": -2.24,
+          "change_percent": -4.04
+        },
+        {
+          "date": "2026-11-05",
+          "weekday": "四",
+          "close": 55.5,
+          "change": -0.04,
+          "change_percent": -0.07
+        },
+        {
+          "date": "2026-11-04",
+          "weekday": "三",
+          "close": 55.54,
+          "change": -1.04,
+          "change_percent": -1.84
+        },
+        {
+          "date": "2026-11-03",
+          "weekday": "二",
+          "close": 56.58,
+          "change": -1.08,
+          "change_percent": -1.87
+        },
+        {
+          "date": "2026-11-02",
+          "weekday": "一",
+          "close": 57.66,
+          "change": null,
+          "change_percent": null
         }
       ]
     },
