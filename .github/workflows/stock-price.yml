@@ -1,4 +1,4 @@
-name: Test Stock Price API
+name: Run Stock Price API
 
 on:
   schedule:
@@ -9,11 +9,11 @@ permissions:
   contents: read
 
 concurrency:
-  group: stock-price-test
+  group: stock-price
   cancel-in-progress: false
 
 jobs:
-  test-stock-price:
+  run-stock-price:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,14 +32,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Test stock price API
-        run: python test_stock_price.py
+      - name: Run stock price API
+        run: python stock_price.py
 
-      - name: Upload test result
+      - name: Upload result
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: stock-price-test-result
-          path: stock_prices_test.json
+          name: stock-price-result
+          path: stock_prices.json
           if-no-files-found: ignore
           retention-days: 7
