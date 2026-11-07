@@ -25,7 +25,7 @@ LOG_FILE = BASE_DIR / "stock_analysis.log"
 # 股票代碼與中文名稱資料庫
 STOCKS_FILE = BASE_DIR / "stocks.json"
 
-＃　策略資料庫
+# 股票　策略資料庫
 BREAKOUT_STATE_FILE = BASE_DIR / "breakout_state.json"
 
 # ============================================================
