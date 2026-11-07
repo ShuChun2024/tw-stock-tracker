@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-11-08 02:00:40",
+  "update_time": "2026-11-08 02:06:24",
   "stock_count": 13,
   "complete_count": 12,
   "score_complete_count": 13,
@@ -115,61 +115,60 @@
           "signal": "20日區間內"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 23.9975,
+            "upper": 25.7291,
+            "lower": 22.2659,
+            "bandwidth": 14.4316,
+            "previous_bandwidth": 13.2938,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 5.2461,
+            "current_bandwidth": 14.4316,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 17.7102,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 220297.0,
+            "previous_avg20": 80364.05,
+            "ratio": 2.7412,
             "required_multiple": 1.5,
-            "qualified": false
+            "qualified": true
           },
           "candle": {
-            "open": null,
-            "close": null,
+            "open": 26.25,
+            "close": 25.5,
             "bullish": false
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 69.36,
+            "d": 67.91
           },
           "stop_condition_met": false,
           "conditions": {
             "above_upper_band": false,
             "bullish_candle": false,
-            "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "volume_qualified": true,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面強勢"
       },
@@ -332,61 +331,60 @@
           "signal": "20日區間內"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
+            "middle": 259.025,
+            "upper": 280.1567,
+            "lower": 237.8933,
+            "bandwidth": 16.3163,
+            "previous_bandwidth": 17.5673,
             "bandwidth_expanding": false
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 10.5226,
+            "current_bandwidth": 16.3163,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 16.7937,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 17268314.0,
+            "previous_avg20": 15116675.7,
+            "ratio": 1.1423,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 240.0,
+            "close": 246.5,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 46.21,
+            "d": 59.82
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
+            "bullish_candle": true,
             "volume_qualified": false,
             "bandwidth_expanding": false,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面偏弱"
       },
@@ -549,61 +547,60 @@
           "signal": "跌破20日低點"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 23.435,
+            "upper": 25.0285,
+            "lower": 21.8415,
+            "bandwidth": 13.5989,
+            "previous_bandwidth": 11.3373,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 6.3558,
+            "current_bandwidth": 13.5989,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 19.8421,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 2719548.0,
+            "previous_avg20": 2586712.6,
+            "ratio": 1.0514,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 20.55,
+            "close": 21.5,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 18.56,
+            "d": 23.24
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
+            "bullish_candle": true,
             "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面弱勢"
       },
@@ -766,61 +763,60 @@
           "signal": "跌破20日低點"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 65.82,
+            "upper": 74.0023,
+            "lower": 57.6377,
+            "bandwidth": 24.8627,
+            "previous_bandwidth": 20.0032,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 10.3941,
+            "current_bandwidth": 24.8627,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 38.1343,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 554018.0,
+            "previous_avg20": 884510.5,
+            "ratio": 0.6264,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 53.1,
+            "close": 55.2,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 12.12,
+            "d": 14.55
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
+            "bullish_candle": true,
             "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面偏弱"
       },
@@ -983,61 +979,60 @@
           "signal": "跌破20日低點"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 2400.75,
+            "upper": 2614.6022,
+            "lower": 2186.8978,
+            "bandwidth": 17.8154,
+            "previous_bandwidth": 15.7405,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 6.7978,
+            "current_bandwidth": 17.8154,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 23.5343,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 110714587.0,
+            "previous_avg20": 33164560.4,
+            "ratio": 3.3383,
             "required_multiple": 1.5,
-            "qualified": false
+            "qualified": true
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 2020.0,
+            "close": 2135.0,
+            "bullish": true
           },
           "kd_golden_cross": {
-            "occurred": false,
-            "k": null,
-            "d": null
+            "occurred": true,
+            "k": 16.74,
+            "d": 16.08
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
-            "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "bullish_candle": true,
+            "volume_qualified": true,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面偏弱"
       },
@@ -1200,61 +1195,60 @@
           "signal": "20日區間內"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
+            "middle": 37.495,
+            "upper": 38.9479,
+            "lower": 36.0421,
+            "bandwidth": 7.7498,
+            "previous_bandwidth": 8.8691,
             "bandwidth_expanding": false
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 4.9209,
+            "current_bandwidth": 7.7498,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
-            "is_sideways": false
+            "range_percent": 8.9345,
+            "threshold_percent": 10.0,
+            "is_sideways": true
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 9418266.0,
+            "previous_avg20": 7675924.75,
+            "ratio": 1.227,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 36.1,
+            "close": 36.55,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 35.34,
+            "d": 44.42
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
+            "bullish_candle": true,
             "volume_qualified": false,
             "bandwidth_expanding": false,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面偏弱"
       },
@@ -1417,61 +1411,60 @@
           "signal": "20日區間內"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 58.095,
+            "upper": 61.9687,
+            "lower": 54.2213,
+            "bandwidth": 13.3359,
+            "previous_bandwidth": 13.0285,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 10.6051,
+            "current_bandwidth": 13.3359,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 16.3525,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 138618.0,
+            "previous_avg20": 223678.25,
+            "ratio": 0.6197,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": null,
-            "close": null,
+            "open": 55.5,
+            "close": 54.5,
             "bullish": false
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 32.14,
+            "d": 40.35
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
             "bullish_candle": false,
             "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面弱勢"
       },
@@ -1636,61 +1629,60 @@
           "signal": "20日區間內"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
+            "middle": 27.2025,
+            "upper": 28.7528,
+            "lower": 25.6522,
+            "bandwidth": 11.3983,
+            "previous_bandwidth": 13.0665,
             "bandwidth_expanding": false
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 5.3428,
+            "current_bandwidth": 11.3983,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 13.6017,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 70512966.0,
+            "previous_avg20": 50585172.5,
+            "ratio": 1.3939,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 25.65,
+            "close": 26.75,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 41.64,
+            "d": 54.64
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
+            "bullish_candle": true,
             "volume_qualified": false,
             "bandwidth_expanding": false,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面偏弱"
       },
@@ -1853,61 +1845,60 @@
           "signal": "跌破20日低點"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 157.225,
+            "upper": 171.9847,
+            "lower": 142.4653,
+            "bandwidth": 18.7752,
+            "previous_bandwidth": 14.6298,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 11.5838,
+            "current_bandwidth": 18.7752,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 26.3953,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 7151504.0,
+            "previous_avg20": 7037559.9,
+            "ratio": 1.0162,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 129.0,
+            "close": 137.0,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 18.53,
+            "d": 27.47
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
+            "bullish_candle": true,
             "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面弱勢"
       },
@@ -2070,61 +2061,60 @@
           "signal": "跌破20日低點"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 157.775,
+            "upper": 165.0721,
+            "lower": 150.4779,
+            "bandwidth": 9.25,
+            "previous_bandwidth": 7.5754,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 7.8153,
+            "current_bandwidth": 9.25,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 15.5284,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 48407737.0,
+            "previous_avg20": 18061054.9,
+            "ratio": 2.6802,
             "required_multiple": 1.5,
-            "qualified": false
+            "qualified": true
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 140.5,
+            "close": 148.0,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 34.02,
+            "d": 41.7
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
-            "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "bullish_candle": true,
+            "volume_qualified": true,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面弱勢"
       },
@@ -2287,61 +2277,60 @@
           "signal": "接近20日低點"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
-          "status": "inactive",
-          "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "data_available": true,
+          "latest_date": "2026-11-06",
+          "status": "watching",
+          "signal": "watch",
+          "message": "盤整蓄勢候選股",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
+            "middle": 17.78,
+            "upper": 18.1916,
+            "lower": 17.3684,
+            "bandwidth": 4.6297,
+            "previous_bandwidth": 4.6297,
             "bandwidth_expanding": false
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
-            "is_contracted": false
+            "percentile": 20.0,
+            "threshold": 4.6421,
+            "current_bandwidth": 4.6297,
+            "is_contracted": true
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
-            "is_sideways": false
+            "range_percent": 8.7177,
+            "threshold_percent": 10.0,
+            "is_sideways": true
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 62517103.0,
+            "previous_avg20": 20124962.65,
+            "ratio": 3.1064,
             "required_multiple": 1.5,
-            "qualified": false
+            "qualified": true
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 17.3,
+            "close": 17.35,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 34.69,
+            "d": 42.55
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
-            "volume_qualified": false,
+            "bullish_candle": true,
+            "volume_qualified": true,
             "bandwidth_expanding": false,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面弱勢"
       },
@@ -2504,61 +2493,60 @@
           "signal": "跌破20日低點"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 37.475,
+            "upper": 40.6939,
+            "lower": 34.2561,
+            "bandwidth": 17.1791,
+            "previous_bandwidth": 14.3248,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 9.0105,
+            "current_bandwidth": 17.1791,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 22.4149,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 62885200.0,
+            "previous_avg20": 43371945.55,
+            "ratio": 1.4499,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 31.6,
+            "close": 33.65,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 21.53,
+            "d": 24.22
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
+            "bullish_candle": true,
             "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面弱勢"
       },
@@ -2721,61 +2709,60 @@
           "signal": "跌破20日低點"
         },
         "breakout_strategy": {
-          "data_available": false,
-          "latest_date": null,
+          "data_available": true,
+          "latest_date": "2026-11-06",
           "status": "inactive",
           "signal": "none",
-          "message": "布林突破策略計算失敗",
+          "message": "目前未符合盤整或突破條件",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2,
+            "std_multiplier": 2.0,
             "std_method": "population",
-            "middle": null,
-            "upper": null,
-            "lower": null,
-            "bandwidth": null,
-            "previous_bandwidth": null,
-            "bandwidth_expanding": false
+            "middle": 18.505,
+            "upper": 19.1817,
+            "lower": 17.8283,
+            "bandwidth": 7.3135,
+            "previous_bandwidth": 4.8692,
+            "bandwidth_expanding": true
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20,
-            "threshold": null,
-            "current_bandwidth": null,
+            "percentile": 20.0,
+            "threshold": 4.526,
+            "current_bandwidth": 7.3135,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": null,
-            "threshold_percent": 10,
+            "range_percent": 11.0781,
+            "threshold_percent": 10.0,
             "is_sideways": false
           },
           "volume": {
-            "today": null,
-            "previous_avg20": null,
-            "ratio": null,
+            "today": 34218740.0,
+            "previous_avg20": 12354661.9,
+            "ratio": 2.7697,
             "required_multiple": 1.5,
-            "qualified": false
+            "qualified": true
           },
           "candle": {
-            "open": null,
-            "close": null,
-            "bullish": false
+            "open": 17.15,
+            "close": 17.4,
+            "bullish": true
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": null,
-            "d": null
+            "k": 17.34,
+            "d": 18.4
           },
-          "stop_condition_met": false,
+          "stop_condition_met": true,
           "conditions": {
             "above_upper_band": false,
-            "bullish_candle": false,
-            "volume_qualified": false,
-            "bandwidth_expanding": false,
+            "bullish_candle": true,
+            "volume_qualified": true,
+            "bandwidth_expanding": true,
             "buy_signal": false
-          },
-          "error": "'tuple' object has no attribute 'iloc'"
+          }
         },
         "message": "技術面弱勢"
       },
