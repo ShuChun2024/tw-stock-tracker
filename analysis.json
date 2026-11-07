@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-11-07 03:56:47",
+  "update_time": "2026-11-08 01:37:30",
   "stock_count": 13,
   "complete_count": 12,
   "score_complete_count": 13,
@@ -14,7 +14,7 @@
   "stocks": [
     {
       "stock_id": "1410",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 40,
         "latest_yoy": 109.17440660474718,
@@ -83,13 +83,13 @@
           "score": 8
         },
         "rsi": {
-          "value": 64.69,
+          "value": 64.71,
           "signal": "偏強",
           "score": 8
         },
         "macd": {
-          "dif": 0.2985,
-          "dea": -0.0081,
+          "dif": 0.2986,
+          "dea": -0.008,
           "histogram": 0.3066,
           "signal": "多方",
           "score": 8
@@ -113,6 +113,63 @@
           "distance_to_high20_percent": -6.93,
           "distance_to_low20_percent": 10.15,
           "signal": "20日區間內"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面強勢"
       },
@@ -174,7 +231,7 @@
     },
     {
       "stock_id": "2603",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 40,
         "latest_yoy": 65.03901404949326,
@@ -274,6 +331,63 @@
           "distance_to_low20_percent": 6.71,
           "signal": "20日區間內"
         },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
+        },
         "message": "技術面偏弱"
       },
       "valuation": {
@@ -334,7 +448,7 @@
     },
     {
       "stock_id": "2034",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 40,
         "latest_yoy": 99.8427956157591,
@@ -434,6 +548,63 @@
           "distance_to_low20_percent": -1.83,
           "signal": "跌破20日低點"
         },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
+        },
         "message": "技術面弱勢"
       },
       "valuation": {
@@ -494,7 +665,7 @@
     },
     {
       "stock_id": "6117",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 40,
         "latest_yoy": 36.02337019873198,
@@ -563,7 +734,7 @@
           "score": 5
         },
         "rsi": {
-          "value": 29.04,
+          "value": 29.03,
           "signal": "超賣",
           "score": 3
         },
@@ -593,6 +764,63 @@
           "distance_to_high20_percent": -29.41,
           "distance_to_low20_percent": -6.44,
           "signal": "跌破20日低點"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面偏弱"
       },
@@ -654,7 +882,7 @@
     },
     {
       "stock_id": "2330",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 25,
         "latest_yoy": 54.64861207105231,
@@ -723,14 +951,14 @@
           "score": 2
         },
         "rsi": {
-          "value": 19.57,
+          "value": 19.56,
           "signal": "超賣",
           "score": 3
         },
         "macd": {
-          "dif": -61.3633,
-          "dea": -31.9545,
-          "histogram": -29.4088,
+          "dif": -61.365,
+          "dea": -31.9569,
+          "histogram": -29.408,
           "signal": "空方",
           "score": 1
         },
@@ -753,6 +981,63 @@
           "distance_to_high20_percent": -17.57,
           "distance_to_low20_percent": -4.47,
           "signal": "跌破20日低點"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面偏弱"
       },
@@ -814,7 +1099,7 @@
     },
     {
       "stock_id": "1102",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 23,
         "latest_yoy": 5.180647432609131,
@@ -876,14 +1161,14 @@
         "latest_close": 36.55,
         "ma": {
           "ma5": 37.31,
-          "ma10": 37.71,
-          "ma20": 37.5,
+          "ma10": 37.72,
+          "ma20": 37.49,
           "ma60": 35.67,
           "trend": "站上60日線",
           "score": 8
         },
         "rsi": {
-          "value": 45.26,
+          "value": 45.28,
           "signal": "中性偏弱",
           "score": 4
         },
@@ -913,6 +1198,63 @@
           "distance_to_high20_percent": -5.56,
           "distance_to_low20_percent": 4.58,
           "signal": "20日區間內"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面偏弱"
       },
@@ -974,7 +1316,7 @@
     },
     {
       "stock_id": "6750",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 25,
         "latest_yoy": 35.530886302596244,
@@ -1043,14 +1385,14 @@
           "score": 5
         },
         "rsi": {
-          "value": 36.79,
+          "value": 36.76,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": -0.1573,
-          "dea": 0.3388,
-          "histogram": -0.4961,
+          "dif": -0.1576,
+          "dea": 0.3383,
+          "histogram": -0.4959,
           "signal": "空方",
           "score": 1
         },
@@ -1073,6 +1415,63 @@
           "distance_to_high20_percent": -12.24,
           "distance_to_low20_percent": 2.44,
           "signal": "20日區間內"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面弱勢"
       },
@@ -1136,7 +1535,7 @@
     },
     {
       "stock_id": "1101",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 8,
         "latest_yoy": 7.626848357922,
@@ -1205,14 +1604,14 @@
           "score": 8
         },
         "rsi": {
-          "value": 49.56,
+          "value": 49.57,
           "signal": "中性偏弱",
           "score": 4
         },
         "macd": {
           "dif": 0.5242,
-          "dea": 0.6777,
-          "histogram": -0.1535,
+          "dea": 0.6778,
+          "histogram": -0.1536,
           "signal": "空方",
           "score": 1
         },
@@ -1235,6 +1634,63 @@
           "distance_to_high20_percent": -7.12,
           "distance_to_low20_percent": 7.86,
           "signal": "20日區間內"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面偏弱"
       },
@@ -1296,7 +1752,7 @@
     },
     {
       "stock_id": "2377",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 8,
         "latest_yoy": 1.832841346248526,
@@ -1365,14 +1821,14 @@
           "score": 5
         },
         "rsi": {
-          "value": 28.15,
+          "value": 28.19,
           "signal": "超賣",
           "score": 3
         },
         "macd": {
-          "dif": -2.1072,
-          "dea": 0.7595,
-          "histogram": -2.8668,
+          "dif": -2.107,
+          "dea": 0.7599,
+          "histogram": -2.8669,
           "signal": "空方",
           "score": 1
         },
@@ -1395,6 +1851,63 @@
           "distance_to_high20_percent": -19.41,
           "distance_to_low20_percent": -3.52,
           "signal": "跌破20日低點"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面弱勢"
       },
@@ -1456,7 +1969,7 @@
     },
     {
       "stock_id": "2881",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 0,
         "latest_yoy": -45.39071293609148,
@@ -1525,14 +2038,14 @@
           "score": 5
         },
         "rsi": {
-          "value": 38.67,
+          "value": 38.68,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": 0.747,
-          "dea": 2.294,
-          "histogram": -1.547,
+          "dif": 0.7471,
+          "dea": 2.2942,
+          "histogram": -1.5471,
           "signal": "空方",
           "score": 1
         },
@@ -1555,6 +2068,63 @@
           "distance_to_high20_percent": -10.03,
           "distance_to_low20_percent": -2.31,
           "signal": "跌破20日低點"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面弱勢"
       },
@@ -1616,7 +2186,7 @@
     },
     {
       "stock_id": "2834",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 8,
         "latest_yoy": 6.5173333051895765,
@@ -1685,7 +2255,7 @@
           "score": 5
         },
         "rsi": {
-          "value": 38.5,
+          "value": 38.51,
           "signal": "偏弱",
           "score": 2
         },
@@ -1715,6 +2285,63 @@
           "distance_to_high20_percent": -4.67,
           "distance_to_low20_percent": 0.58,
           "signal": "接近20日低點"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面弱勢"
       },
@@ -1776,7 +2403,7 @@
     },
     {
       "stock_id": "2883",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 0,
         "latest_yoy": -46.73068314507328,
@@ -1845,13 +2472,13 @@
           "score": 5
         },
         "rsi": {
-          "value": 30.34,
+          "value": 30.35,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": -0.6716,
-          "dea": -0.0614,
+          "dif": -0.6715,
+          "dea": -0.0613,
           "histogram": -0.6102,
           "signal": "空方",
           "score": 1
@@ -1875,6 +2502,63 @@
           "distance_to_high20_percent": -14.81,
           "distance_to_low20_percent": -0.44,
           "signal": "跌破20日低點"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面弱勢"
       },
@@ -1936,7 +2620,7 @@
     },
     {
       "stock_id": "2812",
-      "analysis_date": "2026-11-07",
+      "analysis_date": "2026-11-08",
       "revenue": {
         "score": 0,
         "latest_yoy": -0.034342123869568475,
@@ -2035,6 +2719,63 @@
           "distance_to_high20_percent": -8.18,
           "distance_to_low20_percent": -3.33,
           "signal": "跌破20日低點"
+        },
+        "breakout_strategy": {
+          "data_available": false,
+          "latest_date": null,
+          "status": "inactive",
+          "signal": "none",
+          "message": "布林突破策略計算失敗",
+          "bollinger": {
+            "period": 20,
+            "std_multiplier": 2,
+            "std_method": "population",
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
+          },
+          "contraction": {
+            "lookback": 120,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
+            "is_contracted": false
+          },
+          "sideways": {
+            "observation_days": 20,
+            "range_percent": null,
+            "threshold_percent": 10,
+            "is_sideways": false
+          },
+          "volume": {
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
+            "required_multiple": 1.5,
+            "qualified": false
+          },
+          "candle": {
+            "open": null,
+            "close": null,
+            "bullish": false
+          },
+          "kd_golden_cross": {
+            "occurred": false,
+            "k": null,
+            "d": null
+          },
+          "stop_condition_met": false,
+          "conditions": {
+            "above_upper_band": false,
+            "bullish_candle": false,
+            "volume_qualified": false,
+            "bandwidth_expanding": false,
+            "buy_signal": false
+          },
+          "error": "'tuple' object has no attribute 'iloc'"
         },
         "message": "技術面弱勢"
       },
