@@ -186,7 +186,7 @@ function renderStockPrice(s) {
 
       <div class="stock-price-header">
         <div class="stock-price-title">
-          最新交易日收盤情形
+          個股收盤情形
         </div>
 
         <div class="stock-price-market">
