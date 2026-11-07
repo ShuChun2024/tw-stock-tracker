@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-11-08 02:52:23",
+  "update_time": "2026-11-08 03:20:08",
   "stock_count": 13,
   "complete_count": 12,
   "score_complete_count": 13,
@@ -117,6 +117,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 26.25,
+          "latest_low": 25.3,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -333,6 +335,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 249.0,
+          "latest_low": 236.5,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -549,6 +553,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 21.75,
+          "latest_low": 20.35,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -765,6 +771,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 56.0,
+          "latest_low": 53.1,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -981,6 +989,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 2195.0,
+          "latest_low": 2020.0,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -1197,6 +1207,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 36.9,
+          "latest_low": 35.35,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -1373,26 +1385,26 @@
         "ma": {
           "ma5": 56.86,
           "ma10": 57.93,
-          "ma20": 58.1,
-          "ma60": 57.08,
+          "ma20": 57.36,
+          "ma60": 56.7,
           "trend": "盤整",
           "score": 5
         },
         "rsi": {
-          "value": 36.76,
+          "value": 37.78,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": -0.1576,
-          "dea": 0.3383,
-          "histogram": -0.4959,
+          "dif": -0.1105,
+          "dea": 0.2446,
+          "histogram": -0.3551,
           "signal": "空方",
           "score": 1
         },
         "kd": {
-          "k": 32.14,
-          "d": 40.35,
+          "k": 33.41,
+          "d": 43.25,
           "signal": "偏弱",
           "score": 1
         },
@@ -1404,65 +1416,67 @@
           "score": 3
         },
         "breakout": {
-          "high20": 62.1,
+          "high20": 62.0,
           "low20": 53.2,
-          "distance_to_high20_percent": -12.24,
+          "distance_to_high20_percent": -12.1,
           "distance_to_low20_percent": 2.44,
           "signal": "20日區間內"
         },
         "breakout_strategy": {
-          "data_available": true,
-          "latest_date": "2026-11-06",
+          "data_available": false,
+          "latest_date": null,
+          "latest_high": null,
+          "latest_low": null,
           "status": "inactive",
           "signal": "none",
-          "message": "目前未符合盤整或突破條件",
+          "message": "布林收斂歷史資料不足，需要至少 121 個有效帶寬，目前只有 116 個",
           "bollinger": {
             "period": 20,
-            "std_multiplier": 2.0,
+            "std_multiplier": 2,
             "std_method": "population",
-            "middle": 58.095,
-            "upper": 61.9687,
-            "lower": 54.2213,
-            "bandwidth": 13.3359,
-            "previous_bandwidth": 13.0285,
-            "bandwidth_expanding": true
+            "middle": null,
+            "upper": null,
+            "lower": null,
+            "bandwidth": null,
+            "previous_bandwidth": null,
+            "bandwidth_expanding": false
           },
           "contraction": {
             "lookback": 120,
-            "percentile": 20.0,
-            "threshold": 10.6051,
-            "current_bandwidth": 13.3359,
+            "percentile": 20,
+            "threshold": null,
+            "current_bandwidth": null,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 15.3131,
-            "threshold_percent": 10.0,
+            "range_percent": null,
+            "threshold_percent": 10,
             "is_sideways": false
           },
           "volume": {
-            "today": 138618.0,
-            "previous_avg20": 223678.25,
-            "ratio": 0.6197,
+            "today": null,
+            "previous_avg20": null,
+            "ratio": null,
             "required_multiple": 1.5,
             "qualified": false
           },
           "candle": {
-            "open": 55.5,
-            "close": 54.5,
+            "open": null,
+            "close": null,
             "bullish": false
           },
           "kd_golden_cross": {
             "occurred": false,
-            "k": 32.14,
-            "d": 40.35
+            "k": null,
+            "d": null
           },
-          "stop_condition_met": true,
+          "stop_condition_met": false,
           "conditions": {
             "above_upper_band": false,
             "bullish_candle": false,
             "volume_qualified": false,
-            "bandwidth_expanding": true,
+            "bandwidth_expanding": false,
             "buy_signal": false
           }
         },
@@ -1631,6 +1645,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 27.0,
+          "latest_low": 25.6,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -1847,6 +1863,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 139.0,
+          "latest_low": 128.5,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -2063,6 +2081,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 151.0,
+          "latest_low": 140.0,
           "status": "watching",
           "signal": "watch",
           "message": "盤整蓄勢候選股",
@@ -2279,6 +2299,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 17.5,
+          "latest_low": 16.65,
           "status": "watching",
           "signal": "watch",
           "message": "盤整蓄勢候選股",
@@ -2495,6 +2517,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 34.15,
+          "latest_low": 31.1,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
@@ -2711,6 +2735,8 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
+          "latest_high": 17.55,
+          "latest_low": 16.9,
           "status": "inactive",
           "signal": "none",
           "message": "目前未符合盤整或突破條件",
