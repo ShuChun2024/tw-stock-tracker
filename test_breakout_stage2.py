@@ -329,7 +329,7 @@ class TestBreakoutStage2A(unittest.TestCase):
                         invalid_state
                     )
 
-        # 合法的歷史紀錄必須接受
+        # 合法的訊號歷史紀錄
         valid_state = copy.deepcopy(
             self.state
         )
@@ -343,12 +343,25 @@ class TestBreakoutStage2A(unittest.TestCase):
             }
         ]
 
+        # 合法的完整已完成交易紀錄
         valid_state["stocks"]["2330"][
             "trade_history"
         ] = [
             {
+                "entry_signal_date": "2026-09-30",
                 "entry_date": "2026-10-01",
-                "exit_date": "2026-10-10"
+                "entry_price": 100.0,
+                "holding_days": 7,
+                "highest_price": 110.0,
+                "lowest_price": 95.0,
+                "mfe_pct": 10.0,
+                "mae_pct": -5.0,
+                "pending_exit_date": "2026-10-09",
+                "pending_exit_reason": "跌破中軌停損",
+                "exit_date": "2026-10-10",
+                "exit_price": 98.0,
+                "return_pct": -2.0,
+                "exit_reason": "跌破中軌停損"
             }
         ]
 
