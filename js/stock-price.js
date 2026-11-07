@@ -186,7 +186,7 @@ function renderStockPrice(s) {
 
       <div class="stock-price-header">
         <div class="stock-price-title">
-          近 5 個交易日行情
+          最新交易日收盤情形
         </div>
 
         <div class="stock-price-market">
