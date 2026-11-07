@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-11-08 02:06:24",
+  "update_time": "2026-11-08 02:52:23",
   "stock_count": 13,
   "complete_count": 12,
   "score_complete_count": 13,
@@ -140,7 +140,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 17.7102,
+            "range_percent": 17.762,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -356,7 +356,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 16.7937,
+            "range_percent": 16.8262,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -572,7 +572,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 19.8421,
+            "range_percent": 13.1593,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -788,7 +788,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 38.1343,
+            "range_percent": 28.8744,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -1004,7 +1004,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 23.5343,
+            "range_percent": 14.6497,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -1214,15 +1214,15 @@
           "contraction": {
             "lookback": 120,
             "percentile": 20.0,
-            "threshold": 4.9209,
+            "threshold": 4.8773,
             "current_bandwidth": 7.7498,
             "is_contracted": false
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 8.9345,
+            "range_percent": 10.016,
             "threshold_percent": 10.0,
-            "is_sideways": true
+            "is_sideways": false
           },
           "volume": {
             "today": 9418266.0,
@@ -1436,7 +1436,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 16.3525,
+            "range_percent": 15.3131,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -1654,7 +1654,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 13.6017,
+            "range_percent": 14.7465,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -1870,7 +1870,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 26.3953,
+            "range_percent": 17.7075,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -2063,9 +2063,9 @@
         "breakout_strategy": {
           "data_available": true,
           "latest_date": "2026-11-06",
-          "status": "inactive",
-          "signal": "none",
-          "message": "目前未符合盤整或突破條件",
+          "status": "watching",
+          "signal": "watch",
+          "message": "盤整蓄勢候選股",
           "bollinger": {
             "period": 20,
             "std_multiplier": 2.0,
@@ -2082,13 +2082,13 @@
             "percentile": 20.0,
             "threshold": 7.8153,
             "current_bandwidth": 9.25,
-            "is_contracted": false
+            "is_contracted": true
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 15.5284,
+            "range_percent": 8.2226,
             "threshold_percent": 10.0,
-            "is_sideways": false
+            "is_sideways": true
           },
           "volume": {
             "today": 48407737.0,
@@ -2296,13 +2296,13 @@
           "contraction": {
             "lookback": 120,
             "percentile": 20.0,
-            "threshold": 4.6421,
+            "threshold": 4.6606,
             "current_bandwidth": 4.6297,
             "is_contracted": true
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 8.7177,
+            "range_percent": 5.3431,
             "threshold_percent": 10.0,
             "is_sideways": true
           },
@@ -2518,7 +2518,7 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 22.4149,
+            "range_percent": 15.1294,
             "threshold_percent": 10.0,
             "is_sideways": false
           },
@@ -2734,9 +2734,9 @@
           },
           "sideways": {
             "observation_days": 20,
-            "range_percent": 11.0781,
+            "range_percent": 5.1158,
             "threshold_percent": 10.0,
-            "is_sideways": false
+            "is_sideways": true
           },
           "volume": {
             "today": 34218740.0,
