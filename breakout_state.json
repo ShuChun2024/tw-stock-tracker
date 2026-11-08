@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "update_time": "2026-11-08 15:22:05",
+  "update_time": "2026-11-08 21:00:32",
   "stock_count": 13,
   "stocks": {
     "1101": {
@@ -110,15 +110,24 @@
     "2881": {
       "stock_id": "2881",
       "watchlist_active": true,
-      "status": "inactive",
+      "status": "watching",
       "last_processed_date": "2026-11-06",
-      "watch_signal": null,
+      "watch_signal": {
+        "date": "2026-11-06",
+        "reason": "布林收斂且股價呈現盤整"
+      },
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
-      "signal_history": [],
+      "signal_history": [
+        {
+          "type": "watch",
+          "date": "2026-11-06",
+          "reason": "布林收斂且股價呈現盤整"
+        }
+      ],
       "trade_history": [],
-      "updated_at": "2026-11-08T14:20:09.035105+08:00"
+      "updated_at": "2026-11-08T21:00:27.477770+08:00"
     },
     "1410": {
       "stock_id": "1410",
@@ -136,15 +145,24 @@
     "2834": {
       "stock_id": "2834",
       "watchlist_active": true,
-      "status": "inactive",
+      "status": "watching",
       "last_processed_date": "2026-11-06",
-      "watch_signal": null,
+      "watch_signal": {
+        "date": "2026-11-06",
+        "reason": "布林收斂且股價呈現盤整"
+      },
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
-      "signal_history": [],
+      "signal_history": [
+        {
+          "type": "watch",
+          "date": "2026-11-06",
+          "reason": "布林收斂且股價呈現盤整"
+        }
+      ],
       "trade_history": [],
-      "updated_at": "2026-11-08T14:20:08.472318+08:00"
+      "updated_at": "2026-11-08T21:00:24.828230+08:00"
     },
     "1102": {
       "stock_id": "1102",
