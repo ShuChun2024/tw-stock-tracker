@@ -1,0 +1,48 @@
+name: Test Breakout Strategy
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "breakout.py"
+      - "main.py"
+      - "technical.py"
+      - "test_breakout*.py"
+      - ".github/workflows/test_breakout.yml"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    name: Breakout Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check Python syntax
+        run: |
+          python -m py_compile breakout.py
+          python -m py_compile main.py
+          python -m py_compile technical.py
+          python -m py_compile test_breakout*.py
+      - name: Run Breakout Unit Tests
+        run: |
+          python -m unittest discover -v -p "test_breakout*.py"
+      - name: Test Summary
+        if: success()
+        run: |
+          echo "======================================"
+          echo "Breakout Strategy Tests Passed"
+          echo "Stage 1: State Management"
+          echo "Stage 2: State Validation"
+          echo "Stage 3: Trade Schema Validation"
+          echo "Stage 4: Trade Execution Flow"
+          echo "======================================"
