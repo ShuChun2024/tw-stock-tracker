@@ -1,0 +1,50 @@
+name: Run Stock Analysis
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 台灣時間每天 21:00（UTC 13:00）
+    - cron: "0 13 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install FinMind pandas requests
+
+      - name: Run stock analysis
+        env:
+          FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
+        run: |
+          python main.py
+
+      - name: Commit and push analysis results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add analysis.json breakout_state.json
+
+          if git diff --cached --quiet; then
+            echo "沒有新的分析結果需要提交"
+          else
+            git commit -m "Update stock analysis and breakout state"
+            git push
+          fi
