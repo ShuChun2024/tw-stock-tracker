@@ -1,4 +1,4 @@
-name: Run Stock Analysis
+name: Run Stock Analysis2
 
 on:
   workflow_dispatch:
