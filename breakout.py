@@ -1388,9 +1388,9 @@ def process_breakout_stock(
     today = market["date"]
 
     today_date = datetime.date.fromisoformat(today)
-
+    
     # --------------------------------------------------------
-    # 12.1 同一交易日不得重複處理
+    # 12.1 同一交易日防重複及未保存訊號補救
     # --------------------------------------------------------
 
     last_date = item["last_processed_date"]
@@ -1407,26 +1407,51 @@ def process_breakout_stock(
             last_date
         )
 
-        if today_date <= last_processed_day:
+        if today_date < last_processed_day:
 
             logging.info(
-                "股票 %s 交易日 %s 已處理，"
-                "跳過重複或較舊資料。",
+                "股票 %s 資料日期 %s 早於最後處理日期 %s，"
+                "跳過較舊資料。",
                 stock_id,
-                today
+                today,
+                last_date
             )
 
             return False
 
-    open_price = None
+        if today_date == last_processed_day:
 
-    if market["open"] is not None:
+            # 同日只允許補救尚未保存訊號的 inactive 股票。
+            # 不重新處理持倉、已完成交易或既有訊號。
+            can_recover_signal = (
+                item["status"] == "inactive"
+                and item["watch_signal"] is None
+                and item["entry_signal"] is None
+                and item["active_trade"] is None
+                and (
+                    market["watch_signal"]
+                    or market["buy_signal"]
+                )
+            )
 
-        open_price = get_valid_price(
-            market["open"],
-            "latest_open"
-        )
+            if not can_recover_signal:
 
+                logging.info(
+                    "股票 %s 交易日 %s 已處理，"
+                    "沒有符合補救條件，跳過重複資料。",
+                    stock_id,
+                    today
+                )
+
+                return False
+
+            logging.warning(
+                "股票 %s 交易日 %s 發現尚未保存的訊號，"
+                "允許同日補救處理。",
+                stock_id,
+                today
+            )
+    
     # --------------------------------------------------------
     # 12.2 有待出場交易：下一交易日開盤出場
     # --------------------------------------------------------
