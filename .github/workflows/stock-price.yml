@@ -2,7 +2,7 @@ name: Update Stock Price History
 
 on:
   schedule:
-    - cron: "0 10 * * 1-5" # 台灣時間平日 18:00
+    - cron: "7 10 * * 1-5" # 台灣時間平日 18:00
   workflow_dispatch:
 
 permissions:
