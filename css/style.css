@@ -1044,6 +1044,7 @@ a {
     font-size: 17px;
   }
 }
+
 /* =====================================================
    布林突破策略
    ===================================================== */
@@ -1061,43 +1062,85 @@ a {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .breakout-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
 }
 
+/* =====================================================
+   策略狀態
+   ===================================================== */
+
 .breakout-status {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 11px;
+  font-weight: bold;
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 5px 9px;
+  padding: 5px 11px;
   white-space: nowrap;
 }
 
 .breakout-inactive {
   color: var(--muted);
+  background: rgba(148, 163, 184, .08);
 }
 
 .breakout-watching {
   color: var(--yellow);
-  border-color: var(--yellow);
+  border-color: rgba(251, 191, 36, .5);
+  background: rgba(251, 191, 36, .08);
 }
 
 .breakout-holding {
   color: var(--red);
-  border-color: var(--red);
+  border-color: rgba(255, 114, 114, .5);
+  background: rgba(255, 114, 114, .08);
 }
 
 .breakout-stopped {
   color: var(--green);
-  border-color: var(--green);
+  border-color: rgba(74, 222, 128, .4);
+  background: rgba(74, 222, 128, .08);
 }
 
-/* 卡片摘要 */
+/* =====================================================
+   觀測清單狀態
+   ===================================================== */
+
+.breakout-watchlist-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.breakout-watchlist-active {
+  color: var(--green);
+  background: rgba(74, 222, 128, .1);
+}
+
+.breakout-watchlist-inactive {
+  color: var(--muted);
+  background: rgba(148, 163, 184, .1);
+}
+
+.breakout-watchlist-unknown {
+  color: var(--yellow);
+  background: rgba(251, 191, 36, .1);
+}
+
+/* =====================================================
+   卡片摘要
+   ===================================================== */
 
 .breakout-summary {
   display: grid;
@@ -1107,28 +1150,33 @@ a {
 
 .breakout-summary-item {
   background: #111c2d;
-  border-radius: 8px;
-  padding: 10px;
+  border: 1px solid rgba(51, 65, 85, .55);
+  border-radius: 9px;
+  padding: 11px;
   min-width: 0;
 }
 
 .breakout-summary-label {
   color: var(--muted);
   font-size: 11px;
+  margin-bottom: 7px;
 }
 
 .breakout-summary-value {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  margin-top: 5px;
+  line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
-/* 詳細資料收合 */
+/* =====================================================
+   詳細資料收合
+   ===================================================== */
 
 .breakout-details {
-  margin-top: 10px;
+  margin-top: 11px;
   border-top: 1px solid var(--border);
+  padding-top: 10px;
 }
 
 .breakout-toggle {
@@ -1137,14 +1185,16 @@ a {
   background: #263449;
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 10px;
+  border-radius: 9px;
+  padding: 11px 12px;
   font-size: 13px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
+  transition: border-color .2s ease,
+              background .2s ease;
 }
 
 .breakout-toggle::-webkit-details-marker {
@@ -1157,11 +1207,17 @@ a {
 
 .breakout-toggle:hover {
   border-color: var(--blue);
+  background: #2b3b53;
+}
+
+.breakout-toggle:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
 .breakout-toggle-arrow {
   color: var(--blue);
-  font-size: 16px;
+  font-size: 17px;
   flex-shrink: 0;
   transition: transform .2s ease;
 }
@@ -1170,22 +1226,25 @@ a {
   transform: rotate(180deg);
 }
 
-/* 詳細內容 */
-
 .breakout-detail-content {
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
+/* =====================================================
+   詳細資料區塊
+   ===================================================== */
+
 .breakout-subsection {
-  margin-top: 12px;
-  padding-top: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
   border-top: 1px solid var(--border);
+  min-width: 0;
 }
 
 .breakout-subtitle {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   color: var(--blue);
 }
 
@@ -1197,26 +1256,31 @@ a {
 
 .breakout-field {
   background: #111c2d;
+  border: 1px solid rgba(51, 65, 85, .45);
   border-radius: 8px;
-  padding: 9px;
+  padding: 10px;
   min-width: 0;
 }
 
 .breakout-field-label {
   color: var(--muted);
   font-size: 11px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .breakout-field-value {
   color: var(--text);
   font-size: 13px;
-  line-height: 1.6;
+  font-weight: 500;
+  line-height: 1.65;
   overflow-wrap: anywhere;
+  word-break: break-word;
   white-space: pre-wrap;
 }
 
-/* 歷史紀錄 */
+/* =====================================================
+   歷史訊號及交易紀錄
+   ===================================================== */
 
 .breakout-history-list {
   display: grid;
@@ -1226,41 +1290,136 @@ a {
 .breakout-history-item {
   background: #111c2d;
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 10px;
+  border-radius: 9px;
+  padding: 11px;
   min-width: 0;
+}
+
+.breakout-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .breakout-history-title {
   font-size: 12px;
   font-weight: bold;
-  margin-bottom: 9px;
   color: var(--text);
 }
+
+.breakout-signal-type {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: .3px;
+  white-space: nowrap;
+}
+
+.breakout-signal-watch {
+  color: var(--yellow);
+  border-color: rgba(251, 191, 36, .4);
+  background: rgba(251, 191, 36, .08);
+}
+
+.breakout-signal-watch-end {
+  color: var(--muted);
+  border-color: rgba(148, 163, 184, .35);
+  background: rgba(148, 163, 184, .08);
+}
+
+.breakout-signal-entry {
+  color: var(--red);
+  border-color: rgba(255, 114, 114, .4);
+  background: rgba(255, 114, 114, .08);
+}
+
+.breakout-signal-exit {
+  color: var(--green);
+  border-color: rgba(74, 222, 128, .4);
+  background: rgba(74, 222, 128, .08);
+}
+
+.breakout-signal-stop {
+  color: var(--muted);
+  border-color: var(--border);
+  background: rgba(148, 163, 184, .08);
+}
+
+.breakout-signal-other {
+  color: var(--blue);
+  border-color: rgba(96, 165, 250, .4);
+  background: rgba(96, 165, 250, .08);
+}
+
+/* =====================================================
+   空資料狀態
+   ===================================================== */
 
 .breakout-empty {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.7;
   background: #111c2d;
+  border: 1px dashed rgba(148, 163, 184, .25);
   border-radius: 8px;
-  padding: 10px;
+  padding: 12px;
   overflow-wrap: anywhere;
 }
+
+/* =====================================================
+   更新資訊
+   ===================================================== */
 
 .breakout-meta {
   color: var(--muted);
   font-size: 11px;
-  line-height: 1.8;
-  margin-top: 12px;
-  padding-top: 10px;
+  line-height: 1.7;
+  margin-top: 14px;
+  padding-top: 11px;
   border-top: 1px solid var(--border);
+  display: grid;
+  gap: 6px;
   overflow-wrap: anywhere;
 }
 
-/* 手機版 */
+.breakout-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.breakout-meta-row span:first-child {
+  flex-shrink: 0;
+}
+
+.breakout-meta-row span:last-child {
+  text-align: right;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* =====================================================
+   手機版
+   ===================================================== */
 
 @media (max-width: 480px) {
+
+  .breakout-header {
+    margin-bottom: 10px;
+  }
+
+  .breakout-title {
+    font-size: 13px;
+  }
+
   .breakout-summary {
     gap: 7px;
   }
@@ -1270,7 +1429,7 @@ a {
   }
 
   .breakout-summary-value {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .breakout-fields {
@@ -1281,11 +1440,58 @@ a {
     padding: 8px;
   }
 
+  .breakout-field-label {
+    font-size: 10px;
+  }
+
   .breakout-field-value {
     font-size: 12px;
   }
 
   .breakout-toggle {
     font-size: 12px;
+    padding: 10px;
+  }
+
+  .breakout-history-item {
+    padding: 9px;
+  }
+
+  .breakout-history-header {
+    margin-bottom: 8px;
+  }
+
+  .breakout-history-title {
+    font-size: 12px;
+  }
+
+  .breakout-signal-type {
+    font-size: 9px;
+    padding: 4px 7px;
+  }
+
+  .breakout-empty {
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .breakout-meta {
+    font-size: 10px;
+  }
+
+  .breakout-meta-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .breakout-meta-row span:last-child {
+    text-align: left;
   }
 }
+
+
+
+
+
+
+
