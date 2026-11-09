@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-11-09 22:58:20",
+  "update_time": "2026-11-10 01:59:31",
   "stock_count": 13,
   "complete_count": 12,
   "score_complete_count": 13,
@@ -14,7 +14,7 @@
   "stocks": [
     {
       "stock_id": "1410",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 40,
         "latest_yoy": 31.793566554749276,
@@ -83,7 +83,7 @@
           "score": 8
         },
         "rsi": {
-          "value": 64.72,
+          "value": 64.71,
           "signal": "偏強",
           "score": 8
         },
@@ -175,7 +175,7 @@
         "message": "技術面偏多"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "南染",
         "close_price": 25.5,
         "pe_ratio": 34.93,
@@ -232,7 +232,7 @@
     },
     {
       "stock_id": "2034",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 40,
         "latest_yoy": 99.8427956157591,
@@ -393,12 +393,12 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "允強",
-        "close_price": 21.5,
-        "pe_ratio": 51.19,
-        "pb_ratio": 1.26,
-        "dividend_yield": 4.65,
+        "close_price": 22.5,
+        "pe_ratio": 53.57,
+        "pb_ratio": 1.32,
+        "dividend_yield": 4.44,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -450,7 +450,7 @@
     },
     {
       "stock_id": "2603",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 40,
         "latest_yoy": 65.03901404949326,
@@ -519,14 +519,14 @@
           "score": 8
         },
         "rsi": {
-          "value": 42.89,
+          "value": 42.88,
           "signal": "中性偏弱",
           "score": 4
         },
         "macd": {
-          "dif": 3.3952,
-          "dea": 6.059,
-          "histogram": -2.6639,
+          "dif": 3.395,
+          "dea": 6.0588,
+          "histogram": -2.6638,
           "signal": "空方",
           "score": 1
         },
@@ -611,12 +611,12 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "長榮",
-        "close_price": 246.5,
-        "pe_ratio": 9.77,
+        "close_price": 245.5,
+        "pe_ratio": 9.73,
         "pb_ratio": 0.95,
-        "dividend_yield": 6.49,
+        "dividend_yield": 6.52,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -668,7 +668,7 @@
     },
     {
       "stock_id": "6117",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 40,
         "latest_yoy": 36.02337019873198,
@@ -737,14 +737,14 @@
           "score": 5
         },
         "rsi": {
-          "value": 39.86,
+          "value": 39.85,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": -1.5568,
-          "dea": -0.35,
-          "histogram": -1.2069,
+          "dif": -1.5571,
+          "dea": -0.3503,
+          "histogram": -1.2067,
           "signal": "空方",
           "score": 1
         },
@@ -829,12 +829,12 @@
         "message": "技術面弱勢"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "迎廣",
-        "close_price": 55.2,
-        "pe_ratio": 11.69,
-        "pb_ratio": 2.3,
-        "dividend_yield": 3.62,
+        "close_price": 59,
+        "pe_ratio": 12.5,
+        "pb_ratio": 2.46,
+        "dividend_yield": 3.39,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -886,7 +886,7 @@
     },
     {
       "stock_id": "1102",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 23,
         "latest_yoy": 5.180647432609131,
@@ -955,7 +955,7 @@
           "score": 8
         },
         "rsi": {
-          "value": 48.51,
+          "value": 48.5,
           "signal": "中性偏弱",
           "score": 4
         },
@@ -1047,12 +1047,12 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "亞泥",
-        "close_price": 36.55,
-        "pe_ratio": 10.1,
-        "pb_ratio": 0.7,
-        "dividend_yield": 6.29,
+        "close_price": 36.85,
+        "pe_ratio": 10.18,
+        "pb_ratio": 0.71,
+        "dividend_yield": 6.24,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -1104,7 +1104,7 @@
     },
     {
       "stock_id": "6750",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 25,
         "latest_yoy": 35.530886302596244,
@@ -1173,14 +1173,14 @@
           "score": 5
         },
         "rsi": {
-          "value": 37.86,
+          "value": 37.73,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": -0.1106,
-          "dea": 0.2444,
-          "histogram": -0.355,
+          "dif": -0.1116,
+          "dea": 0.2429,
+          "histogram": -0.3546,
           "signal": "空方",
           "score": 1
         },
@@ -1324,7 +1324,7 @@
     },
     {
       "stock_id": "2330",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 25,
         "latest_yoy": 54.64861207105231,
@@ -1393,14 +1393,14 @@
           "score": 2
         },
         "rsi": {
-          "value": 35.48,
+          "value": 35.46,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": -63.4801,
-          "dea": -38.2578,
-          "histogram": -25.2222,
+          "dif": -63.4846,
+          "dea": -38.2645,
+          "histogram": -25.2201,
           "signal": "空方",
           "score": 1
         },
@@ -1485,12 +1485,12 @@
         "message": "技術面弱勢"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "台積電",
-        "close_price": 2135,
-        "pe_ratio": 24.75,
-        "pb_ratio": 8.61,
-        "dividend_yield": 1.03,
+        "close_price": 2235,
+        "pe_ratio": 25.91,
+        "pb_ratio": 9.01,
+        "dividend_yield": 0.98,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -1542,7 +1542,7 @@
     },
     {
       "stock_id": "1101",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 8,
         "latest_yoy": 7.626848357922,
@@ -1617,8 +1617,8 @@
         },
         "macd": {
           "dif": 0.4414,
-          "dea": 0.6305,
-          "histogram": -0.1891,
+          "dea": 0.6306,
+          "histogram": -0.1892,
           "signal": "空方",
           "score": 1
         },
@@ -1703,9 +1703,9 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "台泥",
-        "close_price": 26.75,
+        "close_price": 26.8,
         "pe_ratio": null,
         "pb_ratio": 0.87,
         "dividend_yield": 2.99,
@@ -1760,7 +1760,7 @@
     },
     {
       "stock_id": "2377",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 8,
         "latest_yoy": 1.832841346248526,
@@ -1829,14 +1829,14 @@
           "score": 5
         },
         "rsi": {
-          "value": 37.4,
+          "value": 37.39,
           "signal": "偏弱",
           "score": 2
         },
         "macd": {
-          "dif": -2.7204,
-          "dea": 0.0627,
-          "histogram": -2.7831,
+          "dif": -2.7206,
+          "dea": 0.0625,
+          "histogram": -2.783,
           "signal": "空方",
           "score": 1
         },
@@ -1921,12 +1921,12 @@
         "message": "技術面弱勢"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "微星",
-        "close_price": 137,
-        "pe_ratio": 11.88,
-        "pb_ratio": 1.99,
-        "dividend_yield": 3.07,
+        "close_price": 143,
+        "pe_ratio": 12.4,
+        "pb_ratio": 2.08,
+        "dividend_yield": 2.94,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -1978,7 +1978,7 @@
     },
     {
       "stock_id": "2881",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 0,
         "latest_yoy": -45.39071293609148,
@@ -2047,13 +2047,13 @@
           "score": 8
         },
         "rsi": {
-          "value": 47.77,
+          "value": 47.78,
           "signal": "中性偏弱",
           "score": 4
         },
         "macd": {
           "dif": 0.4883,
-          "dea": 1.9329,
+          "dea": 1.933,
           "histogram": -1.4447,
           "signal": "空方",
           "score": 1
@@ -2139,12 +2139,12 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "富邦金",
-        "close_price": 148,
-        "pe_ratio": 13.83,
-        "pb_ratio": 1.82,
-        "dividend_yield": 2.87,
+        "close_price": 153.5,
+        "pe_ratio": 14.35,
+        "pb_ratio": 1.89,
+        "dividend_yield": 2.77,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -2196,7 +2196,7 @@
     },
     {
       "stock_id": "2883",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 0,
         "latest_yoy": -46.73068314507328,
@@ -2258,7 +2258,7 @@
         "latest_close": 34.55,
         "ma": {
           "ma5": 34.46,
-          "ma10": 36.28,
+          "ma10": 36.29,
           "ma20": 37.28,
           "ma60": 36.12,
           "trend": "盤整",
@@ -2357,12 +2357,12 @@
         "message": "技術面偏弱"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "凱基金",
-        "close_price": 33.65,
-        "pe_ratio": 11.77,
-        "pb_ratio": 1.33,
-        "dividend_yield": 2.97,
+        "close_price": 34.55,
+        "pe_ratio": 12.08,
+        "pb_ratio": 1.37,
+        "dividend_yield": 2.89,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
@@ -2414,7 +2414,7 @@
     },
     {
       "stock_id": "2834",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 8,
         "latest_yoy": 6.5173333051895765,
@@ -2575,7 +2575,7 @@
         "message": "技術面弱勢"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "臺企銀",
         "close_price": 17.35,
         "pe_ratio": 12.76,
@@ -2632,7 +2632,7 @@
     },
     {
       "stock_id": "2812",
-      "analysis_date": "2026-11-09",
+      "analysis_date": "2026-11-10",
       "revenue": {
         "score": 0,
         "latest_yoy": -0.034342123869568475,
@@ -2707,8 +2707,8 @@
         },
         "macd": {
           "dif": -0.3008,
-          "dea": -0.2028,
-          "histogram": -0.098,
+          "dea": -0.2027,
+          "histogram": -0.0981,
           "signal": "空方",
           "score": 1
         },
@@ -2793,12 +2793,12 @@
         "message": "技術面弱勢"
       },
       "valuation": {
-        "valuation_date": "2026-11-06",
+        "valuation_date": "2026-11-09",
         "stock_name": "台中銀",
-        "close_price": 17.4,
-        "pe_ratio": 10.36,
-        "pb_ratio": 1.09,
-        "dividend_yield": 6.09,
+        "close_price": 17.6,
+        "pe_ratio": 10.48,
+        "pb_ratio": 1.1,
+        "dividend_yield": 6.02,
         "dividend_year": 114,
         "financial_period": "115/2",
         "data_available": true,
