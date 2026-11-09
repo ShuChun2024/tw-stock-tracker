@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "update_time": "2026-11-09 20:13:08",
+  "update_time": "2026-11-09 21:26:27",
   "stock_count": 13,
   "stocks": {
     "2034": {
@@ -183,14 +183,14 @@
       "stock_id": "6750",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": null,
+      "last_processed_date": "2026-11-06",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": null
+      "updated_at": "2026-11-09T21:26:27.268659+08:00"
     }
   }
 }
