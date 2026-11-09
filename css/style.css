@@ -1,0 +1,245 @@
+/* =====================================================
+   布林突破策略
+   ===================================================== */
+
+.breakout-section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  min-width: 0;
+}
+
+.breakout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.breakout-title {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.breakout-status {
+  display: inline-block;
+  font-size: 11px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 9px;
+  white-space: nowrap;
+}
+
+.breakout-inactive {
+  color: var(--muted);
+}
+
+.breakout-watching {
+  color: var(--yellow);
+  border-color: var(--yellow);
+}
+
+.breakout-holding {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.breakout-stopped {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* 卡片摘要 */
+
+.breakout-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.breakout-summary-item {
+  background: #111c2d;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 0;
+}
+
+.breakout-summary-label {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.breakout-summary-value {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+}
+
+/* 詳細資料收合 */
+
+.breakout-details {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.breakout-toggle {
+  list-style: none;
+  width: 100%;
+  background: #263449;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.breakout-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.breakout-toggle::marker {
+  content: "";
+}
+
+.breakout-toggle:hover {
+  border-color: var(--blue);
+}
+
+.breakout-toggle-arrow {
+  color: var(--blue);
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: transform .2s ease;
+}
+
+.breakout-details[open] .breakout-toggle-arrow {
+  transform: rotate(180deg);
+}
+
+/* 詳細內容 */
+
+.breakout-detail-content {
+  padding-top: 10px;
+}
+
+.breakout-subsection {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.breakout-subtitle {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 9px;
+  color: var(--blue);
+}
+
+.breakout-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.breakout-field {
+  background: #111c2d;
+  border-radius: 8px;
+  padding: 9px;
+  min-width: 0;
+}
+
+.breakout-field-label {
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.breakout-field-value {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+/* 歷史紀錄 */
+
+.breakout-history-list {
+  display: grid;
+  gap: 9px;
+}
+
+.breakout-history-item {
+  background: #111c2d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 0;
+}
+
+.breakout-history-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 9px;
+  color: var(--text);
+}
+
+.breakout-empty {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  background: #111c2d;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-wrap: anywhere;
+}
+
+.breakout-meta {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+
+/* 手機版 */
+
+@media (max-width: 480px) {
+  .breakout-summary {
+    gap: 7px;
+  }
+
+  .breakout-summary-item {
+    padding: 9px;
+  }
+
+  .breakout-summary-value {
+    font-size: 15px;
+  }
+
+  .breakout-fields {
+    gap: 6px;
+  }
+
+  .breakout-field {
+    padding: 8px;
+  }
+
+  .breakout-field-value {
+    font-size: 12px;
+  }
+
+  .breakout-toggle {
+    font-size: 12px;
+  }
+}
