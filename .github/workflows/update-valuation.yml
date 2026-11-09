@@ -3,7 +3,7 @@ name: Update Stock Valuation CSV
 on:
   schedule:
     # GitHub Actions 使用 UTC；08:00 UTC = 台灣時間 16:00
-    - cron: "0 8 * * 1-5"
+    - cron: "7 8 * * 1-5"
 
   workflow_dispatch:
 
