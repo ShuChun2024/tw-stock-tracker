@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-11-09 18:37:30",
+  "update_time": "2026-11-09 20:12:56",
   "stock_count": 13,
   "complete_count": 12,
   "score_complete_count": 13,
@@ -1357,12 +1357,12 @@
           "trend": "賣超"
         },
         "trust": {
-          "latest_net_shares": 2584901,
-          "latest_net_lots": 2584.9,
-          "net_5d_shares": 16054835,
-          "net_5d_lots": 16054.8,
-          "net_20d_shares": 42093023,
-          "net_20d_lots": 42093.0,
+          "latest_net_shares": 3828210,
+          "latest_net_lots": 3828.2,
+          "net_5d_shares": 17298144,
+          "net_5d_lots": 17298.1,
+          "net_20d_shares": 43336332,
+          "net_20d_lots": 43336.3,
           "consecutive_days": 27,
           "trend": "買超"
         },
