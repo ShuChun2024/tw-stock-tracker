@@ -124,13 +124,12 @@ async function loadBreakoutState() {
   }
 }
 
-
 /* =====================================================
    11-2. 突破策略資料格式化
    ===================================================== */
 
 /*
- * 日期及文字。
+ * 文字格式化。
  */
 
 function breakoutText(value) {
@@ -148,6 +147,7 @@ function breakoutText(value) {
 
 /*
  * 數值。
+ * 回傳未跳脫字串，由 renderBreakoutField 統一處理。
  */
 
 function breakoutNumber(value, decimals = 2) {
@@ -155,7 +155,7 @@ function breakoutNumber(value, decimals = 2) {
     return "—";
   }
 
-  return escapeHTML(fmt(value, decimals));
+  return fmt(value, decimals);
 }
 
 
@@ -168,7 +168,7 @@ function breakoutPercent(value) {
     return "—";
   }
 
-  return escapeHTML(signedPercent(value));
+  return signedPercent(value);
 }
 
 
@@ -182,12 +182,36 @@ function renderBreakoutField(label, value) {
       <div class="breakout-field-label">
         ${escapeHTML(label)}
       </div>
+
       <div class="breakout-field-value">
         ${breakoutText(value)}
       </div>
     </div>
   `;
 }
+
+
+/*
+ * 歷史訊號類型名稱。
+ *
+ * 未知類型保留原始文字。
+ */
+
+const BREAKOUT_SIGNAL_LABELS = {
+  watch: "WATCH",
+  watch_end: "WATCH END",
+  entry: "ENTRY",
+  exit: "EXIT",
+  stop: "STOP"
+};
+
+const BREAKOUT_SIGNAL_CLASSES = {
+  watch: "breakout-signal-watch",
+  watch_end: "breakout-signal-watch-end",
+  entry: "breakout-signal-entry",
+  exit: "breakout-signal-exit",
+  stop: "breakout-signal-stop"
+};
 
 
 /*
@@ -202,13 +226,15 @@ function renderBreakoutField(label, value) {
 function renderBreakoutSignal(title, signal) {
   if (
     !signal ||
-    typeof signal !== "object"
+    typeof signal !== "object" ||
+    Array.isArray(signal)
   ) {
     return `
       <div class="breakout-subsection">
         <div class="breakout-subtitle">
           ${escapeHTML(title)}
         </div>
+
         <div class="breakout-empty">
           尚無紀錄
         </div>
@@ -218,13 +244,22 @@ function renderBreakoutSignal(title, signal) {
 
   return `
     <div class="breakout-subsection">
+
       <div class="breakout-subtitle">
         ${escapeHTML(title)}
       </div>
 
       <div class="breakout-fields">
-        ${renderBreakoutField("訊號日期", signal.date)}
-        ${renderBreakoutField("訊號原因", signal.reason)}
+
+        ${renderBreakoutField(
+          "訊號日期",
+          signal.date
+        )}
+
+        ${renderBreakoutField(
+          "訊號原因",
+          signal.reason
+        )}
 
         ${
           signal.execution_date !== undefined
@@ -243,7 +278,9 @@ function renderBreakoutSignal(title, signal) {
               )
             : ""
         }
+
       </div>
+
     </div>
   `;
 }
@@ -256,7 +293,8 @@ function renderBreakoutSignal(title, signal) {
 function renderActiveBreakoutTrade(trade) {
   if (
     !trade ||
-    typeof trade !== "object"
+    typeof trade !== "object" ||
+    Array.isArray(trade)
   ) {
     return `
       <div class="breakout-empty">
@@ -330,7 +368,10 @@ function renderActiveBreakoutTrade(trade) {
    ===================================================== */
 
 function renderBreakoutTradeHistory(trades) {
-  if (!Array.isArray(trades) || !trades.length) {
+  if (
+    !Array.isArray(trades) ||
+    !trades.length
+  ) {
     return `
       <div class="breakout-empty">
         尚無歷史交易紀錄。
@@ -344,7 +385,8 @@ function renderBreakoutTradeHistory(trades) {
       ${trades.map((trade, index) => {
         if (
           !trade ||
-          typeof trade !== "object"
+          typeof trade !== "object" ||
+          Array.isArray(trade)
         ) {
           return "";
         }
@@ -421,6 +463,7 @@ function renderBreakoutTradeHistory(trades) {
               )}
 
             </div>
+
           </div>
         `;
       }).join("")}
@@ -435,7 +478,10 @@ function renderBreakoutTradeHistory(trades) {
    ===================================================== */
 
 function renderBreakoutSignalHistory(signals) {
-  if (!Array.isArray(signals) || !signals.length) {
+  if (
+    !Array.isArray(signals) ||
+    !signals.length
+  ) {
     return `
       <div class="breakout-empty">
         尚無歷史訊號紀錄。
@@ -449,17 +495,34 @@ function renderBreakoutSignalHistory(signals) {
       ${signals.map((signal, index) => {
         if (
           !signal ||
-          typeof signal !== "object"
+          typeof signal !== "object" ||
+          Array.isArray(signal)
         ) {
           return "";
         }
 
+        const type = String(signal.type || "");
+
+        const label =
+          BREAKOUT_SIGNAL_LABELS[type] || type || "未知訊號";
+
+        const signalClass =
+          BREAKOUT_SIGNAL_CLASSES[type] ||
+          "breakout-signal-other";
+
         return `
           <div class="breakout-history-item">
 
-            <div class="breakout-history-title">
-              訊號 ${index + 1}
-              ｜${breakoutText(signal.type)}
+            <div class="breakout-history-header">
+
+              <div class="breakout-history-title">
+                訊號 ${index + 1}
+              </div>
+
+              <span class="breakout-signal-type ${signalClass}">
+                ${escapeHTML(label)}
+              </span>
+
             </div>
 
             <div class="breakout-fields">
@@ -475,6 +538,7 @@ function renderBreakoutSignalHistory(signals) {
               )}
 
             </div>
+
           </div>
         `;
       }).join("")}
@@ -502,9 +566,11 @@ function renderBreakoutPanel(stockId) {
       <div class="breakout-section">
 
         <div class="breakout-header">
+
           <div class="breakout-title">
             布林突破策略
           </div>
+
         </div>
 
         <div class="breakout-empty">
@@ -525,6 +591,7 @@ function renderBreakoutPanel(stockId) {
       <div class="breakout-section">
 
         <div class="breakout-header">
+
           <div class="breakout-title">
             布林突破策略
           </div>
@@ -532,6 +599,7 @@ function renderBreakoutPanel(stockId) {
           <span class="breakout-status breakout-inactive">
             尚無紀錄
           </span>
+
         </div>
 
         <div class="breakout-empty">
@@ -542,25 +610,55 @@ function renderBreakoutPanel(stockId) {
     `;
   }
 
+  /*
+   * 策略狀態。
+   */
+
   const status = state.status || "inactive";
 
   const statusLabel =
     BREAKOUT_STATUS_LABELS[status] || "未知狀態";
 
   const statusClass =
-    BREAKOUT_STATUS_CLASSES[status] || "breakout-inactive";
+    BREAKOUT_STATUS_CLASSES[status] ||
+    "breakout-inactive";
+
+  /*
+   * 觀測清單狀態。
+   *
+   * 與策略 status 分開處理。
+   */
+
+  const watchlistLabel =
+    state.watchlist_active === true
+      ? "啟用"
+      : state.watchlist_active === false
+        ? "停用"
+        : "未提供";
+
+  const watchlistClass =
+    state.watchlist_active === true
+      ? "breakout-watchlist-active"
+      : state.watchlist_active === false
+        ? "breakout-watchlist-inactive"
+        : "breakout-watchlist-unknown";
+
+  /*
+   * 目前持有交易。
+   */
 
   const trade = state.active_trade;
 
   const hasTrade =
     trade &&
-    typeof trade === "object";
+    typeof trade === "object" &&
+    !Array.isArray(trade);
 
   /*
-   * 卡片摘要。
+   * 摘要資訊。
    *
-   * 僅顯示主要狀態。
-   * 其餘資訊放在 details 內。
+   * 不論有沒有持有交易，
+   * 都顯示最後處理日期及觀測清單狀態。
    */
 
   return `
@@ -580,22 +678,53 @@ function renderBreakoutPanel(stockId) {
 
       <div class="breakout-summary">
 
+        <div class="breakout-summary-item">
+
+          <div class="breakout-summary-label">
+            最後處理日期
+          </div>
+
+          <div class="breakout-summary-value">
+            ${breakoutText(state.last_processed_date)}
+          </div>
+
+        </div>
+
+        <div class="breakout-summary-item">
+
+          <div class="breakout-summary-label">
+            觀測清單狀態
+          </div>
+
+          <div class="breakout-summary-value">
+            <span class="breakout-watchlist-badge ${watchlistClass}">
+              ${escapeHTML(watchlistLabel)}
+            </span>
+          </div>
+
+        </div>
+
         ${
           hasTrade
             ? `
               <div class="breakout-summary-item">
+
                 <div class="breakout-summary-label">
                   進場價格
                 </div>
+
                 <div class="breakout-summary-value">
                   ${breakoutNumber(trade.entry_price)}
                 </div>
+
               </div>
 
               <div class="breakout-summary-item">
+
                 <div class="breakout-summary-label">
                   持有天數
                 </div>
+
                 <div class="breakout-summary-value">
                   ${
                     validNumber(trade.holding_days)
@@ -603,31 +732,10 @@ function renderBreakoutPanel(stockId) {
                       : "—"
                   }
                 </div>
-              </div>
-            `
-            : `
-              <div class="breakout-summary-item">
-                <div class="breakout-summary-label">
-                  最後處理日期
-                </div>
-                <div class="breakout-summary-value">
-                  ${breakoutText(state.last_processed_date)}
-                </div>
-              </div>
 
-              <div class="breakout-summary-item">
-                <div class="breakout-summary-label">
-                  觀測清單狀態
-                </div>
-                <div class="breakout-summary-value">
-                  ${state.watchlist_active === true
-                    ? "啟用"
-                    : state.watchlist_active === false
-                      ? "停用"
-                      : "—"}
-                </div>
               </div>
             `
+            : ""
         }
 
       </div>
@@ -635,8 +743,15 @@ function renderBreakoutPanel(stockId) {
       <details class="breakout-details">
 
         <summary class="breakout-toggle">
-          <span>查看突破策略詳細資料</span>
-          <span class="breakout-toggle-arrow">⌄</span>
+
+          <span>
+            查看突破策略詳細資料
+          </span>
+
+          <span class="breakout-toggle-arrow">
+            ⌄
+          </span>
+
         </summary>
 
         <div class="breakout-detail-content">
@@ -694,18 +809,20 @@ function renderBreakoutPanel(stockId) {
 
           <div class="breakout-meta">
 
-            最後處理日期：
-            ${breakoutText(state.last_processed_date)}
+            <div class="breakout-meta-row">
+              <span>最後處理日期</span>
+              <span>${breakoutText(state.last_processed_date)}</span>
+            </div>
 
-            <br>
+            <div class="breakout-meta-row">
+              <span>個股更新時間</span>
+              <span>${breakoutText(state.updated_at)}</span>
+            </div>
 
-            個股更新時間：
-            ${breakoutText(state.updated_at)}
-
-            <br>
-
-            策略資料更新時間：
-            ${breakoutText(breakoutStateUpdateTime)}
+            <div class="breakout-meta-row">
+              <span>策略資料更新時間</span>
+              <span>${breakoutText(breakoutStateUpdateTime)}</span>
+            </div>
 
           </div>
 
@@ -716,7 +833,6 @@ function renderBreakoutPanel(stockId) {
     </div>
   `;
 }
-
 
 /* =====================================================
    11-7. 原有展開／縮合功能
