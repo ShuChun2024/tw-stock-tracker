@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-11-10 01:36:13",
+  "update_time": "2026-11-11 01:43:10",
   "stock_count": 13,
   "failed_count": 0,
   "failed_stocks": [],
@@ -10,6 +10,13 @@
       "stock_name": "台積電",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 2285,
+          "change": 50,
+          "change_percent": 2.24
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -37,13 +44,6 @@
           "close": 2260,
           "change": -35,
           "change_percent": -1.53
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 2295,
-          "change": -35,
-          "change_percent": -1.5
         }
       ]
     },
@@ -52,6 +52,13 @@
       "stock_name": "長榮",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 255.5,
+          "change": 10,
+          "change_percent": 4.07
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -79,13 +86,6 @@
           "close": 268,
           "change": 1.5,
           "change_percent": 0.56
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 266.5,
-          "change": -8,
-          "change_percent": -2.91
         }
       ]
     },
@@ -94,6 +94,13 @@
       "stock_name": "微星",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 140,
+          "change": -3,
+          "change_percent": -2.1
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -121,13 +128,6 @@
           "close": 150.5,
           "change": -2.5,
           "change_percent": -1.63
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 153,
-          "change": -3.5,
-          "change_percent": -2.24
         }
       ]
     },
@@ -136,6 +136,13 @@
       "stock_name": "凱基金",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 35.2,
+          "change": 0.65,
+          "change_percent": 1.88
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -163,13 +170,6 @@
           "close": 34.8,
           "change": -0.15,
           "change_percent": -0.43
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 34.95,
-          "change": -2.3,
-          "change_percent": -6.17
         }
       ]
     },
@@ -178,6 +178,13 @@
       "stock_name": "台泥",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 27.3,
+          "change": 0.5,
+          "change_percent": 1.87
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -205,13 +212,6 @@
           "close": 27.25,
           "change": -0.45,
           "change_percent": -1.62
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 27.7,
-          "change": -0.4,
-          "change_percent": -1.42
         }
       ]
     },
@@ -220,6 +220,13 @@
       "stock_name": "亞泥",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 36.6,
+          "change": -0.25,
+          "change_percent": -0.68
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -247,13 +254,6 @@
           "close": 36.9,
           "change": -0.85,
           "change_percent": -2.25
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 37.75,
-          "change": -0.35,
-          "change_percent": -0.92
         }
       ]
     },
@@ -262,6 +262,13 @@
       "stock_name": "迎廣",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 60.2,
+          "change": 1.2,
+          "change_percent": 2.03
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -289,13 +296,6 @@
           "close": 61.7,
           "change": -0.3,
           "change_percent": -0.48
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 62,
-          "change": -2.4,
-          "change_percent": -3.73
         }
       ]
     },
@@ -304,6 +304,13 @@
       "stock_name": "允強",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 23.65,
+          "change": 1.15,
+          "change_percent": 5.11
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -331,13 +338,6 @@
           "close": 22.55,
           "change": 0.15,
           "change_percent": 0.67
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 22.4,
-          "change": -0.5,
-          "change_percent": -2.18
         }
       ]
     },
@@ -346,6 +346,13 @@
       "stock_name": "6750",
       "market": "ESB",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 54.87,
+          "change": 0.08,
+          "change_percent": 0.15
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -373,13 +380,6 @@
           "close": 55.54,
           "change": -1.04,
           "change_percent": -1.84
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 56.58,
-          "change": -1.08,
-          "change_percent": -1.87
         }
       ]
     },
@@ -388,6 +388,13 @@
       "stock_name": "臺企銀",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 17.25,
+          "change": -0.1,
+          "change_percent": -0.58
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -415,13 +422,6 @@
           "close": 17.65,
           "change": -0.05,
           "change_percent": -0.28
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 17.7,
-          "change": -0.35,
-          "change_percent": -1.94
         }
       ]
     },
@@ -430,6 +430,13 @@
       "stock_name": "南染",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 25.4,
+          "change": -0.1,
+          "change_percent": -0.39
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -457,13 +464,6 @@
           "close": 26.25,
           "change": 2.35,
           "change_percent": 9.83
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 23.9,
-          "change": 0.15,
-          "change_percent": 0.63
         }
       ]
     },
@@ -472,6 +472,13 @@
       "stock_name": "台中銀",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 17.1,
+          "change": -0.5,
+          "change_percent": -2.84
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -499,13 +506,6 @@
           "close": 18.05,
           "change": -0.1,
           "change_percent": -0.55
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 18.15,
-          "change": -0.4,
-          "change_percent": -2.16
         }
       ]
     },
@@ -514,6 +514,13 @@
       "stock_name": "富邦金",
       "market": "TWSE",
       "data": [
+        {
+          "date": "2026-11-10",
+          "weekday": "二",
+          "close": 153,
+          "change": -0.5,
+          "change_percent": -0.33
+        },
         {
           "date": "2026-11-09",
           "weekday": "一",
@@ -541,13 +548,6 @@
           "close": 154.5,
           "change": 0.5,
           "change_percent": 0.32
-        },
-        {
-          "date": "2026-11-03",
-          "weekday": "二",
-          "close": 154,
-          "change": -5.5,
-          "change_percent": -3.45
         }
       ]
     }
