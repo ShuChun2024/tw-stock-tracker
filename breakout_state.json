@@ -1,26 +1,26 @@
 {
   "schema_version": 1,
-  "update_time": "2026-11-17 06:51:26",
+  "update_time": "2026-11-18 05:43:35",
   "stock_count": 13,
   "stocks": {
     "2034": {
       "stock_id": "2034",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:18.893731+08:00"
+      "updated_at": "2026-11-18T05:43:28.462624+08:00"
     },
     "2834": {
       "stock_id": "2834",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
@@ -38,26 +38,26 @@
         }
       ],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:23.197179+08:00"
+      "updated_at": "2026-11-18T05:43:32.509234+08:00"
     },
     "6117": {
       "stock_id": "6117",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:25.755272+08:00"
+      "updated_at": "2026-11-18T05:43:34.934082+08:00"
     },
     "2881": {
       "stock_id": "2881",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
@@ -75,124 +75,124 @@
         }
       ],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:23.986548+08:00"
+      "updated_at": "2026-11-18T05:43:33.406521+08:00"
     },
     "2330": {
       "stock_id": "2330",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:19.647584+08:00"
+      "updated_at": "2026-11-18T05:43:29.127649+08:00"
     },
     "1102": {
       "stock_id": "1102",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:16.962796+08:00"
+      "updated_at": "2026-11-18T05:43:26.939572+08:00"
     },
     "1410": {
       "stock_id": "1410",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:17.821265+08:00"
+      "updated_at": "2026-11-18T05:43:27.806232+08:00"
     },
     "2377": {
       "stock_id": "2377",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:20.686005+08:00"
+      "updated_at": "2026-11-18T05:43:29.811080+08:00"
     },
     "2603": {
       "stock_id": "2603",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:21.664948+08:00"
+      "updated_at": "2026-11-18T05:43:30.709359+08:00"
     },
     "2812": {
       "stock_id": "2812",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:22.420161+08:00"
+      "updated_at": "2026-11-18T05:43:31.840751+08:00"
     },
     "1101": {
       "stock_id": "1101",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:15.990821+08:00"
+      "updated_at": "2026-11-18T05:43:26.104435+08:00"
     },
     "2883": {
       "stock_id": "2883",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:24.893949+08:00"
+      "updated_at": "2026-11-18T05:43:34.190301+08:00"
     },
     "6750": {
       "stock_id": "6750",
       "watchlist_active": true,
       "status": "inactive",
-      "last_processed_date": "2026-11-16",
+      "last_processed_date": "2026-11-17",
       "watch_signal": null,
       "entry_signal": null,
       "exit_signal": null,
       "active_trade": null,
       "signal_history": [],
       "trade_history": [],
-      "updated_at": "2026-11-17T06:51:26.550554+08:00"
+      "updated_at": "2026-11-18T05:43:35.646448+08:00"
     }
   }
 }
