@@ -1,6 +1,6 @@
 {
-  "update_time": "2026-11-18 21:21:59",
-  "stock_count": 1997,
+  "update_time": "2026-11-19 21:25:22",
+  "stock_count": 1996,
   "stocks": [
     {
       "stock_id": "1101",
@@ -900,12 +900,6 @@
       "stock_id": "1587",
       "short_name": "吉茂",
       "company_name": "吉茂精密股份有限公司",
-      "market": "TWSE"
-    },
-    {
-      "stock_id": "1589",
-      "short_name": "永冠-KY",
-      "company_name": "永冠能源科技集團有限公司",
       "market": "TWSE"
     },
     {
