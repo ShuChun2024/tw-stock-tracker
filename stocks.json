@@ -1,6 +1,6 @@
 {
-  "update_time": "2026-11-25 22:26:39",
-  "stock_count": 1996,
+  "update_time": "2026-11-26 22:15:46",
+  "stock_count": 1997,
   "stocks": [
     {
       "stock_id": "1101",
@@ -10657,6 +10657,12 @@
       "short_name": "特力屋",
       "company_name": "特力屋股份有限公司",
       "market": "TWSE"
+    },
+    {
+      "stock_id": "7869",
+      "short_name": "宏于電機",
+      "company_name": "宏于電機股份有限公司",
+      "market": "TPEx"
     },
     {
       "stock_id": "8011",
